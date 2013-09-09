@@ -1,0 +1,47 @@
+  BatGUI.Form1.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly BatGUI, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
+    System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
+    System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
+    Int32 c : Public, Static
+  Methods:
+    InitializeCostParameters(): PrivateScope, Public, HideBySig
+    populateSpline2V(vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*, vector<double\,std::allocator<double> >* IsImplicitlyDereferenced, vector<double\,std::allocator<double> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    interpolateSplineV(Double, vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*): PrivateScope, Public, HideBySig
+    interpolate2dSpline(vector<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >\,std::allocator<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > > > >*, vector<double\,std::allocator<double> >*, Double, Double): PrivateScope, Public, HideBySig
+    fileRead(vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
+    asinh(Double): PrivateScope, Public, HideBySig
+    voltage(Double, Double, Double, Double, Double, Int32, Int32, vector<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >\,std::allocator<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > > > >* IsImplicitlyDereferenced, vector<double\,std::allocator<double> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    CostTab(Int32, Int32, Double): PrivateScope, Public, HideBySig
+    unitFunction<double>(String, Double): PrivateScope, Public, HideBySig
+    powerCost(Double, Double, Double, Double, Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
+    energyCost(Double, Double, Double, Int32): PrivateScope, Public, HideBySig
+    shuntLoss(Double, Double, Double, Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
+    pLoss(Double, Double, Double, Double, Double, Int32): PrivateScope, Public, HideBySig
+    MarshalString(String, basic_string<wchar_t\,std::char_traits<wchar_t>\,std::allocator<wchar_t> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    MarshalString(String, basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
