@@ -1,3 +1,66 @@
+/*
+                                                                                             .://:                      
+                                                                                         .////:                         
+                                                                                      :/##/.                            
+                                                                                   /##/:                                
+                                                                                /###/                                   
+                                                                             /###/.                                     
+                                                                         //###:                                         
+                               ##/.                                 ://####/                                            
+                               /####/.                          :/##//###:                                              
+                                  :####/               .:://####/:/###/.                                                
+                                  /########////#///###/:./###/   /##:                                                   
+                                        ./#/./###///////###    /##:                                                     
+                                         /####:     .###....:###.                                                       
+                                        ./   /#/  /##/     ###/.                                                        
+                                               ####.     /##/                                                           
+                                              ##//#    /##/                                                             
+                                              :   .#::###                                                               
+                                                   .###.                                                                
+                                                   ##//                                                                 
+                                                       /                                                                
+                                                             
+    ____  ___   __________________________
+   / __ \/   | / ____/  _/ ____/  _/ ____/
+  / /_/ / /| |/ /    / // /_   / // /     
+ / ____/ ___ / /____/ // __/ _/ // /___   
+/_/   /_/  |_\____/___/_/   /___/\____/   
+                                          
+    _   ______  ____  ________  ___       ___________________
+   / | / / __ \/ __ \/_  __/ / / / |     / / ____/ ___/_  __/
+  /  |/ / / / / /_/ / / / / /_/ /| | /| / / __/  \__ \ / /   
+ / /|  / /_/ / _, _/ / / / __  / | |/ |/ / /___ ___/ // /    
+/_/ |_/\____/_/ |_| /_/ /_/ /_/  |__/|__/_____//____//_/     
+                                                             
+    _   _____  ______________  _   _____    __ 
+   / | / /   |/_  __/  _/ __ \/ | / /   |  / / 
+  /  |/ / /| | / /  / // / / /  |/ / /| | / /  
+ / /|  / ___ |/ / _/ // /_/ / /|  / ___ |/ /___
+/_/ |_/_/  |_/_/ /___/\____/_/ |_/_/  |_/_____/
+                                               
+    __    ___    ____  ____  ____  ___  __________  ______  __
+   / /   /   |  / __ )/ __ \/ __ \/   |/_  __/ __ \/ __ \ \/ /
+  / /   / /| | / __  / / / / /_/ / /| | / / / / / / /_/ /\  / 
+ / /___/ ___ |/ /_/ / /_/ / _, _/ ___ |/ / / /_/ / _, _/ / /  
+/_____/_/  |_/_____/\____/_/ |_/_/  |_/_/  \____/_/ |_| /_/                                       
+*/
+
+/*PNNL has developed an interactive tool to estimate the capital cost for PNNL 
+all vanadium Gen 1, Gen2, and iron-vanadium chemistries. This tool has also been 
+adapted for organic electrolyte redox flow batteries. The Gen 2 all vanadium 
+system incorporates the PNNL-developed electrolyte with high concentration and 
+wide operating temperature range. The tool allows determination of the most 
+cost-effective chemistries and the optimum operating conditions for power or 
+energy intensive applications, providing a strategy for a redox flow battery 
+management system (BMS). 
+
+This tool was developed with funding from The U. S. Department of Energy, 
+Office of Electricity Delivery and Energy Reliability/Energy Storage Program, 
+under the leadership of Dr. Imre Gyuk.*/
+
+
+
+
 #pragma once
 #define NOMINMAX
 #include <math.h>
