@@ -2271,7 +2271,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			{
 			powerloss*=1/(aspectratio*digits*digits);
 			}
-			powerloss/=pDropFactor;
+			powerloss*=pDropFactor;
 			pumpEff=powerloss/powerproduced;
 			shuntEff=shuntLoss(V,area,cwidth,cdepth,aspectratio,channels,cells)/(cells*powerproduced);
 			electrochemEff=1-(V/voltage(SOC,area,flow,0,aspectratio,system,membrane,SuperMatrix,J));

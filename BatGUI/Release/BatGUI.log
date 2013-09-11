@@ -1,15 +1,13 @@
-﻿  stdafx.cpp
-  AssemblyInfo.cpp
+﻿  AssemblyInfo.cpp
   BatGUI.cpp
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2014): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2080): warning C4018: '<' : signed/unsigned mismatch
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2086): warning C4018: '<' : signed/unsigned mismatch
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2091): warning C4018: '<' : signed/unsigned mismatch
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2101): warning C4018: '<' : signed/unsigned mismatch
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2150): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2216): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2077): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2143): warning C4018: '<' : signed/unsigned mismatch
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2149): warning C4018: '<' : signed/unsigned mismatch
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2154): warning C4018: '<' : signed/unsigned mismatch
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2164): warning C4018: '<' : signed/unsigned mismatch
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2213): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2276): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\Form1.h(2279): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
   Generating Code...
-c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\form1.h(1857): warning C4700: uninitialized local variable 'units' used
-  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+c:\users\craw038\documents\github\pnnl-oe-redox-flow-battery-cost-tool\batgui\form1.h(1920): warning C4700: uninitialized local variable 'units' used
   BatGUI.vcxproj -> C:\Users\craw038\Documents\GitHub\PNNL-OE-Redox-Flow-Battery-Cost-Tool\Release\BatGUI.exe
