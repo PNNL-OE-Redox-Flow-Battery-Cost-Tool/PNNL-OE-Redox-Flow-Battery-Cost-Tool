@@ -2062,7 +2062,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double flow=0;
 	double optFlow=0;
 	double flowres=0;
-	double flowdensres=0.1;
+	double flowdensres=0.05;
 	double area=areares;
 	double V=0;
 	double VEff=0;
@@ -2290,10 +2290,26 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				else
 				{
 
-				
-						prevPower=j*VEff*area*10;
 						areares=0.0005;
+						if(j*VEff*area*10>=prevPower)
+						{
+							prevPower=j*VEff*area*10;
+							if(prevPower*2<cellPower)
+							{
+								area*=cellPower/prevPower;
+							}
+							else
+							{
+							area+=areares;
+							}
+						}
+						else
+						{
+							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high or too low.");
+							return;
+						}
 						
+						/*
 						if(abs(cellPower-prevPower)>(cellPower*0.5))
 						{
 						area*=cellPower/prevPower;
@@ -2308,7 +2324,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 							{
 								area+=areares;
 							}
-						}
+						}*/
 
 					
 
