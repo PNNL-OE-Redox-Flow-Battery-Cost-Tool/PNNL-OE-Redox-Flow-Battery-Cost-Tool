@@ -2291,7 +2291,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 
 						areares=0.0005;
-						MessageBox::Show("VEff: " + VEff);
 						if(j*VEff*area*10>=prevPower)
 						{
 							prevPower=j*VEff*area*10;
