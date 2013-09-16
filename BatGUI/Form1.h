@@ -2291,6 +2291,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 
 						areares=0.0005;
+						MessageBox::Show("VEff: " + VEff);
 						if(j*VEff*area*10>=prevPower)
 						{
 							prevPower=j*VEff*area*10;
@@ -2305,7 +2306,14 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						}
 						else
 						{
-							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high or too low.");
+							if(V*j>((j+jres)*voltage(SOC,area,flow,j+jres,aspectratio,system,membrane,SuperMatrix,J)))
+							{
+							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high. Try adjusting current density range.");
+							}
+							else
+							{
+							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too low. Try adjusting current density range.");
+							}
 							return;
 						}
 						
