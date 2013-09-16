@@ -1823,7 +1823,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		
 		//etaneg = 0;
 		//etapos = 0;
-		pat = A[1]*condScaleFactor/(10); //S/m
+		pat = A[1]*10*condScaleFactor/(10); //S/m
 		pct = pat; //temp
 		condM[membrane]=2.5/(10); //S/m
 		//t=0.5/1000;
@@ -2191,7 +2191,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			area=cellPower/(10*j*V);
 			if (area<=0)
 			{
-				MessageBox::Show("Current Too High!");
+				MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high. Try adjusting current density range.");
 				return;
 			}
 			
