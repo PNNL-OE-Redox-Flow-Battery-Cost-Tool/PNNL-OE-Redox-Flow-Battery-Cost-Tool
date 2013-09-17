@@ -269,108 +269,108 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->saveProcess = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
 			this->CostParameters = (gcnew System::Windows::Forms::DataGridView());
-			this->Column26 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column25 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column24 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column23 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column22 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column23 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column24 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column25 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column26 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->costChart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->dataOutput = (gcnew System::Windows::Forms::DataGridView());
-			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->FeV = (gcnew System::Windows::Forms::RadioButton());
-			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
-			this->VVGen2 = (gcnew System::Windows::Forms::RadioButton());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->LiOrgButton = (gcnew System::Windows::Forms::RadioButton());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->jLowBox = (gcnew System::Windows::Forms::NumericUpDown());
-			this->jHighBox = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->DODBox = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->calculate = (gcnew System::Windows::Forms::Button());
-			this->progressBar = (gcnew System::Windows::Forms::ProgressBar());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->powerBox = (gcnew System::Windows::Forms::TextBox());
-			this->epBox = (gcnew System::Windows::Forms::TextBox());
-			this->energyBox = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->cellBox = (gcnew System::Windows::Forms::TextBox());
-			this->stackBox = (gcnew System::Windows::Forms::TextBox());
-			this->label67 = (gcnew System::Windows::Forms::Label());
-			this->label68 = (gcnew System::Windows::Forms::Label());
-			this->bestTable = (gcnew System::Windows::Forms::DataGridView());
-			this->Column20 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column19 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->constpower = (gcnew System::Windows::Forms::RadioButton());
-			this->constcurrent = (gcnew System::Windows::Forms::RadioButton());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->ECModelButton = (gcnew System::Windows::Forms::RadioButton());
-			this->SplineButton = (gcnew System::Windows::Forms::RadioButton());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->flowBox = (gcnew System::Windows::Forms::TextBox());
-			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->CondBox = (gcnew System::Windows::Forms::TextBox());
-			this->textasf = (gcnew System::Windows::Forms::Label());
-			this->ThicknessBox = (gcnew System::Windows::Forms::TextBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->KBox = (gcnew System::Windows::Forms::TextBox());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->PBox = (gcnew System::Windows::Forms::TextBox());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->ThRedBox = (gcnew System::Windows::Forms::TextBox());
-			this->MOBox = (gcnew System::Windows::Forms::TextBox());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->FOHBox = (gcnew System::Windows::Forms::TextBox());
-			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->FOWBox = (gcnew System::Windows::Forms::TextBox());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->aspectRatioBox = (gcnew System::Windows::Forms::TextBox());
-			this->label84 = (gcnew System::Windows::Forms::Label());
-			this->interdigBox = (gcnew System::Windows::Forms::CheckBox());
-			this->channelSepBox = (gcnew System::Windows::Forms::TextBox());
-			this->label89 = (gcnew System::Windows::Forms::Label());
-			this->flowCapBox = (gcnew System::Windows::Forms::TextBox());
-			this->label90 = (gcnew System::Windows::Forms::Label());
-			this->LiVoltageBox = (gcnew System::Windows::Forms::TextBox());
-			this->label51 = (gcnew System::Windows::Forms::Label());
-			this->electronBox = (gcnew System::Windows::Forms::TextBox());
 			this->label81 = (gcnew System::Windows::Forms::Label());
+			this->electronBox = (gcnew System::Windows::Forms::TextBox());
+			this->LiVoltageBox = (gcnew System::Windows::Forms::TextBox());
+			this->flowCapBox = (gcnew System::Windows::Forms::TextBox());
+			this->channelSepBox = (gcnew System::Windows::Forms::TextBox());
+			this->aspectRatioBox = (gcnew System::Windows::Forms::TextBox());
+			this->FOWBox = (gcnew System::Windows::Forms::TextBox());
+			this->FOHBox = (gcnew System::Windows::Forms::TextBox());
+			this->MOBox = (gcnew System::Windows::Forms::TextBox());
+			this->ThRedBox = (gcnew System::Windows::Forms::TextBox());
+			this->PBox = (gcnew System::Windows::Forms::TextBox());
+			this->KBox = (gcnew System::Windows::Forms::TextBox());
+			this->ThicknessBox = (gcnew System::Windows::Forms::TextBox());
+			this->CondBox = (gcnew System::Windows::Forms::TextBox());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->label90 = (gcnew System::Windows::Forms::Label());
+			this->label89 = (gcnew System::Windows::Forms::Label());
+			this->interdigBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label84 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textasf = (gcnew System::Windows::Forms::Label());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->flowBox = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->SplineButton = (gcnew System::Windows::Forms::RadioButton());
+			this->ECModelButton = (gcnew System::Windows::Forms::RadioButton());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->constcurrent = (gcnew System::Windows::Forms::RadioButton());
+			this->constpower = (gcnew System::Windows::Forms::RadioButton());
+			this->bestTable = (gcnew System::Windows::Forms::DataGridView());
+			this->Column19 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column20 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label68 = (gcnew System::Windows::Forms::Label());
+			this->label67 = (gcnew System::Windows::Forms::Label());
+			this->stackBox = (gcnew System::Windows::Forms::TextBox());
+			this->cellBox = (gcnew System::Windows::Forms::TextBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->energyBox = (gcnew System::Windows::Forms::TextBox());
+			this->epBox = (gcnew System::Windows::Forms::TextBox());
+			this->powerBox = (gcnew System::Windows::Forms::TextBox());
+			this->progressBar = (gcnew System::Windows::Forms::ProgressBar());
+			this->calculate = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->DODBox = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->jHighBox = (gcnew System::Windows::Forms::NumericUpDown());
+			this->jLowBox = (gcnew System::Windows::Forms::NumericUpDown());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->LiOrgButton = (gcnew System::Windows::Forms::RadioButton());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->VVGen2 = (gcnew System::Windows::Forms::RadioButton());
+			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
+			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
@@ -384,16 +384,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->BeginInit();
 			this->tabPage1->SuspendLayout();
-			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->BeginInit();
-			this->panel3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->BeginInit();
-			this->panel4->SuspendLayout();
-			this->panel5->SuspendLayout();
 			this->panel6->SuspendLayout();
+			this->panel5->SuspendLayout();
+			this->panel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->BeginInit();
+			this->panel3->SuspendLayout();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -473,23 +473,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->CostParameters->Size = System::Drawing::Size(768, 450);
 			this->CostParameters->TabIndex = 0;
 			// 
-			// Column26
+			// Column22
 			// 
-			this->Column26->HeaderText = L"Unit";
-			this->Column26->Name = L"Column26";
-			this->Column26->Width = 51;
-			// 
-			// Column25
-			// 
-			this->Column25->HeaderText = L"Value (Optimistic)";
-			this->Column25->Name = L"Column25";
-			this->Column25->Width = 104;
-			// 
-			// Column24
-			// 
-			this->Column24->HeaderText = L"Value (Near Term)";
-			this->Column24->Name = L"Column24";
-			this->Column24->Width = 108;
+			this->Column22->HeaderText = L"Component";
+			this->Column22->Name = L"Column22";
+			this->Column22->Width = 86;
 			// 
 			// Column23
 			// 
@@ -497,11 +485,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column23->Name = L"Column23";
 			this->Column23->Width = 96;
 			// 
-			// Column22
+			// Column24
 			// 
-			this->Column22->HeaderText = L"Component";
-			this->Column22->Name = L"Column22";
-			this->Column22->Width = 86;
+			this->Column24->HeaderText = L"Value (Near Term)";
+			this->Column24->Name = L"Column24";
+			this->Column24->Width = 108;
+			// 
+			// Column25
+			// 
+			this->Column25->HeaderText = L"Value (Optimistic)";
+			this->Column25->Name = L"Column25";
+			this->Column25->Width = 104;
+			// 
+			// Column26
+			// 
+			this->Column26->HeaderText = L"Unit";
+			this->Column26->Name = L"Column26";
+			this->Column26->Width = 51;
 			// 
 			// tabPage3
 			// 
@@ -566,101 +566,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataOutput->Size = System::Drawing::Size(877, 343);
 			this->dataOutput->TabIndex = 0;
 			// 
-			// Digits
+			// Column1
 			// 
-			this->Digits->HeaderText = L"Column28";
-			this->Digits->Name = L"Digits";
-			// 
-			// Column21
-			// 
-			this->Column21->HeaderText = L"Avg Flow";
-			this->Column21->Name = L"Column21";
-			// 
-			// Column14
-			// 
-			this->Column14->HeaderText = L"Area";
-			this->Column14->Name = L"Column14";
-			// 
-			// Column16
-			// 
-			this->Column16->HeaderText = L"Shunt Eff";
-			this->Column16->Name = L"Column16";
-			// 
-			// Column15
-			// 
-			this->Column15->HeaderText = L"Pump Eff";
-			this->Column15->Name = L"Column15";
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
-			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			// 
-			// Column13
-			// 
-			this->Column13->HeaderText = L"Optimistic $/kW";
-			this->Column13->Name = L"Column13";
-			this->Column13->Width = 50;
-			// 
-			// Column12
-			// 
-			this->Column12->HeaderText = L"Near-Term $/kW";
-			this->Column12->Name = L"Column12";
-			this->Column12->Width = 50;
-			// 
-			// Column11
-			// 
-			this->Column11->HeaderText = L"Present $/kW";
-			this->Column11->Name = L"Column11";
-			this->Column11->Width = 50;
-			// 
-			// Column10
-			// 
-			this->Column10->HeaderText = L"Optimistic $/kWh";
-			this->Column10->Name = L"Column10";
-			this->Column10->Width = 50;
-			// 
-			// Column9
-			// 
-			this->Column9->HeaderText = L"Near-Term $/kWh";
-			this->Column9->Name = L"Column9";
-			this->Column9->Width = 50;
-			// 
-			// Column8
-			// 
-			this->Column8->HeaderText = L"Present $/kWh";
-			this->Column8->Name = L"Column8";
-			this->Column8->Width = 50;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Efficiency (1way)";
-			this->Column7->Name = L"Column7";
-			this->Column7->Width = 60;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Cell Area (m^2)";
-			this->Column6->Name = L"Column6";
-			this->Column6->Width = 50;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Average Effective Voltage";
-			this->Column5->Name = L"Column5";
-			this->Column5->Width = 50;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Optimistic Total $/kWh";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 50;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Near-Term Total $/kWh";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 50;
+			this->Column1->HeaderText = L"j Low";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 50;
 			// 
 			// Column2
 			// 
@@ -668,11 +578,101 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column2->Name = L"Column2";
 			this->Column2->Width = 50;
 			// 
-			// Column1
+			// Column3
 			// 
-			this->Column1->HeaderText = L"j Low";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 50;
+			this->Column3->HeaderText = L"Near-Term Total $/kWh";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Optimistic Total $/kWh";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 50;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Average Effective Voltage";
+			this->Column5->Name = L"Column5";
+			this->Column5->Width = 50;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Cell Area (m^2)";
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 50;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Efficiency (1way)";
+			this->Column7->Name = L"Column7";
+			this->Column7->Width = 60;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Present $/kWh";
+			this->Column8->Name = L"Column8";
+			this->Column8->Width = 50;
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"Near-Term $/kWh";
+			this->Column9->Name = L"Column9";
+			this->Column9->Width = 50;
+			// 
+			// Column10
+			// 
+			this->Column10->HeaderText = L"Optimistic $/kWh";
+			this->Column10->Name = L"Column10";
+			this->Column10->Width = 50;
+			// 
+			// Column11
+			// 
+			this->Column11->HeaderText = L"Present $/kW";
+			this->Column11->Name = L"Column11";
+			this->Column11->Width = 50;
+			// 
+			// Column12
+			// 
+			this->Column12->HeaderText = L"Near-Term $/kW";
+			this->Column12->Name = L"Column12";
+			this->Column12->Width = 50;
+			// 
+			// Column13
+			// 
+			this->Column13->HeaderText = L"Optimistic $/kW";
+			this->Column13->Name = L"Column13";
+			this->Column13->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			// 
+			// Column15
+			// 
+			this->Column15->HeaderText = L"Pump Eff";
+			this->Column15->Name = L"Column15";
+			// 
+			// Column16
+			// 
+			this->Column16->HeaderText = L"Shunt Eff";
+			this->Column16->Name = L"Column16";
+			// 
+			// Column14
+			// 
+			this->Column14->HeaderText = L"Area";
+			this->Column14->Name = L"Column14";
+			// 
+			// Column21
+			// 
+			this->Column21->HeaderText = L"Avg Flow";
+			this->Column21->Name = L"Column21";
+			// 
+			// Digits
+			// 
+			this->Digits->HeaderText = L"Column28";
+			this->Digits->Name = L"Digits";
 			// 
 			// tabPage1
 			// 
@@ -719,218 +719,388 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
-			// panel1
+			// label81
 			// 
-			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel1->Controls->Add(this->LiOrgButton);
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->VVGen2);
-			this->panel1->Controls->Add(this->VVGen1);
-			this->panel1->Controls->Add(this->FeV);
-			this->panel1->Location = System::Drawing::Point(3, 6);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(108, 104);
-			this->panel1->TabIndex = 10;
-			// 
-			// FeV
-			// 
-			this->FeV->AutoSize = true;
-			this->FeV->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label81->AutoSize = true;
+			this->label81->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->FeV->Location = System::Drawing::Point(3, 16);
-			this->FeV->Name = L"FeV";
-			this->FeV->Size = System::Drawing::Size(56, 21);
-			this->FeV->TabIndex = 0;
-			this->FeV->Text = L"Fe-V";
-			this->FeV->UseVisualStyleBackColor = true;
+			this->label81->Location = System::Drawing::Point(119, 434);
+			this->label81->Name = L"label81";
+			this->label81->Size = System::Drawing::Size(67, 17);
+			this->label81->TabIndex = 51;
+			this->label81->Text = L"Electrons";
 			// 
-			// VVGen1
+			// electronBox
 			// 
-			this->VVGen1->AutoSize = true;
-			this->VVGen1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->electronBox->Location = System::Drawing::Point(192, 434);
+			this->electronBox->Name = L"electronBox";
+			this->electronBox->Size = System::Drawing::Size(50, 20);
+			this->electronBox->TabIndex = 50;
+			this->electronBox->Text = L"1";
+			// 
+			// LiVoltageBox
+			// 
+			this->LiVoltageBox->Location = System::Drawing::Point(194, 408);
+			this->LiVoltageBox->Name = L"LiVoltageBox";
+			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
+			this->LiVoltageBox->TabIndex = 48;
+			this->LiVoltageBox->Text = L"3.8";
+			// 
+			// flowCapBox
+			// 
+			this->flowCapBox->Location = System::Drawing::Point(194, 382);
+			this->flowCapBox->Name = L"flowCapBox";
+			this->flowCapBox->Size = System::Drawing::Size(50, 20);
+			this->flowCapBox->TabIndex = 46;
+			this->flowCapBox->Text = L"999999999999";
+			// 
+			// channelSepBox
+			// 
+			this->channelSepBox->Location = System::Drawing::Point(101, 344);
+			this->channelSepBox->Name = L"channelSepBox";
+			this->channelSepBox->Size = System::Drawing::Size(50, 20);
+			this->channelSepBox->TabIndex = 43;
+			this->channelSepBox->Text = L"0.1";
+			// 
+			// aspectRatioBox
+			// 
+			this->aspectRatioBox->Location = System::Drawing::Point(101, 295);
+			this->aspectRatioBox->Name = L"aspectRatioBox";
+			this->aspectRatioBox->Size = System::Drawing::Size(50, 20);
+			this->aspectRatioBox->TabIndex = 40;
+			this->aspectRatioBox->Text = L"1";
+			// 
+			// FOWBox
+			// 
+			this->FOWBox->Location = System::Drawing::Point(442, 435);
+			this->FOWBox->Name = L"FOWBox";
+			this->FOWBox->Size = System::Drawing::Size(65, 20);
+			this->FOWBox->TabIndex = 38;
+			this->FOWBox->Text = L"0.05";
+			// 
+			// FOHBox
+			// 
+			this->FOHBox->Location = System::Drawing::Point(442, 410);
+			this->FOHBox->Name = L"FOHBox";
+			this->FOHBox->Size = System::Drawing::Size(65, 20);
+			this->FOHBox->TabIndex = 36;
+			this->FOHBox->Text = L"0.14";
+			// 
+			// MOBox
+			// 
+			this->MOBox->Location = System::Drawing::Point(442, 384);
+			this->MOBox->Name = L"MOBox";
+			this->MOBox->Size = System::Drawing::Size(65, 20);
+			this->MOBox->TabIndex = 34;
+			this->MOBox->Text = L"0.038";
+			// 
+			// ThRedBox
+			// 
+			this->ThRedBox->Location = System::Drawing::Point(663, 361);
+			this->ThRedBox->Name = L"ThRedBox";
+			this->ThRedBox->Size = System::Drawing::Size(31, 20);
+			this->ThRedBox->TabIndex = 33;
+			this->ThRedBox->Text = L"1";
+			// 
+			// PBox
+			// 
+			this->PBox->Location = System::Drawing::Point(592, 413);
+			this->PBox->Name = L"PBox";
+			this->PBox->Size = System::Drawing::Size(65, 20);
+			this->PBox->TabIndex = 31;
+			this->PBox->Text = L"1";
+			// 
+			// KBox
+			// 
+			this->KBox->Location = System::Drawing::Point(592, 387);
+			this->KBox->Name = L"KBox";
+			this->KBox->Size = System::Drawing::Size(65, 20);
+			this->KBox->TabIndex = 29;
+			this->KBox->Text = L"1";
+			// 
+			// ThicknessBox
+			// 
+			this->ThicknessBox->Location = System::Drawing::Point(592, 361);
+			this->ThicknessBox->Name = L"ThicknessBox";
+			this->ThicknessBox->Size = System::Drawing::Size(65, 20);
+			this->ThicknessBox->TabIndex = 27;
+			this->ThicknessBox->Text = L"1";
+			// 
+			// CondBox
+			// 
+			this->CondBox->Location = System::Drawing::Point(592, 335);
+			this->CondBox->Name = L"CondBox";
+			this->CondBox->Size = System::Drawing::Size(65, 20);
+			this->CondBox->TabIndex = 25;
+			this->CondBox->Text = L"1";
+			// 
+			// label51
+			// 
+			this->label51->AutoSize = true;
+			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->VVGen1->Location = System::Drawing::Point(3, 39);
-			this->VVGen1->Name = L"VVGen1";
-			this->VVGen1->Size = System::Drawing::Size(87, 21);
-			this->VVGen1->TabIndex = 1;
-			this->VVGen1->Text = L"V-V Gen I";
-			this->VVGen1->UseVisualStyleBackColor = true;
+			this->label51->Location = System::Drawing::Point(-1, 409);
+			this->label51->Name = L"label51";
+			this->label51->Size = System::Drawing::Size(189, 17);
+			this->label51->TabIndex = 49;
+			this->label51->Text = L"Li+ Organic OCV (50% SOC)";
 			// 
-			// VVGen2
+			// label90
 			// 
-			this->VVGen2->AutoSize = true;
-			this->VVGen2->Checked = true;
-			this->VVGen2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label90->AutoSize = true;
+			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->VVGen2->Location = System::Drawing::Point(3, 62);
-			this->VVGen2->Name = L"VVGen2";
-			this->VVGen2->Size = System::Drawing::Size(90, 21);
-			this->VVGen2->TabIndex = 2;
-			this->VVGen2->TabStop = true;
-			this->VVGen2->Text = L"V-V Gen II";
-			this->VVGen2->UseVisualStyleBackColor = true;
+			this->label90->Location = System::Drawing::Point(5, 383);
+			this->label90->Name = L"label90";
+			this->label90->Size = System::Drawing::Size(183, 17);
+			this->label90->TabIndex = 47;
+			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
 			// 
-			// label4
+			// label89
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label89->AutoSize = true;
+			this->label89->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(1, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(70, 17);
-			this->label4->TabIndex = 11;
-			this->label4->Text = L"Chemistry";
+			this->label89->Location = System::Drawing::Point(7, 345);
+			this->label89->Name = L"label89";
+			this->label89->Size = System::Drawing::Size(89, 17);
+			this->label89->TabIndex = 44;
+			this->label89->Text = L"Channel Sep";
 			// 
-			// LiOrgButton
+			// interdigBox
 			// 
-			this->LiOrgButton->AutoSize = true;
-			this->LiOrgButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->interdigBox->AutoSize = true;
+			this->interdigBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->LiOrgButton->Location = System::Drawing::Point(3, 82);
-			this->LiOrgButton->Name = L"LiOrgButton";
-			this->LiOrgButton->Size = System::Drawing::Size(99, 21);
-			this->LiOrgButton->TabIndex = 12;
-			this->LiOrgButton->Text = L"Li+ Organic";
-			this->LiOrgButton->UseVisualStyleBackColor = true;
+			this->interdigBox->Location = System::Drawing::Point(9, 321);
+			this->interdigBox->Name = L"interdigBox";
+			this->interdigBox->Size = System::Drawing::Size(109, 21);
+			this->interdigBox->TabIndex = 42;
+			this->interdigBox->Text = L"Interdigitated";
+			this->interdigBox->UseVisualStyleBackColor = true;
 			// 
-			// panel2
+			// label84
 			// 
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel2->Controls->Add(this->label14);
-			this->panel2->Controls->Add(this->label13);
-			this->panel2->Controls->Add(this->label12);
-			this->panel2->Controls->Add(this->label3);
-			this->panel2->Controls->Add(this->DODBox);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->jHighBox);
-			this->panel2->Controls->Add(this->jLowBox);
-			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label84->AutoSize = true;
+			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->panel2->Location = System::Drawing::Point(3, 148);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(310, 81);
-			this->panel2->TabIndex = 11;
+			this->label84->Location = System::Drawing::Point(7, 296);
+			this->label84->Name = L"label84";
+			this->label84->Size = System::Drawing::Size(88, 17);
+			this->label84->TabIndex = 41;
+			this->label84->Text = L"Aspect Ratio";
 			// 
-			// jLowBox
+			// label21
 			// 
-			this->jLowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(350, 438);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(90, 13);
+			this->label21->TabIndex = 39;
+			this->label21->Text = L"Frame Overlap W";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(350, 413);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(87, 13);
+			this->label19->TabIndex = 37;
+			this->label19->Text = L"Frame Overlap H";
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(339, 387);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(97, 13);
+			this->label20->TabIndex = 35;
+			this->label20->Text = L"Membrane Overlap";
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(512, 416);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(67, 13);
+			this->label18->TabIndex = 32;
+			this->label18->Text = L"Scale PDrop";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(512, 390);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(74, 13);
+			this->label17->TabIndex = 30;
+			this->label17->Text = L"Scale Kinetics";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(500, 364);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(86, 13);
+			this->label16->TabIndex = 28;
+			this->label16->Text = L"Scale Thickness";
+			// 
+			// textasf
+			// 
+			this->textasf->AutoSize = true;
+			this->textasf->Location = System::Drawing::Point(514, 338);
+			this->textasf->Name = L"textasf";
+			this->textasf->Size = System::Drawing::Size(72, 13);
+			this->textasf->TabIndex = 26;
+			this->textasf->Text = L"Scale E Cond";
+			// 
+			// panel6
+			// 
+			this->panel6->Controls->Add(this->label15);
+			this->panel6->Controls->Add(this->flowBox);
+			this->panel6->Controls->Add(this->label9);
+			this->panel6->Location = System::Drawing::Point(213, 236);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(278, 49);
+			this->panel6->TabIndex = 23;
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->jLowBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->jLowBox->Location = System::Drawing::Point(164, 54);
-			this->jLowBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {300, 0, 0, 0});
-			this->jLowBox->Name = L"jLowBox";
-			this->jLowBox->Size = System::Drawing::Size(45, 23);
-			this->jLowBox->TabIndex = 4;
-			this->jLowBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {100, 0, 0, 0});
+			this->label15->Location = System::Drawing::Point(192, 10);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(61, 17);
+			this->label15->TabIndex = 27;
+			this->label15->Text = L"ml/min/A";
 			// 
-			// jHighBox
+			// flowBox
 			// 
-			this->jHighBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->flowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->jHighBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->jHighBox->Location = System::Drawing::Point(164, 28);
-			this->jHighBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {300, 0, 0, 0});
-			this->jHighBox->Name = L"jHighBox";
-			this->jHighBox->Size = System::Drawing::Size(45, 23);
-			this->jHighBox->TabIndex = 5;
-			this->jHighBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {300, 0, 0, 0});
+			this->flowBox->Location = System::Drawing::Point(155, 7);
+			this->flowBox->Name = L"flowBox";
+			this->flowBox->Size = System::Drawing::Size(31, 23);
+			this->flowBox->TabIndex = 26;
+			this->flowBox->Text = L"5";
 			// 
-			// label1
+			// label9
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(5, 30);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(155, 17);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"Max current at low SOC";
+			this->label9->Location = System::Drawing::Point(7, 10);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(203, 17);
+			this->label9->TabIndex = 25;
+			this->label9->Text = L"Flow rate used for interpolation";
 			// 
-			// label2
+			// panel5
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(8, 56);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(152, 17);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"Min current at low SOC";
+			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel5->Controls->Add(this->SplineButton);
+			this->panel5->Controls->Add(this->ECModelButton);
+			this->panel5->Location = System::Drawing::Point(329, 92);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(107, 50);
+			this->panel5->TabIndex = 22;
 			// 
-			// DODBox
+			// SplineButton
 			// 
-			this->DODBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->SplineButton->AutoSize = true;
+			this->SplineButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->DODBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->DODBox->Location = System::Drawing::Point(164, 2);
-			this->DODBox->Name = L"DODBox";
-			this->DODBox->Size = System::Drawing::Size(45, 23);
-			this->DODBox->TabIndex = 8;
-			this->DODBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {70, 0, 0, 0});
+			this->SplineButton->Location = System::Drawing::Point(4, 23);
+			this->SplineButton->Name = L"SplineButton";
+			this->SplineButton->Size = System::Drawing::Size(104, 21);
+			this->SplineButton->TabIndex = 19;
+			this->SplineButton->Text = L"Interpolation";
+			this->SplineButton->UseVisualStyleBackColor = true;
 			// 
-			// label3
+			// ECModelButton
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->ECModelButton->AutoSize = true;
+			this->ECModelButton->Checked = true;
+			this->ECModelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(25, 4);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(130, 17);
-			this->label3->TabIndex = 9;
-			this->label3->Text = L"Depth of Discharge";
+			this->ECModelButton->Location = System::Drawing::Point(4, 0);
+			this->ECModelButton->Name = L"ECModelButton";
+			this->ECModelButton->Size = System::Drawing::Size(86, 21);
+			this->ECModelButton->TabIndex = 18;
+			this->ECModelButton->TabStop = true;
+			this->ECModelButton->Text = L"EC Model";
+			this->ECModelButton->UseVisualStyleBackColor = true;
 			// 
-			// label12
+			// panel4
 			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel4->Controls->Add(this->constcurrent);
+			this->panel4->Controls->Add(this->constpower);
+			this->panel4->Location = System::Drawing::Point(3, 235);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(139, 50);
+			this->panel4->TabIndex = 21;
+			// 
+			// constcurrent
+			// 
+			this->constcurrent->AutoSize = true;
+			this->constcurrent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(217, 4);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(20, 17);
-			this->label12->TabIndex = 24;
-			this->label12->Text = L"%";
+			this->constcurrent->Location = System::Drawing::Point(4, 23);
+			this->constcurrent->Name = L"constcurrent";
+			this->constcurrent->Size = System::Drawing::Size(133, 21);
+			this->constcurrent->TabIndex = 19;
+			this->constcurrent->Text = L"Constant Current";
+			this->constcurrent->UseVisualStyleBackColor = true;
 			// 
-			// label13
+			// constpower
 			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->constpower->AutoSize = true;
+			this->constpower->Checked = true;
+			this->constpower->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(217, 30);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(58, 17);
-			this->label13->TabIndex = 25;
-			this->label13->Text = L"mA/cm2";
+			this->constpower->Location = System::Drawing::Point(4, 0);
+			this->constpower->Name = L"constpower";
+			this->constpower->Size = System::Drawing::Size(125, 21);
+			this->constpower->TabIndex = 18;
+			this->constpower->TabStop = true;
+			this->constpower->Text = L"Constant Power";
+			this->constpower->UseVisualStyleBackColor = true;
 			// 
-			// label14
+			// bestTable
 			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(217, 56);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(58, 17);
-			this->label14->TabIndex = 26;
-			this->label14->Text = L"mA/cm2";
+			this->bestTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->bestTable->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {this->Column19, this->Column17, 
+				this->Column18, this->Column20});
+			this->bestTable->Location = System::Drawing::Point(466, 6);
+			this->bestTable->Name = L"bestTable";
+			this->bestTable->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->bestTable->Size = System::Drawing::Size(414, 193);
+			this->bestTable->TabIndex = 20;
 			// 
-			// calculate
+			// Column19
 			// 
-			this->calculate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->calculate->Location = System::Drawing::Point(753, 236);
-			this->calculate->Name = L"calculate";
-			this->calculate->Size = System::Drawing::Size(125, 30);
-			this->calculate->TabIndex = 0;
-			this->calculate->Text = L"Calculate!";
-			this->calculate->UseVisualStyleBackColor = true;
-			this->calculate->Click += gcnew System::EventHandler(this, &Form1::calculate_Click);
+			this->Column19->HeaderText = L"Quantity";
+			this->Column19->Name = L"Column19";
 			// 
-			// progressBar
+			// Column17
 			// 
-			this->progressBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->progressBar->Location = System::Drawing::Point(753, 201);
-			this->progressBar->Name = L"progressBar";
-			this->progressBar->Size = System::Drawing::Size(125, 28);
-			this->progressBar->TabIndex = 3;
+			this->Column17->HeaderText = L"Present";
+			this->Column17->Name = L"Column17";
+			this->Column17->Width = 60;
+			// 
+			// Column18
+			// 
+			this->Column18->HeaderText = L"Near Term";
+			this->Column18->Name = L"Column18";
+			this->Column18->Width = 60;
+			// 
+			// Column20
+			// 
+			this->Column20->HeaderText = L"Optimistic";
+			this->Column20->Name = L"Column20";
+			this->Column20->Width = 60;
 			// 
 			// panel3
 			// 
@@ -953,123 +1123,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel3->Size = System::Drawing::Size(196, 136);
 			this->panel3->TabIndex = 17;
 			// 
-			// powerBox
+			// label68
 			// 
-			this->powerBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label68->AutoSize = true;
+			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->powerBox->Location = System::Drawing::Point(83, 9);
-			this->powerBox->Name = L"powerBox";
-			this->powerBox->Size = System::Drawing::Size(65, 23);
-			this->powerBox->TabIndex = 12;
-			this->powerBox->Text = L"1000";
-			// 
-			// epBox
-			// 
-			this->epBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->epBox->Location = System::Drawing::Point(83, 32);
-			this->epBox->Name = L"epBox";
-			this->epBox->Size = System::Drawing::Size(65, 23);
-			this->epBox->TabIndex = 13;
-			this->epBox->Text = L"4";
-			this->epBox->TextChanged += gcnew System::EventHandler(this, &Form1::epBox_TextChanged);
-			// 
-			// energyBox
-			// 
-			this->energyBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->energyBox->Location = System::Drawing::Point(83, 57);
-			this->energyBox->Name = L"energyBox";
-			this->energyBox->Size = System::Drawing::Size(65, 23);
-			this->energyBox->TabIndex = 14;
-			this->energyBox->Text = L"4000";
-			this->energyBox->TextChanged += gcnew System::EventHandler(this, &Form1::energyBox_TextChanged);
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(30, 12);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(47, 17);
-			this->label5->TabIndex = 10;
-			this->label5->Text = L"Power";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(47, 35);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(30, 17);
-			this->label6->TabIndex = 15;
-			this->label6->Text = L"E/P";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(30, 58);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(53, 17);
-			this->label7->TabIndex = 16;
-			this->label7->Text = L"Energy";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(154, 12);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(28, 17);
-			this->label8->TabIndex = 17;
-			this->label8->Text = L"kW";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(154, 60);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(36, 17);
-			this->label10->TabIndex = 18;
-			this->label10->Text = L"kWh";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(154, 38);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(21, 17);
-			this->label11->TabIndex = 19;
-			this->label11->Text = L"hr";
-			// 
-			// cellBox
-			// 
-			this->cellBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->cellBox->Location = System::Drawing::Point(83, 82);
-			this->cellBox->Name = L"cellBox";
-			this->cellBox->Size = System::Drawing::Size(65, 23);
-			this->cellBox->TabIndex = 20;
-			this->cellBox->Text = L"60";
-			// 
-			// stackBox
-			// 
-			this->stackBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->stackBox->Location = System::Drawing::Point(83, 106);
-			this->stackBox->Name = L"stackBox";
-			this->stackBox->Size = System::Drawing::Size(65, 23);
-			this->stackBox->TabIndex = 21;
-			this->stackBox->Text = L"36";
+			this->label68->Location = System::Drawing::Point(27, 106);
+			this->label68->Name = L"label68";
+			this->label68->Size = System::Drawing::Size(50, 17);
+			this->label68->TabIndex = 23;
+			this->label68->Text = L"Stacks";
 			// 
 			// label67
 			// 
@@ -1082,399 +1145,338 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label67->TabIndex = 22;
 			this->label67->Text = L"Cells/Stack";
 			// 
-			// label68
+			// stackBox
 			// 
-			this->label68->AutoSize = true;
-			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->stackBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label68->Location = System::Drawing::Point(27, 106);
-			this->label68->Name = L"label68";
-			this->label68->Size = System::Drawing::Size(50, 17);
-			this->label68->TabIndex = 23;
-			this->label68->Text = L"Stacks";
+			this->stackBox->Location = System::Drawing::Point(83, 106);
+			this->stackBox->Name = L"stackBox";
+			this->stackBox->Size = System::Drawing::Size(65, 23);
+			this->stackBox->TabIndex = 21;
+			this->stackBox->Text = L"36";
 			// 
-			// bestTable
+			// cellBox
 			// 
-			this->bestTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->bestTable->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {this->Column19, this->Column17, 
-				this->Column18, this->Column20});
-			this->bestTable->Location = System::Drawing::Point(466, 6);
-			this->bestTable->Name = L"bestTable";
-			this->bestTable->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bestTable->Size = System::Drawing::Size(414, 193);
-			this->bestTable->TabIndex = 20;
-			// 
-			// Column20
-			// 
-			this->Column20->HeaderText = L"Optimistic";
-			this->Column20->Name = L"Column20";
-			this->Column20->Width = 60;
-			// 
-			// Column18
-			// 
-			this->Column18->HeaderText = L"Near Term";
-			this->Column18->Name = L"Column18";
-			this->Column18->Width = 60;
-			// 
-			// Column17
-			// 
-			this->Column17->HeaderText = L"Present";
-			this->Column17->Name = L"Column17";
-			this->Column17->Width = 60;
-			// 
-			// Column19
-			// 
-			this->Column19->HeaderText = L"Quantity";
-			this->Column19->Name = L"Column19";
-			// 
-			// panel4
-			// 
-			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel4->Controls->Add(this->constcurrent);
-			this->panel4->Controls->Add(this->constpower);
-			this->panel4->Location = System::Drawing::Point(3, 235);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(139, 50);
-			this->panel4->TabIndex = 21;
-			// 
-			// constpower
-			// 
-			this->constpower->AutoSize = true;
-			this->constpower->Checked = true;
-			this->constpower->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->cellBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->constpower->Location = System::Drawing::Point(4, 0);
-			this->constpower->Name = L"constpower";
-			this->constpower->Size = System::Drawing::Size(125, 21);
-			this->constpower->TabIndex = 18;
-			this->constpower->TabStop = true;
-			this->constpower->Text = L"Constant Power";
-			this->constpower->UseVisualStyleBackColor = true;
+			this->cellBox->Location = System::Drawing::Point(83, 82);
+			this->cellBox->Name = L"cellBox";
+			this->cellBox->Size = System::Drawing::Size(65, 23);
+			this->cellBox->TabIndex = 20;
+			this->cellBox->Text = L"60";
 			// 
-			// constcurrent
+			// label11
 			// 
-			this->constcurrent->AutoSize = true;
-			this->constcurrent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->constcurrent->Location = System::Drawing::Point(4, 23);
-			this->constcurrent->Name = L"constcurrent";
-			this->constcurrent->Size = System::Drawing::Size(133, 21);
-			this->constcurrent->TabIndex = 19;
-			this->constcurrent->Text = L"Constant Current";
-			this->constcurrent->UseVisualStyleBackColor = true;
+			this->label11->Location = System::Drawing::Point(154, 38);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(21, 17);
+			this->label11->TabIndex = 19;
+			this->label11->Text = L"hr";
 			// 
-			// panel5
+			// label10
 			// 
-			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel5->Controls->Add(this->SplineButton);
-			this->panel5->Controls->Add(this->ECModelButton);
-			this->panel5->Location = System::Drawing::Point(329, 92);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(107, 50);
-			this->panel5->TabIndex = 22;
-			// 
-			// ECModelButton
-			// 
-			this->ECModelButton->AutoSize = true;
-			this->ECModelButton->Checked = true;
-			this->ECModelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->ECModelButton->Location = System::Drawing::Point(4, 0);
-			this->ECModelButton->Name = L"ECModelButton";
-			this->ECModelButton->Size = System::Drawing::Size(86, 21);
-			this->ECModelButton->TabIndex = 18;
-			this->ECModelButton->TabStop = true;
-			this->ECModelButton->Text = L"EC Model";
-			this->ECModelButton->UseVisualStyleBackColor = true;
+			this->label10->Location = System::Drawing::Point(154, 60);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(36, 17);
+			this->label10->TabIndex = 18;
+			this->label10->Text = L"kWh";
 			// 
-			// SplineButton
+			// label8
 			// 
-			this->SplineButton->AutoSize = true;
-			this->SplineButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->SplineButton->Location = System::Drawing::Point(4, 23);
-			this->SplineButton->Name = L"SplineButton";
-			this->SplineButton->Size = System::Drawing::Size(104, 21);
-			this->SplineButton->TabIndex = 19;
-			this->SplineButton->Text = L"Interpolation";
-			this->SplineButton->UseVisualStyleBackColor = true;
+			this->label8->Location = System::Drawing::Point(154, 12);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(28, 17);
+			this->label8->TabIndex = 17;
+			this->label8->Text = L"kW";
 			// 
-			// panel6
+			// label7
 			// 
-			this->panel6->Controls->Add(this->label15);
-			this->panel6->Controls->Add(this->flowBox);
-			this->panel6->Controls->Add(this->label9);
-			this->panel6->Location = System::Drawing::Point(213, 236);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(278, 49);
-			this->panel6->TabIndex = 23;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(7, 10);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(203, 17);
-			this->label9->TabIndex = 25;
-			this->label9->Text = L"Flow rate used for interpolation";
+			this->label7->Location = System::Drawing::Point(30, 58);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(53, 17);
+			this->label7->TabIndex = 16;
+			this->label7->Text = L"Energy";
 			// 
-			// flowBox
+			// label6
 			// 
-			this->flowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->flowBox->Location = System::Drawing::Point(155, 7);
-			this->flowBox->Name = L"flowBox";
-			this->flowBox->Size = System::Drawing::Size(31, 23);
-			this->flowBox->TabIndex = 26;
-			this->flowBox->Text = L"5";
+			this->label6->Location = System::Drawing::Point(47, 35);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(30, 17);
+			this->label6->TabIndex = 15;
+			this->label6->Text = L"E/P";
 			// 
-			// label15
+			// label5
 			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(192, 10);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(61, 17);
-			this->label15->TabIndex = 27;
-			this->label15->Text = L"ml/min/A";
+			this->label5->Location = System::Drawing::Point(30, 12);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(47, 17);
+			this->label5->TabIndex = 10;
+			this->label5->Text = L"Power";
 			// 
-			// CondBox
+			// energyBox
 			// 
-			this->CondBox->Location = System::Drawing::Point(592, 335);
-			this->CondBox->Name = L"CondBox";
-			this->CondBox->Size = System::Drawing::Size(65, 20);
-			this->CondBox->TabIndex = 25;
-			this->CondBox->Text = L"1";
-			// 
-			// textasf
-			// 
-			this->textasf->AutoSize = true;
-			this->textasf->Location = System::Drawing::Point(514, 338);
-			this->textasf->Name = L"textasf";
-			this->textasf->Size = System::Drawing::Size(72, 13);
-			this->textasf->TabIndex = 26;
-			this->textasf->Text = L"Scale E Cond";
-			// 
-			// ThicknessBox
-			// 
-			this->ThicknessBox->Location = System::Drawing::Point(592, 361);
-			this->ThicknessBox->Name = L"ThicknessBox";
-			this->ThicknessBox->Size = System::Drawing::Size(65, 20);
-			this->ThicknessBox->TabIndex = 27;
-			this->ThicknessBox->Text = L"1";
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(500, 364);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(86, 13);
-			this->label16->TabIndex = 28;
-			this->label16->Text = L"Scale Thickness";
-			// 
-			// KBox
-			// 
-			this->KBox->Location = System::Drawing::Point(592, 387);
-			this->KBox->Name = L"KBox";
-			this->KBox->Size = System::Drawing::Size(65, 20);
-			this->KBox->TabIndex = 29;
-			this->KBox->Text = L"1";
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(512, 390);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(74, 13);
-			this->label17->TabIndex = 30;
-			this->label17->Text = L"Scale Kinetics";
-			// 
-			// PBox
-			// 
-			this->PBox->Location = System::Drawing::Point(592, 413);
-			this->PBox->Name = L"PBox";
-			this->PBox->Size = System::Drawing::Size(65, 20);
-			this->PBox->TabIndex = 31;
-			this->PBox->Text = L"1";
-			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(512, 416);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(67, 13);
-			this->label18->TabIndex = 32;
-			this->label18->Text = L"Scale PDrop";
-			// 
-			// ThRedBox
-			// 
-			this->ThRedBox->Location = System::Drawing::Point(663, 361);
-			this->ThRedBox->Name = L"ThRedBox";
-			this->ThRedBox->Size = System::Drawing::Size(31, 20);
-			this->ThRedBox->TabIndex = 33;
-			this->ThRedBox->Text = L"1";
-			// 
-			// MOBox
-			// 
-			this->MOBox->Location = System::Drawing::Point(442, 384);
-			this->MOBox->Name = L"MOBox";
-			this->MOBox->Size = System::Drawing::Size(65, 20);
-			this->MOBox->TabIndex = 34;
-			this->MOBox->Text = L"0.038";
-			// 
-			// label20
-			// 
-			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(339, 387);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(97, 13);
-			this->label20->TabIndex = 35;
-			this->label20->Text = L"Membrane Overlap";
-			// 
-			// FOHBox
-			// 
-			this->FOHBox->Location = System::Drawing::Point(442, 410);
-			this->FOHBox->Name = L"FOHBox";
-			this->FOHBox->Size = System::Drawing::Size(65, 20);
-			this->FOHBox->TabIndex = 36;
-			this->FOHBox->Text = L"0.14";
-			// 
-			// label19
-			// 
-			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(350, 413);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(87, 13);
-			this->label19->TabIndex = 37;
-			this->label19->Text = L"Frame Overlap H";
-			// 
-			// FOWBox
-			// 
-			this->FOWBox->Location = System::Drawing::Point(442, 435);
-			this->FOWBox->Name = L"FOWBox";
-			this->FOWBox->Size = System::Drawing::Size(65, 20);
-			this->FOWBox->TabIndex = 38;
-			this->FOWBox->Text = L"0.05";
-			// 
-			// label21
-			// 
-			this->label21->AutoSize = true;
-			this->label21->Location = System::Drawing::Point(350, 438);
-			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(90, 13);
-			this->label21->TabIndex = 39;
-			this->label21->Text = L"Frame Overlap W";
-			// 
-			// aspectRatioBox
-			// 
-			this->aspectRatioBox->Location = System::Drawing::Point(101, 295);
-			this->aspectRatioBox->Name = L"aspectRatioBox";
-			this->aspectRatioBox->Size = System::Drawing::Size(50, 20);
-			this->aspectRatioBox->TabIndex = 40;
-			this->aspectRatioBox->Text = L"1";
-			// 
-			// label84
-			// 
-			this->label84->AutoSize = true;
-			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->energyBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label84->Location = System::Drawing::Point(7, 296);
-			this->label84->Name = L"label84";
-			this->label84->Size = System::Drawing::Size(88, 17);
-			this->label84->TabIndex = 41;
-			this->label84->Text = L"Aspect Ratio";
+			this->energyBox->Location = System::Drawing::Point(83, 57);
+			this->energyBox->Name = L"energyBox";
+			this->energyBox->Size = System::Drawing::Size(65, 23);
+			this->energyBox->TabIndex = 14;
+			this->energyBox->Text = L"4000";
+			this->energyBox->TextChanged += gcnew System::EventHandler(this, &Form1::energyBox_TextChanged);
 			// 
-			// interdigBox
+			// epBox
 			// 
-			this->interdigBox->AutoSize = true;
-			this->interdigBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->epBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->interdigBox->Location = System::Drawing::Point(9, 321);
-			this->interdigBox->Name = L"interdigBox";
-			this->interdigBox->Size = System::Drawing::Size(109, 21);
-			this->interdigBox->TabIndex = 42;
-			this->interdigBox->Text = L"Interdigitated";
-			this->interdigBox->UseVisualStyleBackColor = true;
+			this->epBox->Location = System::Drawing::Point(83, 32);
+			this->epBox->Name = L"epBox";
+			this->epBox->Size = System::Drawing::Size(65, 23);
+			this->epBox->TabIndex = 13;
+			this->epBox->Text = L"4";
+			this->epBox->TextChanged += gcnew System::EventHandler(this, &Form1::epBox_TextChanged);
 			// 
-			// channelSepBox
+			// powerBox
 			// 
-			this->channelSepBox->Location = System::Drawing::Point(101, 344);
-			this->channelSepBox->Name = L"channelSepBox";
-			this->channelSepBox->Size = System::Drawing::Size(50, 20);
-			this->channelSepBox->TabIndex = 43;
-			this->channelSepBox->Text = L"0.1";
-			// 
-			// label89
-			// 
-			this->label89->AutoSize = true;
-			this->label89->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->powerBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label89->Location = System::Drawing::Point(7, 345);
-			this->label89->Name = L"label89";
-			this->label89->Size = System::Drawing::Size(89, 17);
-			this->label89->TabIndex = 44;
-			this->label89->Text = L"Channel Sep";
+			this->powerBox->Location = System::Drawing::Point(83, 9);
+			this->powerBox->Name = L"powerBox";
+			this->powerBox->Size = System::Drawing::Size(65, 23);
+			this->powerBox->TabIndex = 12;
+			this->powerBox->Text = L"1000";
 			// 
-			// flowCapBox
+			// progressBar
 			// 
-			this->flowCapBox->Location = System::Drawing::Point(194, 382);
-			this->flowCapBox->Name = L"flowCapBox";
-			this->flowCapBox->Size = System::Drawing::Size(50, 20);
-			this->flowCapBox->TabIndex = 46;
-			this->flowCapBox->Text = L"999999999999";
+			this->progressBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->progressBar->Location = System::Drawing::Point(753, 201);
+			this->progressBar->Name = L"progressBar";
+			this->progressBar->Size = System::Drawing::Size(125, 28);
+			this->progressBar->TabIndex = 3;
 			// 
-			// label90
+			// calculate
 			// 
-			this->label90->AutoSize = true;
-			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->calculate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(5, 383);
-			this->label90->Name = L"label90";
-			this->label90->Size = System::Drawing::Size(183, 17);
-			this->label90->TabIndex = 47;
-			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
+			this->calculate->Location = System::Drawing::Point(753, 236);
+			this->calculate->Name = L"calculate";
+			this->calculate->Size = System::Drawing::Size(125, 30);
+			this->calculate->TabIndex = 0;
+			this->calculate->Text = L"Calculate!";
+			this->calculate->UseVisualStyleBackColor = true;
+			this->calculate->Click += gcnew System::EventHandler(this, &Form1::calculate_Click);
 			// 
-			// LiVoltageBox
+			// panel2
 			// 
-			this->LiVoltageBox->Location = System::Drawing::Point(194, 408);
-			this->LiVoltageBox->Name = L"LiVoltageBox";
-			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
-			this->LiVoltageBox->TabIndex = 48;
-			this->LiVoltageBox->Text = L"3.8";
-			// 
-			// label51
-			// 
-			this->label51->AutoSize = true;
-			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel2->Controls->Add(this->label14);
+			this->panel2->Controls->Add(this->label13);
+			this->panel2->Controls->Add(this->label12);
+			this->panel2->Controls->Add(this->label3);
+			this->panel2->Controls->Add(this->DODBox);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Controls->Add(this->label1);
+			this->panel2->Controls->Add(this->jHighBox);
+			this->panel2->Controls->Add(this->jLowBox);
+			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label51->Location = System::Drawing::Point(-1, 409);
-			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(189, 17);
-			this->label51->TabIndex = 49;
-			this->label51->Text = L"Li+ Organic OCV (50% SOC)";
+			this->panel2->Location = System::Drawing::Point(3, 148);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(310, 81);
+			this->panel2->TabIndex = 11;
 			// 
-			// electronBox
+			// label14
 			// 
-			this->electronBox->Location = System::Drawing::Point(192, 434);
-			this->electronBox->Name = L"electronBox";
-			this->electronBox->Size = System::Drawing::Size(50, 20);
-			this->electronBox->TabIndex = 50;
-			this->electronBox->Text = L"1";
-			// 
-			// label81
-			// 
-			this->label81->AutoSize = true;
-			this->label81->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label81->Location = System::Drawing::Point(119, 434);
-			this->label81->Name = L"label81";
-			this->label81->Size = System::Drawing::Size(67, 17);
-			this->label81->TabIndex = 51;
-			this->label81->Text = L"Electrons";
+			this->label14->Location = System::Drawing::Point(217, 56);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(58, 17);
+			this->label14->TabIndex = 26;
+			this->label14->Text = L"mA/cm2";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label13->Location = System::Drawing::Point(217, 30);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(58, 17);
+			this->label13->TabIndex = 25;
+			this->label13->Text = L"mA/cm2";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label12->Location = System::Drawing::Point(217, 4);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(20, 17);
+			this->label12->TabIndex = 24;
+			this->label12->Text = L"%";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(25, 4);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(130, 17);
+			this->label3->TabIndex = 9;
+			this->label3->Text = L"Depth of Discharge";
+			// 
+			// DODBox
+			// 
+			this->DODBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->DODBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+			this->DODBox->Location = System::Drawing::Point(164, 2);
+			this->DODBox->Name = L"DODBox";
+			this->DODBox->Size = System::Drawing::Size(45, 23);
+			this->DODBox->TabIndex = 8;
+			this->DODBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {70, 0, 0, 0});
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(8, 56);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(152, 17);
+			this->label2->TabIndex = 7;
+			this->label2->Text = L"Min current at low SOC";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(5, 30);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(155, 17);
+			this->label1->TabIndex = 6;
+			this->label1->Text = L"Max current at low SOC";
+			// 
+			// jHighBox
+			// 
+			this->jHighBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->jHighBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+			this->jHighBox->Location = System::Drawing::Point(164, 28);
+			this->jHighBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
+			this->jHighBox->Name = L"jHighBox";
+			this->jHighBox->Size = System::Drawing::Size(45, 23);
+			this->jHighBox->TabIndex = 5;
+			this->jHighBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
+			this->jHighBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jHighBox_ValueChanged);
+			// 
+			// jLowBox
+			// 
+			this->jLowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->jLowBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+			this->jLowBox->Location = System::Drawing::Point(164, 54);
+			this->jLowBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
+			this->jLowBox->Name = L"jLowBox";
+			this->jLowBox->Size = System::Drawing::Size(45, 23);
+			this->jLowBox->TabIndex = 4;
+			this->jLowBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {100, 0, 0, 0});
+			this->jLowBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jLowBox_ValueChanged);
+			// 
+			// panel1
+			// 
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->LiOrgButton);
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Controls->Add(this->VVGen2);
+			this->panel1->Controls->Add(this->VVGen1);
+			this->panel1->Controls->Add(this->FeV);
+			this->panel1->Location = System::Drawing::Point(3, 6);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(108, 104);
+			this->panel1->TabIndex = 10;
+			// 
+			// LiOrgButton
+			// 
+			this->LiOrgButton->AutoSize = true;
+			this->LiOrgButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->LiOrgButton->Location = System::Drawing::Point(3, 82);
+			this->LiOrgButton->Name = L"LiOrgButton";
+			this->LiOrgButton->Size = System::Drawing::Size(99, 21);
+			this->LiOrgButton->TabIndex = 12;
+			this->LiOrgButton->Text = L"Li+ Organic";
+			this->LiOrgButton->UseVisualStyleBackColor = true;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(1, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(70, 17);
+			this->label4->TabIndex = 11;
+			this->label4->Text = L"Chemistry";
+			// 
+			// VVGen2
+			// 
+			this->VVGen2->AutoSize = true;
+			this->VVGen2->Checked = true;
+			this->VVGen2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->VVGen2->Location = System::Drawing::Point(3, 62);
+			this->VVGen2->Name = L"VVGen2";
+			this->VVGen2->Size = System::Drawing::Size(90, 21);
+			this->VVGen2->TabIndex = 2;
+			this->VVGen2->TabStop = true;
+			this->VVGen2->Text = L"V-V Gen II";
+			this->VVGen2->UseVisualStyleBackColor = true;
+			// 
+			// VVGen1
+			// 
+			this->VVGen1->AutoSize = true;
+			this->VVGen1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->VVGen1->Location = System::Drawing::Point(3, 39);
+			this->VVGen1->Name = L"VVGen1";
+			this->VVGen1->Size = System::Drawing::Size(87, 21);
+			this->VVGen1->TabIndex = 1;
+			this->VVGen1->Text = L"V-V Gen I";
+			this->VVGen1->UseVisualStyleBackColor = true;
+			// 
+			// FeV
+			// 
+			this->FeV->AutoSize = true;
+			this->FeV->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->FeV->Location = System::Drawing::Point(3, 16);
+			this->FeV->Name = L"FeV";
+			this->FeV->Size = System::Drawing::Size(56, 21);
+			this->FeV->TabIndex = 0;
+			this->FeV->Text = L"Fe-V";
+			this->FeV->UseVisualStyleBackColor = true;
 			// 
 			// tabControl1
 			// 
@@ -1511,22 +1513,22 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->EndInit();
-			this->panel3->ResumeLayout(false);
-			this->panel3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->EndInit();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
-			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->EndInit();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -2430,6 +2432,18 @@ private: System::Void energyBox_TextChanged(System::Object^  sender, System::Eve
 			 epBox->Text=(energy/power).ToString();
 		 }
 
+private: System::Void jHighBox_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if ((jHighBox->Value)<(jLowBox->Value))
+			 {
+				 jLowBox->Value=(jHighBox->Value);
+			 }
+		 }
+private: System::Void jLowBox_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if ((jHighBox->Value)<(jLowBox->Value))
+			 {
+				 jHighBox->Value=(jLowBox->Value);
+			 }
+		 }
 };
 }
 
