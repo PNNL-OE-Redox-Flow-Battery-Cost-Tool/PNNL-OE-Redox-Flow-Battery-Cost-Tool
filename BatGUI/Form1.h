@@ -1743,7 +1743,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	if(LiOrgButton->Checked)
 	{
-		Ci1=2000;
+		Ci1=1000;
 	}
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
@@ -1766,7 +1766,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double kScaleFactor = Convert::ToDouble(KBox->Text);
     double k1=8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
 	double k2[2]={1.6/100000*exp((F*0.77/R)*(T-298)/(298*T)),0.00000068*exp((F*V2[i]/R)*(T-298)/(298*T))};
-    double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    if(LiOrgButton->Checked)
+	{
+		k1*=1;
+		k2[system]*=1;
+	}
+	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
     double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
 	double mt[2]={450e-6,175e-6}; //membrane thickness m
 	double condM[2]={53.65395346,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
