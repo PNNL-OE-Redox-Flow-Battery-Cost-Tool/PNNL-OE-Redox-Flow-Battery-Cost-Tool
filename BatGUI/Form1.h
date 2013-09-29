@@ -1,4 +1,9 @@
 /*
+PNNL Cost-Performance Tool (DOE-OE sponsored) for Estimation of Capital Costs for Redox Flow Batteries.
+Battelle IPID 30401.
+Copyright © 2013, Battelle Memorial Institute
+All rights reserved.
+
                                                                                              .://:                      
                                                                                          .////:                         
                                                                                       :/##/.                            
@@ -199,6 +204,15 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::RadioButton^  VVGen1;
 	private: System::Windows::Forms::RadioButton^  FeV;
 	private: System::Windows::Forms::TabControl^  tabControl1;
+private: System::Windows::Forms::Label^  label22;
+private: System::Windows::Forms::TextBox^  LiConcBox;
+private: System::Windows::Forms::Label^  label23;
+private: System::Windows::Forms::TextBox^  spaBox;
+private: System::Windows::Forms::DataGridView^  OutputGrid;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column27;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column28;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column29;
+
 	public: static int c = 0;
 	public:
 		Form1(void)
@@ -298,6 +312,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->spaBox = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->LiConcBox = (gcnew System::Windows::Forms::TextBox());
 			this->label81 = (gcnew System::Windows::Forms::Label());
 			this->electronBox = (gcnew System::Windows::Forms::TextBox());
 			this->LiVoltageBox = (gcnew System::Windows::Forms::TextBox());
@@ -372,6 +390,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -395,6 +417,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataSet2
@@ -676,6 +699,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->OutputGrid);
+			this->tabPage1->Controls->Add(this->label23);
+			this->tabPage1->Controls->Add(this->spaBox);
+			this->tabPage1->Controls->Add(this->label22);
+			this->tabPage1->Controls->Add(this->LiConcBox);
 			this->tabPage1->Controls->Add(this->label81);
 			this->tabPage1->Controls->Add(this->electronBox);
 			this->tabPage1->Controls->Add(this->LiVoltageBox);
@@ -718,6 +746,42 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(486, 468);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(100, 13);
+			this->label23->TabIndex = 55;
+			this->label23->Text = L"Scale Specific Area";
+			// 
+			// spaBox
+			// 
+			this->spaBox->Location = System::Drawing::Point(592, 465);
+			this->spaBox->Name = L"spaBox";
+			this->spaBox->Size = System::Drawing::Size(65, 20);
+			this->spaBox->TabIndex = 54;
+			this->spaBox->Text = L"1";
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(543, 442);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(43, 13);
+			this->label22->TabIndex = 53;
+			this->label22->Text = L"Li Conc";
+			this->label22->Visible = false;
+			// 
+			// LiConcBox
+			// 
+			this->LiConcBox->Location = System::Drawing::Point(592, 439);
+			this->LiConcBox->Name = L"LiConcBox";
+			this->LiConcBox->Size = System::Drawing::Size(65, 20);
+			this->LiConcBox->TabIndex = 52;
+			this->LiConcBox->Text = L"2000";
+			this->LiConcBox->Visible = false;
 			// 
 			// label81
 			// 
@@ -1491,6 +1555,31 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
+			// OutputGrid
+			// 
+			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->Column27, 
+				this->Column28, this->Column29});
+			this->OutputGrid->Location = System::Drawing::Point(70, 507);
+			this->OutputGrid->Name = L"OutputGrid";
+			this->OutputGrid->Size = System::Drawing::Size(352, 182);
+			this->OutputGrid->TabIndex = 56;
+			// 
+			// Column27
+			// 
+			this->Column27->HeaderText = L"SOC (%)";
+			this->Column27->Name = L"Column27";
+			// 
+			// Column28
+			// 
+			this->Column28->HeaderText = L"Flow rate (ml/min/cell)";
+			this->Column28->Name = L"Column28";
+			// 
+			// Column29
+			// 
+			this->Column29->HeaderText = L"Current (mA/cm^2)";
+			this->Column29->Name = L"Column29";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1530,6 +1619,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
 			this->ResumeLayout(false);
 
 		}//GUI portion has ended
@@ -1743,7 +1833,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	if(LiOrgButton->Checked)
 	{
-		Ci1=1000;
+		Ci1= Convert::ToDouble(LiConcBox->Text);
 	}
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
@@ -1758,6 +1848,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double Inew=j*(1+chi[i]*delSOC*2)*100*100/1000;
     double eps=0.94; //porosity
     double a = 39000*eps/4;//CHECK THIS
+	a*=Convert::ToDouble(spaBox->Text);
     double Km=0.00016*pow(Q/(eps*width*t),0.4);
     double Conc1neg=Ci1*SOCrxn-Inew/(t*F*a*Km/eps); // V 2+
     double Conc1pos=Ci1-Conc1neg; //V 3+
@@ -2064,12 +2155,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double jres=0.1;
 	double j=jres;
 	double areares=0.01;
-	double SOCres=0.1;
+	double SOCres=0.01;
 	double highflow=0;
 	double flow=0;
 	double optFlow=0;
 	double flowres=0;
-	double flowdensres=0.05;
+	double flowdensres=0.01;
 	double area=areares;
 	double V=0;
 	double VEff=0;
@@ -2375,6 +2466,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		
 		Vavg+=VEff;
 		i++;
+		OutputGrid->Rows->Add(SOC,flow,j);
 		SOC+=SOCres;;
 	
 		flowavg+=flow;
