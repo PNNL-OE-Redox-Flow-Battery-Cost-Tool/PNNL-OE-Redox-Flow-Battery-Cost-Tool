@@ -312,6 +312,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->spaBox = (gcnew System::Windows::Forms::TextBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
@@ -390,10 +394,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -406,6 +406,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->BeginInit();
 			this->tabPage1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
 			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
@@ -417,7 +418,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataSet2
@@ -747,6 +747,31 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// OutputGrid
+			// 
+			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->Column27, 
+				this->Column28, this->Column29});
+			this->OutputGrid->Location = System::Drawing::Point(70, 507);
+			this->OutputGrid->Name = L"OutputGrid";
+			this->OutputGrid->Size = System::Drawing::Size(352, 182);
+			this->OutputGrid->TabIndex = 56;
+			// 
+			// Column27
+			// 
+			this->Column27->HeaderText = L"SOC (%)";
+			this->Column27->Name = L"Column27";
+			// 
+			// Column28
+			// 
+			this->Column28->HeaderText = L"Flow rate (ml/min/cell)";
+			this->Column28->Name = L"Column28";
+			// 
+			// Column29
+			// 
+			this->Column29->HeaderText = L"Current (mA/cm^2)";
+			this->Column29->Name = L"Column29";
+			// 
 			// label23
 			// 
 			this->label23->AutoSize = true;
@@ -772,7 +797,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label22->Size = System::Drawing::Size(43, 13);
 			this->label22->TabIndex = 53;
 			this->label22->Text = L"Li Conc";
-			this->label22->Visible = false;
 			// 
 			// LiConcBox
 			// 
@@ -781,7 +805,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiConcBox->Size = System::Drawing::Size(65, 20);
 			this->LiConcBox->TabIndex = 52;
 			this->LiConcBox->Text = L"2000";
-			this->LiConcBox->Visible = false;
 			// 
 			// label81
 			// 
@@ -1555,31 +1578,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
-			// OutputGrid
-			// 
-			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->Column27, 
-				this->Column28, this->Column29});
-			this->OutputGrid->Location = System::Drawing::Point(70, 507);
-			this->OutputGrid->Name = L"OutputGrid";
-			this->OutputGrid->Size = System::Drawing::Size(352, 182);
-			this->OutputGrid->TabIndex = 56;
-			// 
-			// Column27
-			// 
-			this->Column27->HeaderText = L"SOC (%)";
-			this->Column27->Name = L"Column27";
-			// 
-			// Column28
-			// 
-			this->Column28->HeaderText = L"Flow rate (ml/min/cell)";
-			this->Column28->Name = L"Column28";
-			// 
-			// Column29
-			// 
-			this->Column29->HeaderText = L"Current (mA/cm^2)";
-			this->Column29->Name = L"Column29";
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1602,6 +1600,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
 			this->panel5->ResumeLayout(false);
@@ -1619,7 +1618,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
 			this->ResumeLayout(false);
 
 		}//GUI portion has ended
