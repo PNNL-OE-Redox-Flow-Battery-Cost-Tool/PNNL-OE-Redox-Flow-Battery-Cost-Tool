@@ -24,6 +24,21 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    Int32 g_system : Public
+    Int32 g_membrane : Public
+    Double g_area : Public
+    Double g_jLow : Public
+    Double g_qhigh : Public
+    Double g_reqpower : Public
+    Double g_cells : Public
+    Double g_stacks : Public
+    Double g_reqpowerpercell : Public
+    Double g_DOD : Public
+    Double g_SOC : Public
+    Double g_aspectratio : Public
+    Double g_cwidth : Public
+    Double g_cdepth : Public
+    Int32 g_channels : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
@@ -36,6 +51,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     fileRead(vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
     asinh(Double): PrivateScope, Public, HideBySig
     voltage(Double, Double, Double, Double, Double, Int32, Int32, vector<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >\,std::allocator<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > > > >* IsImplicitlyDereferenced, vector<double\,std::allocator<double> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    g_voltage(Double, Double, Double, Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
     CostTab(Int32, Int32, Double): PrivateScope, Public, HideBySig
     unitFunction<double>(String, Double): PrivateScope, Public, HideBySig
     powerCost(Double, Double, Double, Double, Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
@@ -45,3 +61,5 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     MarshalString(String, basic_string<wchar_t\,std::char_traits<wchar_t>\,std::allocator<wchar_t> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     MarshalString(String, basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
+    global_initialization(): PrivateScope, Public, HideBySig
+    calculateArea(): PrivateScope, Public, HideBySig

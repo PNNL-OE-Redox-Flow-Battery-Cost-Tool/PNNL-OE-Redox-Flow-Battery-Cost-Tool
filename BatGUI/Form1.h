@@ -231,6 +231,18 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column16;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column14;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column21;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Digits;
+private: System::Windows::Forms::TabPage^  tabPage4;
+private: System::Windows::Forms::Button^  button1;
+private: System::Windows::Forms::TextBox^  testBox;
+private: System::Windows::Forms::TextBox^  testFlow;
+private: System::Windows::Forms::TextBox^  testCurrent;
+private: System::Windows::Forms::Label^  label26;
+private: System::Windows::Forms::Label^  label25;
+private: System::Windows::Forms::Label^  label24;
+private: System::Windows::Forms::TextBox^  testPowerOrig;
+private: System::Windows::Forms::TextBox^  testPowerNew;
+private: System::Windows::Forms::Label^  label27;
+private: System::Windows::Forms::Label^  label28;
 
 	public: static int c = 0;
 	public:
@@ -311,6 +323,25 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->costChart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->dataOutput = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -394,25 +425,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->testFlow = (gcnew System::Windows::Forms::TextBox());
+			this->testCurrent = (gcnew System::Windows::Forms::TextBox());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->testBox = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->testPowerOrig = (gcnew System::Windows::Forms::TextBox());
+			this->testPowerNew = (gcnew System::Windows::Forms::TextBox());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -437,6 +461,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
+			this->tabPage4->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dataSet2
@@ -608,6 +633,114 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataOutput->Size = System::Drawing::Size(877, 343);
 			this->dataOutput->TabIndex = 0;
 			this->dataOutput->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataOutput_CellContentClick);
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"j Low";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 50;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Present Total $/kWh";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 50;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Near-Term Total $/kWh";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Optimistic Total $/kWh";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 50;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Average Effective Voltage";
+			this->Column5->Name = L"Column5";
+			this->Column5->Width = 50;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Cell Area (m^2)";
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 50;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Efficiency (1way)";
+			this->Column7->Name = L"Column7";
+			this->Column7->Width = 60;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Present $/kWh";
+			this->Column8->Name = L"Column8";
+			this->Column8->Width = 50;
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"Near-Term $/kWh";
+			this->Column9->Name = L"Column9";
+			this->Column9->Width = 50;
+			// 
+			// Column10
+			// 
+			this->Column10->HeaderText = L"Optimistic $/kWh";
+			this->Column10->Name = L"Column10";
+			this->Column10->Width = 50;
+			// 
+			// Column11
+			// 
+			this->Column11->HeaderText = L"Present $/kW";
+			this->Column11->Name = L"Column11";
+			this->Column11->Width = 50;
+			// 
+			// Column12
+			// 
+			this->Column12->HeaderText = L"Near-Term $/kW";
+			this->Column12->Name = L"Column12";
+			this->Column12->Width = 50;
+			// 
+			// Column13
+			// 
+			this->Column13->HeaderText = L"Optimistic $/kW";
+			this->Column13->Name = L"Column13";
+			this->Column13->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			// 
+			// Column15
+			// 
+			this->Column15->HeaderText = L"Pump Eff";
+			this->Column15->Name = L"Column15";
+			// 
+			// Column16
+			// 
+			this->Column16->HeaderText = L"Shunt Eff";
+			this->Column16->Name = L"Column16";
+			// 
+			// Column14
+			// 
+			this->Column14->HeaderText = L"Area";
+			this->Column14->Name = L"Column14";
+			// 
+			// Column21
+			// 
+			this->Column21->HeaderText = L"Avg Flow";
+			this->Column21->Name = L"Column21";
+			// 
+			// Digits
+			// 
+			this->Digits->HeaderText = L"High Flow";
+			this->Digits->Name = L"Digits";
 			// 
 			// tabPage1
 			// 
@@ -1483,6 +1616,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage5);
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->RightToLeftLayout = true;
@@ -1490,113 +1624,116 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
-			// Column1
+			// tabPage4
 			// 
-			this->Column1->HeaderText = L"j Low";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 50;
+			this->tabPage4->Controls->Add(this->testPowerOrig);
+			this->tabPage4->Controls->Add(this->testPowerNew);
+			this->tabPage4->Controls->Add(this->label27);
+			this->tabPage4->Controls->Add(this->label28);
+			this->tabPage4->Controls->Add(this->testFlow);
+			this->tabPage4->Controls->Add(this->testCurrent);
+			this->tabPage4->Controls->Add(this->label26);
+			this->tabPage4->Controls->Add(this->label25);
+			this->tabPage4->Controls->Add(this->label24);
+			this->tabPage4->Controls->Add(this->testBox);
+			this->tabPage4->Controls->Add(this->button1);
+			this->tabPage4->Location = System::Drawing::Point(4, 22);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(886, 746);
+			this->tabPage4->TabIndex = 5;
+			this->tabPage4->Text = L"Test tab";
+			this->tabPage4->UseVisualStyleBackColor = true;
 			// 
-			// Column2
+			// testFlow
 			// 
-			this->Column2->HeaderText = L"Present Total $/kWh";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 50;
+			this->testFlow->Location = System::Drawing::Point(85, 107);
+			this->testFlow->Name = L"testFlow";
+			this->testFlow->Size = System::Drawing::Size(90, 20);
+			this->testFlow->TabIndex = 6;
 			// 
-			// Column3
+			// testCurrent
 			// 
-			this->Column3->HeaderText = L"Near-Term Total $/kWh";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 50;
+			this->testCurrent->Location = System::Drawing::Point(84, 133);
+			this->testCurrent->Name = L"testCurrent";
+			this->testCurrent->Size = System::Drawing::Size(90, 20);
+			this->testCurrent->TabIndex = 5;
 			// 
-			// Column4
+			// label26
 			// 
-			this->Column4->HeaderText = L"Optimistic Total $/kWh";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 50;
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(38, 115);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(26, 13);
+			this->label26->TabIndex = 4;
+			this->label26->Text = L"flow";
 			// 
-			// Column5
+			// label25
 			// 
-			this->Column5->HeaderText = L"Average Effective Voltage";
-			this->Column5->Name = L"Column5";
-			this->Column5->Width = 50;
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(38, 140);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(40, 13);
+			this->label25->TabIndex = 3;
+			this->label25->Text = L"current";
 			// 
-			// Column6
+			// label24
 			// 
-			this->Column6->HeaderText = L"Cell Area (m^2)";
-			this->Column6->Name = L"Column6";
-			this->Column6->Width = 50;
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(38, 169);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(28, 13);
+			this->label24->TabIndex = 2;
+			this->label24->Text = L"area";
 			// 
-			// Column7
+			// testBox
 			// 
-			this->Column7->HeaderText = L"Efficiency (1way)";
-			this->Column7->Name = L"Column7";
-			this->Column7->Width = 60;
+			this->testBox->Location = System::Drawing::Point(85, 166);
+			this->testBox->Name = L"testBox";
+			this->testBox->Size = System::Drawing::Size(90, 20);
+			this->testBox->TabIndex = 1;
 			// 
-			// Column8
+			// button1
 			// 
-			this->Column8->HeaderText = L"Present $/kWh";
-			this->Column8->Name = L"Column8";
-			this->Column8->Width = 50;
+			this->button1->Location = System::Drawing::Point(28, 22);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Test";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
-			// Column9
+			// testPowerOrig
 			// 
-			this->Column9->HeaderText = L"Near-Term $/kWh";
-			this->Column9->Name = L"Column9";
-			this->Column9->Width = 50;
+			this->testPowerOrig->Location = System::Drawing::Point(324, 44);
+			this->testPowerOrig->Name = L"testPowerOrig";
+			this->testPowerOrig->Size = System::Drawing::Size(90, 20);
+			this->testPowerOrig->TabIndex = 10;
 			// 
-			// Column10
+			// testPowerNew
 			// 
-			this->Column10->HeaderText = L"Optimistic $/kWh";
-			this->Column10->Name = L"Column10";
-			this->Column10->Width = 50;
+			this->testPowerNew->Location = System::Drawing::Point(323, 70);
+			this->testPowerNew->Name = L"testPowerNew";
+			this->testPowerNew->Size = System::Drawing::Size(90, 20);
+			this->testPowerNew->TabIndex = 9;
 			// 
-			// Column11
+			// label27
 			// 
-			this->Column11->HeaderText = L"Present $/kW";
-			this->Column11->Name = L"Column11";
-			this->Column11->Width = 50;
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(256, 47);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(56, 13);
+			this->label27->TabIndex = 8;
+			this->label27->Text = L"Old Power";
 			// 
-			// Column12
+			// label28
 			// 
-			this->Column12->HeaderText = L"Near-Term $/kW";
-			this->Column12->Name = L"Column12";
-			this->Column12->Width = 50;
-			// 
-			// Column13
-			// 
-			this->Column13->HeaderText = L"Optimistic $/kW";
-			this->Column13->Name = L"Column13";
-			this->Column13->Width = 50;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
-			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			// 
-			// Column15
-			// 
-			this->Column15->HeaderText = L"Pump Eff";
-			this->Column15->Name = L"Column15";
-			// 
-			// Column16
-			// 
-			this->Column16->HeaderText = L"Shunt Eff";
-			this->Column16->Name = L"Column16";
-			// 
-			// Column14
-			// 
-			this->Column14->HeaderText = L"Area";
-			this->Column14->Name = L"Column14";
-			// 
-			// Column21
-			// 
-			this->Column21->HeaderText = L"Avg Flow";
-			this->Column21->Name = L"Column21";
-			// 
-			// Digits
-			// 
-			this->Digits->HeaderText = L"High Flow";
-			this->Digits->Name = L"Digits";
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(256, 70);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(61, 13);
+			this->label28->TabIndex = 7;
+			this->label28->Text = L"New power";
 			// 
 			// Form1
 			// 
@@ -1638,6 +1775,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage4->ResumeLayout(false);
+			this->tabPage4->PerformLayout();
 			this->ResumeLayout(false);
 
 		}//GUI portion has ended
@@ -1806,7 +1945,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane,vector<vector<vector<double> > >& SuperMatrix,vector<double>& J)
 {
 	//electrochemical model
-	//SOC as fractio
+	//SOC as fraction
 	//area is active cell area in m^2
 	//flow is flow rate ml/min/cell
 	//j is current density in mA/cm^2
@@ -1831,6 +1970,155 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	{
 		return interpolate2dSpline(SuperMatrix,J,SOC,j);
 	}
+	if(VVGen1->Checked)
+	{
+		TCent[1]=35;
+	}
+    double T = TCent[i]+273.15; // K
+    double Ci1 = 1750; // initial concentration of chemical 1, mol/m^3
+	if(VVGen1->Checked)
+	{
+		Ci1=1500;
+	}
+	if(FeV->Checked)
+	{
+		Ci1=1750;
+	}
+	if(VVGen2->Checked)
+	{
+		Ci1=2000;
+	}
+	if(LiOrgButton->Checked)
+	{
+		Ci1= Convert::ToDouble(LiConcBox->Text);
+	}
+	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
+	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
+    double t=0.004*tScaleFactor; //cell thickness m
+    double I=j*width*height*100*100/1000; //current A
+	double A[2] = {2,4};
+	A[i]*= Convert::ToDouble(ThRedBox->Text);
+	double chi[2] = {4,0};
+	double n = Convert::ToDouble(electronBox->Text);
+    double delSOC=I*A[i]/(n*2*Q*Ci1*F);
+    double SOCrxn=SOC-delSOC;
+    double Inew=j*(1+chi[i]*delSOC*2)*100*100/1000;
+    double eps=0.94; //porosity
+    double a = 39000*eps/4;//CHECK THIS
+	a*=Convert::ToDouble(spaBox->Text);
+    double Km=0.00016*pow(Q/(eps*width*t),0.4);
+    double Conc1neg=Ci1*SOCrxn-Inew/(t*F*a*Km/eps); // V 2+
+    double Conc1pos=Ci1-Conc1neg; //V 3+
+    double Conc2pos=Ci2*SOCrxn-Inew/(t*F*a*Km/eps); // V 5+
+    double Conc2neg=Ci2-Conc2pos; //V 4+
+	double kScaleFactor = Convert::ToDouble(KBox->Text);
+    double k1=8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
+	double k2[2]={1.6/100000*exp((F*0.77/R)*(T-298)/(298*T)),0.00000068*exp((F*V2[i]/R)*(T-298)/(298*T))};
+    if(LiOrgButton->Checked)
+	{
+		k1*=1;
+		k2[system]*=1;
+	}
+	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double mt[2]={450e-6,175e-6}; //membrane thickness m
+	double condM[2]={53.65395346,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
+    double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
+	double iconcH[2]={5300,1000};
+	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn-Inew/(t*F*a*Km)};
+	double concCl[2]={1500,0};
+	double concH2SO4[2]={3800,5000};
+    int ZV2=2;
+    int ZV3=3;
+    int ZFe2=2;
+    int ZFe3=3;
+	int ZV4=2;
+	int ZV5=1;
+    int ZH=1;
+    int ZCl=-1;
+    int ZH2SO4=-1;
+	double bruggman[2]={1.5,0};
+	double reduction[2]={2.75/pow(eps,bruggman[i]),0.73/pow(eps,bruggman[i])};
+	if(VVGen1->Checked)
+	{
+		reduction[1]=0.833/pow(eps,bruggman[i]);
+	}
+	double DV2=(2.4E-10)/reduction[system];
+    double DV3=(2.4E-10)/reduction[system];
+	double DV4=(3.9E-10)/reduction[system];
+	double DV5=(3.9E-10)/reduction[system];
+    double DFe2=(2.5E-10)/reduction[system];
+    double DFe3=(2.5E-10)/reduction[system];
+	double DH=(9.31E-09)/reduction[system];
+    double DCl=(2.032E-09)/reduction[system];
+    double DH2SO4=(1.33E-09)/reduction[system];
+	double condScaleFactor = Convert::ToDouble(CondBox->Text);
+	double pa=(F*F/(T*R))*(ZV2*ZV2*DV2*Conc1neg+ZV3*ZV3*DV3*Conc1pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]);
+    double pat=pa*(1+1.711464*(T-273-23)/100)*condScaleFactor;
+	double pc[2]={(F*F/(T*R))*(ZFe2*ZFe2*DFe2*Conc2neg+ZFe3*ZFe3*DFe3*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]),(F*F/(T*R))*(ZV4*ZV4*DV4*Conc2neg+ZV5*ZV5*DV5*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i])};
+    double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;
+    double Irea=t*Inew/pat;
+    double Irec=t*Inew/pct;
+    if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
+    {
+    V = V2[i]-V1[i]+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
+    }
+    else
+    {
+    V=0;
+    }
+	if(LiOrgButton->Checked)
+	{
+		double VLiA[] = {3.193552576,3.298606737,3.422420435,3.516218117,3.602508955,3.662540986,3.670044043,3.673797466,3.700060059,3.73382571,3.752585246,3.767595148,3.790104319,3.812617278,3.835126449,3.898911903,3.932295015,3.977286844,4.12524213,4.152428876};
+		std::vector<double> VLi (&VLiA[0], &VLiA[0]+20);
+		double SOCLiA[] = {0.009631481,0.015312908,0.026677674,0.039934338,0.05697862,0.085387667,0.115688613,0.168717178,0.195232417,0.252048601,0.316440021,0.388408589,0.469844291,0.538025241,0.600522852,0.674383318,0.721711346,0.797815335,0.972556012,1};
+		std::vector<double> SOCLi (&SOCLiA[0], &SOCLiA[0]+20);
+		std::vector<vector<double> > LiMatrix= populateSpline2V(SOCLi,VLi);
+		double OCVLi = interpolateSplineV(SOC,LiMatrix)-3.8+Convert::ToDouble(LiVoltageBox->Text);
+		
+		//etaneg = 0;
+		//etapos = 0;
+		pat = A[1]*10*condScaleFactor/(10); //S/m
+		pct = pat; //temp
+		condM[membrane]=2.5/(10); //S/m
+		//t=0.5/1000;
+		Irea = t*Inew/pat;
+		Irec = t*Inew/pct;
+		mt[membrane]=7*(25e-6); // m
+		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
+		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
+
+	}
+	if(Conc1neg<=0 || Conc2neg<=0 || Conc1pos<=0 || Conc2pos<=0)
+	{
+		V=0;
+	}
+	double scaleV=1/*1.138*/;
+    return V*scaleV;
+}
+	public: double g_voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane)
+{
+	//electrochemical model
+	//SOC as fraction
+	//area is active cell area in m^2
+	//flow is flow rate ml/min/cell
+	//j is current density in mA/cm^2
+	//aspect ratio is height:width  (height being the direction of flow)
+	//system is 0 for Fe-V, 1 for V-V
+	//membrane is 0 for Daramic, 1 for Nafion
+	//SuperMatrix and J are used for spline extrapolation
+	
+	int i = system; //0 for Fe-V, 1 for V-V
+    const double F = 96485;// C/mol
+    const double R = 8.314; // J/mol K
+    double V;
+    double width = sqrt(area/aspectratio); //cell width m
+    double height = width*aspectratio;
+	double V2[2] = {0.77,1.004}; //V
+//	V2[1]+=2;
+	double V1[2]={-0.085,-.41}; //V
+    double Q = flow/(60*1000*1000); // m^3/s
+	double TCent[2]={45,45};
 	if(VVGen1->Checked)
 	{
 		TCent[1]=35;
@@ -2142,6 +2430,72 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			{//calculates slope given 4 points.
 				return (y2-y1)/(x2-x1);
 			}
+	public: int g_system;
+	public: int g_membrane;
+	public: double g_area;
+	public: double g_jLow;
+	public: double g_qhigh;
+	public: double g_reqpower;
+	public: double g_cells;
+	public: double g_stacks;
+	public: double g_reqpowerpercell;
+	public: double g_DOD;
+	public: double g_SOC;
+	public: double g_aspectratio;
+	public: double g_cwidth;
+	public: double g_cdepth;
+	public: int g_channels;
+	public: void global_initialization()
+			{
+				//temp
+				g_jLow=Convert::ToDouble(testCurrent->Text);
+				g_qhigh=Convert::ToDouble(testFlow->Text);
+				g_DOD=(double)DODBox->Value;
+				//end temp
+				g_reqpower=Convert::ToDouble(powerBox->Text)*1000;
+				g_cells=Convert::ToDouble(cellBox->Text);
+				g_stacks=Convert::ToDouble(stackBox->Text);
+				g_reqpowerpercell=g_reqpower/(g_cells*g_stacks);
+				g_aspectratio=Convert::ToDouble(aspectRatioBox->Text);
+				g_cwidth=0.005;
+				g_cdepth=0.002;
+				g_channels=10;
+				if(FeV->Checked)
+	{
+		g_system=0;
+		g_membrane=0;
+	}
+	if(VVGen1->Checked || VVGen2->Checked)
+	{
+		g_system=1;
+		g_membrane=1;
+	}
+	if(LiOrgButton->Checked)
+	{
+		g_system=1;
+		g_membrane=1;
+	}
+			}
+	public: void calculateArea()
+			{
+				g_SOC = (100-g_DOD)/200;
+				double V=g_voltage(g_SOC,1,10e9,g_jLow,g_aspectratio,g_system,g_membrane);
+				g_area=g_reqpowerpercell/(10*g_jLow*V);
+				int i = 0;		
+				double a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+				double b;
+				double c;
+				while (i<20)
+				{
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+					b=-10*g_jLow*V/sqrt(0.98);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					g_area=(-b-sqrt(b*b-4*a*c))/(2*a);
+					i++;
+				}
+				double power = V*10*g_jLow*g_area/sqrt(0.98) - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+				testPowerNew->Text=power.ToString();
+			}
  	private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 	//This executes when the calculate button is clicked, this is the bulk of the program.
 
@@ -2183,7 +2537,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double V=0;
 	double VEff=0;
 	double optV=0;
-	double power=Convert::ToDouble(powerBox->Text)*1000;;
+	double power=Convert::ToDouble(powerBox->Text)*1000;
 	double cells=Convert::ToDouble(cellBox->Text);	
 	double stacks=Convert::ToDouble(stackBox->Text);
 	double jLow=(double)jLowBox->Value;
@@ -2401,6 +2755,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				if(j*VEff*area*10>=cellPower)
 				{
 					powerAttained=true;
+					testPowerOrig->Text=(j*VEff*area*10).ToString();
 					highflow=flow;
 				}
 				else
@@ -2560,6 +2915,11 @@ private: System::Void jLowBox_ValueChanged(System::Object^  sender, System::Even
 			 }
 		 }
 private: System::Void dataOutput_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 global_initialization();
+			 calculateArea();
+			 testBox->Text=g_area.ToString();
 		 }
 };
 }
