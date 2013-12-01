@@ -38,6 +38,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double g_aspectratio : Public
     Double g_cwidth : Public
     Double g_cdepth : Public
+    Double g_CE : Public
     Int32 g_channels : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
@@ -62,4 +63,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     MarshalString(String, basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
     global_initialization(): PrivateScope, Public, HideBySig
-    calculateArea(): PrivateScope, Public, HideBySig
+    calculateArea(Double, Double): PrivateScope, Public, HideBySig
+    calculateCost(Double, Double): PrivateScope, Public, HideBySig
+    optimizeFlow(Double, Double, Double): PrivateScope, Public, HideBySig
+    calculateVeffAvg(Double, Double): PrivateScope, Public, HideBySig

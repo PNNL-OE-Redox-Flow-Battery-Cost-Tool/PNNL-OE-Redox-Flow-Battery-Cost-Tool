@@ -243,6 +243,20 @@ private: System::Windows::Forms::TextBox^  testPowerOrig;
 private: System::Windows::Forms::TextBox^  testPowerNew;
 private: System::Windows::Forms::Label^  label27;
 private: System::Windows::Forms::Label^  label28;
+private: System::Windows::Forms::Label^  label29;
+private: System::Windows::Forms::TextBox^  testVEff;
+private: System::Windows::Forms::DataGridView^  testGrid;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column32;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Power;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column30;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column31;
+
+
+
+
 
 	public: static int c = 0;
 	public:
@@ -426,6 +440,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->testGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->testVEff = (gcnew System::Windows::Forms::TextBox());
+			this->testPowerOrig = (gcnew System::Windows::Forms::TextBox());
+			this->testPowerNew = (gcnew System::Windows::Forms::TextBox());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->testFlow = (gcnew System::Windows::Forms::TextBox());
 			this->testCurrent = (gcnew System::Windows::Forms::TextBox());
 			this->label26 = (gcnew System::Windows::Forms::Label());
@@ -433,10 +454,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->testPowerOrig = (gcnew System::Windows::Forms::TextBox());
-			this->testPowerNew = (gcnew System::Windows::Forms::TextBox());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column30 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column31 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column32 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Power = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -462,6 +486,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataSet2
@@ -795,8 +820,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// OutputGrid
 			// 
 			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->Column27, 
-				this->Column28, this->Column29});
+			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->Column27, 
+				this->Column28, this->Column29, this->Column32, this->Power});
 			this->OutputGrid->Location = System::Drawing::Point(70, 507);
 			this->OutputGrid->Name = L"OutputGrid";
 			this->OutputGrid->Size = System::Drawing::Size(352, 182);
@@ -1626,6 +1651,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// tabPage4
 			// 
+			this->tabPage4->Controls->Add(this->testGrid);
+			this->tabPage4->Controls->Add(this->label29);
+			this->tabPage4->Controls->Add(this->testVEff);
 			this->tabPage4->Controls->Add(this->testPowerOrig);
 			this->tabPage4->Controls->Add(this->testPowerNew);
 			this->tabPage4->Controls->Add(this->label27);
@@ -1645,12 +1673,71 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage4->Text = L"Test tab";
 			this->tabPage4->UseVisualStyleBackColor = true;
 			// 
+			// testGrid
+			// 
+			this->testGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->testGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->dataGridViewTextBoxColumn2, 
+				this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn3, this->Column30, this->Column31});
+			this->testGrid->Location = System::Drawing::Point(269, 192);
+			this->testGrid->Name = L"testGrid";
+			this->testGrid->Size = System::Drawing::Size(450, 182);
+			this->testGrid->TabIndex = 57;
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(37, 195);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(46, 13);
+			this->label29->TabIndex = 12;
+			this->label29->Text = L"VEffAvg";
+			// 
+			// testVEff
+			// 
+			this->testVEff->Location = System::Drawing::Point(84, 192);
+			this->testVEff->Name = L"testVEff";
+			this->testVEff->Size = System::Drawing::Size(90, 20);
+			this->testVEff->TabIndex = 11;
+			// 
+			// testPowerOrig
+			// 
+			this->testPowerOrig->Location = System::Drawing::Point(324, 44);
+			this->testPowerOrig->Name = L"testPowerOrig";
+			this->testPowerOrig->Size = System::Drawing::Size(90, 20);
+			this->testPowerOrig->TabIndex = 10;
+			// 
+			// testPowerNew
+			// 
+			this->testPowerNew->Location = System::Drawing::Point(323, 70);
+			this->testPowerNew->Name = L"testPowerNew";
+			this->testPowerNew->Size = System::Drawing::Size(90, 20);
+			this->testPowerNew->TabIndex = 9;
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(256, 47);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(56, 13);
+			this->label27->TabIndex = 8;
+			this->label27->Text = L"Old Power";
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(256, 70);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(61, 13);
+			this->label28->TabIndex = 7;
+			this->label28->Text = L"New power";
+			// 
 			// testFlow
 			// 
 			this->testFlow->Location = System::Drawing::Point(85, 107);
 			this->testFlow->Name = L"testFlow";
 			this->testFlow->Size = System::Drawing::Size(90, 20);
 			this->testFlow->TabIndex = 6;
+			this->testFlow->Text = L"5798";
 			// 
 			// testCurrent
 			// 
@@ -1658,6 +1745,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testCurrent->Name = L"testCurrent";
 			this->testCurrent->Size = System::Drawing::Size(90, 20);
 			this->testCurrent->TabIndex = 5;
+			this->testCurrent->Text = L"100";
 			// 
 			// label26
 			// 
@@ -1703,37 +1791,40 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
-			// testPowerOrig
+			// dataGridViewTextBoxColumn2
 			// 
-			this->testPowerOrig->Location = System::Drawing::Point(324, 44);
-			this->testPowerOrig->Name = L"testPowerOrig";
-			this->testPowerOrig->Size = System::Drawing::Size(90, 20);
-			this->testPowerOrig->TabIndex = 10;
+			this->dataGridViewTextBoxColumn2->HeaderText = L"SOC (%)";
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			// 
-			// testPowerNew
+			// dataGridViewTextBoxColumn4
 			// 
-			this->testPowerNew->Location = System::Drawing::Point(323, 70);
-			this->testPowerNew->Name = L"testPowerNew";
-			this->testPowerNew->Size = System::Drawing::Size(90, 20);
-			this->testPowerNew->TabIndex = 9;
+			this->dataGridViewTextBoxColumn4->HeaderText = L"Current (mA/cm^2)";
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
 			// 
-			// label27
+			// dataGridViewTextBoxColumn3
 			// 
-			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(256, 47);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(56, 13);
-			this->label27->TabIndex = 8;
-			this->label27->Text = L"Old Power";
+			this->dataGridViewTextBoxColumn3->HeaderText = L"Flow rate (ml/min/cell)";
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			// 
-			// label28
+			// Column30
 			// 
-			this->label28->AutoSize = true;
-			this->label28->Location = System::Drawing::Point(256, 70);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(61, 13);
-			this->label28->TabIndex = 7;
-			this->label28->Text = L"New power";
+			this->Column30->HeaderText = L"VEff";
+			this->Column30->Name = L"Column30";
+			// 
+			// Column31
+			// 
+			this->Column31->HeaderText = L"Power";
+			this->Column31->Name = L"Column31";
+			// 
+			// Column32
+			// 
+			this->Column32->HeaderText = L"VEff";
+			this->Column32->Name = L"Column32";
+			// 
+			// Power
+			// 
+			this->Power->HeaderText = L"Column33";
+			this->Power->Name = L"Power";
 			// 
 			// Form1
 			// 
@@ -1777,6 +1868,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage4->ResumeLayout(false);
 			this->tabPage4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->EndInit();
 			this->ResumeLayout(false);
 
 		}//GUI portion has ended
@@ -2444,6 +2536,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_aspectratio;
 	public: double g_cwidth;
 	public: double g_cdepth;
+	public: double g_CE;
 	public: int g_channels;
 	public: void global_initialization()
 			{
@@ -2460,6 +2553,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_cwidth=0.005;
 				g_cdepth=0.002;
 				g_channels=10;
+				g_CE=0.98;
 				if(FeV->Checked)
 	{
 		g_system=0;
@@ -2476,25 +2570,125 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		g_membrane=1;
 	}
 			}
-	public: void calculateArea()
+	public: void calculateArea(double jLow, double qhigh)
 			{
 				g_SOC = (100-g_DOD)/200;
-				double V=g_voltage(g_SOC,1,10e9,g_jLow,g_aspectratio,g_system,g_membrane);
-				g_area=g_reqpowerpercell/(10*g_jLow*V);
+				double V=g_voltage(g_SOC,1,10e9,jLow,g_aspectratio,g_system,g_membrane);
+				g_area=g_reqpowerpercell/(10*jLow*V);
 				int i = 0;		
-				double a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+				double a;
 				double b;
 				double c;
 				while (i<20)
 				{
-					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
-					b=-10*g_jLow*V/sqrt(0.98);
+					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*jLow*V/sqrt(g_CE);
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					g_area=(-b-sqrt(b*b-4*a*c))/(2*a);
 					i++;
 				}
 				double power = V*10*g_jLow*g_area/sqrt(0.98) - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 				testPowerNew->Text=power.ToString();
+			}
+
+	public: double calculateCost(double jLow, double qhigh)
+			{
+				calculateArea(jLow,qhigh);
+				double VeffAvg=calculateVeffAvg(jLow,qhigh);
+				return 0;
+			}
+	public: double optimizeFlow(double j,double flow, double SOC)
+			{
+				double V;
+				double VEff;
+				double VEffF;
+				double VEffB;
+				bool optFlow=false;
+				double powerproduced;
+				double powerloss;
+				double flowres=1;
+				double D_flowVeff;
+				double D_flow2Veff;
+				while(!optFlow)
+				{
+						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+						VEff = V*(powerproduced-powerloss)/powerproduced;
+						V=g_voltage(SOC,g_area,(flow+flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,(flow+flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+						VEffF = V*(powerproduced-powerloss)/powerproduced;
+						V=g_voltage(SOC,g_area,(flow-flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,(flow-flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+						VEffB = V*(powerproduced-powerloss)/powerproduced;
+						D_flowVeff=(VEffF-VEffB)/(2*flowres);
+						D_flow2Veff=(VEffF+VEffB-2*VEff)/(flowres*flowres);
+						flow-=(D_flowVeff/D_flow2Veff);
+						if(abs(D_flowVeff/D_flow2Veff)<=0.01)
+						{
+							optFlow=true;
+						}
+				}
+				return flow;
+			}
+	public: double calculateVeffAvg(double jLow, double qhigh)
+			{
+				double delSOC = 0.01;
+				double SOCLow = (100-g_DOD)/200;
+				double SOCHigh = 1.0000001-SOCLow;
+				double flow=qhigh;
+				double V;
+				double VEff;
+				bool powerAttained;
+				double j = jLow;
+				double jres=0.01;
+				double VEffAvg=0;
+				double power;
+				V=g_voltage(SOCLow,g_area,flow*g_area,jLow,g_aspectratio,g_system,g_membrane);
+				VEff =V*(V*j*g_area*10-pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)-shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells))/(V*j*g_area*10);
+				VEffAvg+=VEff;
+				int i = 1;
+				testGrid->Rows->Add(SOCLow,j,qhigh*g_area,VEff);
+				double SOC = SOCLow+delSOC;
+				double powerproduced;
+				double powerloss;
+				double D_jP;
+				double Pb;
+				while (SOC<= SOCHigh)
+				{
+					powerAttained=false;
+					while(!powerAttained)
+
+
+					{
+					flow=optimizeFlow(j,flow,SOC);
+					V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+					powerproduced=V*j*g_area*10;
+					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					VEff =V*(powerproduced-powerloss)/powerproduced;
+					power = powerproduced-powerloss;
+					flow=optimizeFlow(j-jres,flow,SOC);
+					V=g_voltage(SOC,g_area,flow*g_area,(j-jres),g_aspectratio,g_system,g_membrane);
+					powerproduced=V*(j-jres)*g_area*10;
+					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					Pb=powerproduced-powerloss;
+					D_jP=((power-Pb)/jres);
+					j-=((power-g_reqpowerpercell)/D_jP);
+					if(abs((power-g_reqpowerpercell)/D_jP)<=0.001)
+					{
+						powerAttained=true;
+					}
+					}
+					i++;
+					VEffAvg+=VEff;
+					testGrid->Rows->Add(SOC,j,flow*g_area,VEff,power);
+					SOC+=delSOC;
+				}
+				VEffAvg/=i;
+				return VEffAvg;
 			}
  	private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 	//This executes when the calculate button is clicked, this is the bulk of the program.
@@ -2532,7 +2726,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double flow=0;
 	double optFlow=0;
 	double flowres=0;
-	double flowdensres=0.01;
+	double flowdensres=0.001;
 	double area=areares;
 	double V=0;
 	double VEff=0;
@@ -2839,7 +3033,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		
 		Vavg+=VEff;
 		i++;
-		OutputGrid->Rows->Add(SOC,flow,j);
+		OutputGrid->Rows->Add(SOC,flow,j,VEff,powerproduced*sqrt(CE[membrane])-powerloss);
 		SOC+=SOCres;;
 	
 		flowavg+=flow;
@@ -2901,7 +3095,6 @@ private: System::Void energyBox_TextChanged(System::Object^  sender, System::Eve
 			 double energy = Convert::ToDouble(energyBox->Text);
 			 epBox->Text=(energy/power).ToString();
 		 }
-
 private: System::Void jHighBox_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 			 if ((jHighBox->Value)<(jLowBox->Value))
 			 {
@@ -2918,8 +3111,10 @@ private: System::Void dataOutput_CellContentClick(System::Object^  sender, Syste
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 global_initialization();
-			 calculateArea();
+			 calculateArea(Convert::ToDouble(testCurrent->Text),Convert::ToDouble(testFlow->Text));
 			 testBox->Text=g_area.ToString();
+			 double VEffAvg=calculateVeffAvg(Convert::ToDouble(testCurrent->Text),Convert::ToDouble(testFlow->Text));
+			 testVEff->Text=VEffAvg.ToString();
 		 }
 };
 }
