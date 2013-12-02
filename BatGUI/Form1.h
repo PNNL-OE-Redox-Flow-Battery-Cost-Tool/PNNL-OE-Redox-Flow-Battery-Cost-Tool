@@ -2538,13 +2538,19 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_cdepth;
 	public: double g_CE;
 	public: int g_channels;
+	public: int g_k;
+	public: double g_power;
+	public: double g_ep;
 	public: void global_initialization()
 			{
 				//temp
+				g_k=2;
 				g_jLow=Convert::ToDouble(testCurrent->Text);
 				g_qhigh=Convert::ToDouble(testFlow->Text);
 				g_DOD=(double)DODBox->Value;
 				//end temp
+				g_power=Convert::ToDouble(powerBox->Text)*1000;
+				g_ep=Convert::ToDouble(epBox->Text);
 				g_reqpower=Convert::ToDouble(powerBox->Text)*1000;
 				g_cells=Convert::ToDouble(cellBox->Text);
 				g_stacks=Convert::ToDouble(stackBox->Text);
@@ -2585,6 +2591,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 					b=-10*jLow*V/sqrt(g_CE);
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					if(4*a*c>(b*b))
+					{
+						MessageBox::Show("Nope not happening.");
+					}
+					
 					g_area=(-b-sqrt(b*b-4*a*c))/(2*a);
 					i++;
 				}
@@ -2596,7 +2607,28 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			{
 				calculateArea(jLow,qhigh);
 				double VeffAvg=calculateVeffAvg(jLow,qhigh);
-				return 0;
+				double pcost=powerCost(g_area,qhigh,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[g_k]*1000/g_power;
+				double ecost=energyCost(VeffAvg,g_DOD/100,1500,g_system)[g_k];
+				double totcost=pcost/g_ep+ecost;
+				
+				
+				return totcost;
+			}
+	public: double D_xcostoverD_xxcost(double % x, double jLow, double qhigh)
+			{
+				g_qhigh=qhigh;
+				g_jLow=jLow;
+				double h = 10;
+				double cost = calculateCost(g_jLow,g_qhigh);
+				
+				(x)-=(h);
+				double costB=calculateCost(g_jLow,g_qhigh);
+				(x)+=(2*h);
+				double costF=calculateCost(g_jLow,g_qhigh);
+				double D_xcost = (costF-costB)/(2*h);
+				double D_xxcost = (costF+costB-2*cost)/(h*h);
+				//testGrid->Rows->Add(cost,x-h,costB,costF);
+				return (D_xcost/D_xxcost);
 			}
 	public: double optimizeFlow(double j,double flow, double SOC)
 			{
@@ -2610,7 +2642,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double flowres=1;
 				double D_flowVeff;
 				double D_flow2Veff;
-				while(!optFlow)
+				while((!optFlow))
 				{
 						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 						powerproduced=V*j*g_area*10;
@@ -2632,6 +2664,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 							optFlow=true;
 						}
 				}
+				if (flow>=g_qhigh)
+				{
+
+				}
 				return flow;
 			}
 	public: double calculateVeffAvg(double jLow, double qhigh)
@@ -2651,7 +2687,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				VEff =V*(V*j*g_area*10-pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)-shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells))/(V*j*g_area*10);
 				VEffAvg+=VEff;
 				int i = 1;
-				testGrid->Rows->Add(SOCLow,j,qhigh*g_area,VEff);
+
 				double SOC = SOCLow+delSOC;
 				double powerproduced;
 				double powerloss;
@@ -2684,7 +2720,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					}
 					i++;
 					VEffAvg+=VEff;
-					testGrid->Rows->Add(SOC,j,flow*g_area,VEff,power);
 					SOC+=delSOC;
 				}
 				VEffAvg/=i;
@@ -3111,10 +3146,27 @@ private: System::Void dataOutput_CellContentClick(System::Object^  sender, Syste
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 global_initialization();
-			 calculateArea(Convert::ToDouble(testCurrent->Text),Convert::ToDouble(testFlow->Text));
-			 testBox->Text=g_area.ToString();
-			 double VEffAvg=calculateVeffAvg(Convert::ToDouble(testCurrent->Text),Convert::ToDouble(testFlow->Text));
-			 testVEff->Text=VEffAvg.ToString();
+			 int i = 0;
+			 g_qhigh=Convert::ToDouble(testFlow->Text);
+			 g_jLow=Convert::ToDouble(testCurrent->Text);
+			 double cost = calculateCost(g_jLow,g_qhigh);
+			 double delcost=cost;
+			 while (abs(delcost)>=0.0001)
+			 {
+
+
+				 g_qhigh-=D_xcostoverD_xxcost((g_qhigh),g_jLow,g_qhigh);
+
+
+				 g_jLow-=0.5*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhigh);
+
+
+				 delcost=calculateCost(g_jLow,g_qhigh)-cost;
+				 cost=cost + delcost;
+				 testGrid->Rows->Add(cost,g_jLow,(g_qhigh/10000));
+				 i++;
+			 }
+			 testBox->Text=cost.ToString();
 		 }
 };
 }

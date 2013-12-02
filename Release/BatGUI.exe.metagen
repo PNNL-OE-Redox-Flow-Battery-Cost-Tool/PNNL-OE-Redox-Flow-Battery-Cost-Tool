@@ -40,6 +40,9 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double g_cdepth : Public
     Double g_CE : Public
     Int32 g_channels : Public
+    Int32 g_k : Public
+    Double g_power : Public
+    Double g_ep : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
@@ -65,5 +68,6 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     global_initialization(): PrivateScope, Public, HideBySig
     calculateArea(Double, Double): PrivateScope, Public, HideBySig
     calculateCost(Double, Double): PrivateScope, Public, HideBySig
+    D_xcostoverD_xxcost(Double&, Double, Double): PrivateScope, Public, HideBySig
     optimizeFlow(Double, Double, Double): PrivateScope, Public, HideBySig
     calculateVeffAvg(Double, Double): PrivateScope, Public, HideBySig
