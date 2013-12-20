@@ -39,6 +39,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double g_cwidth : Public
     Double g_cdepth : Public
     Double g_CE : Public
+    Double g_qhighpercurrent : Public
     Int32 g_channels : Public
     Int32 g_k : Public
     Double g_power : Public
@@ -67,6 +68,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
     global_initialization(): PrivateScope, Public, HideBySig
     calculateArea(Double, Double): PrivateScope, Public, HideBySig
+    fixArea(Double, Double): PrivateScope, Public, HideBySig
     calculateCost(Double, Double): PrivateScope, Public, HideBySig
     D_xcostoverD_xxcost(Double&, Double, Double): PrivateScope, Public, HideBySig
     optimizeFlow(Double, Double, Double): PrivateScope, Public, HideBySig
