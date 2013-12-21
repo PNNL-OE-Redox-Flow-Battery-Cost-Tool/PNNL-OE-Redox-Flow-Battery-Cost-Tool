@@ -2542,6 +2542,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: int g_k;
 	public: double g_power;
 	public: double g_ep;
+	public: bool g_areaReal;
 	public: void global_initialization()
 			{
 				//temp
@@ -2594,78 +2595,136 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 					b=-10*jLow*V/sqrt(g_CE);
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
-					if(4*a*c>(b*b))
+					if((4*a*c)>(b*b))
 					{
 						if(V==0)
 						{
-							while(4*a*c>(b*b))
+							while((4*a*c)>(b*b))
 							{
 								qhigh+=100;
 								V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
 								a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 								b=-10*jLow*V/sqrt(g_CE);
 								c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+
 							}
 							g_qhighpercurrent=qhigh/jLow;
 						}
 						else
 						{
-						MessageBox::Show("Nope not happening.");
+						MessageBox::Show("Fixing area!");
+						g_areaReal=false;
+						fixArea();
 						}
 
 					}
 					
 					g_area=(-b-sqrt(b*b-4*a*c))/(2*a);
 					i++;
+
 				}
 				double power = V*10*g_jLow*g_area/sqrt(0.98) - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 				testPowerNew->Text=power.ToString();
 			}
-	public: void fixArea(double jLow, double qhighpercurrent)
+	public: void fixArea()
 			{
-				double qhigh = qhighpercurrent*jLow;
+				double g_qhigh = g_qhighpercurrent*g_jLow;
 				double a;
 				double b;
 				double c;
-				double V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
-				a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
-				b=-10*jLow*V/sqrt(g_CE);
+				double V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+				a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+				b=-10*g_jLow*V/sqrt(g_CE);
 				c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 				double F = b*b-4*a*c;
-				double dF;
+				double hq=10;
+				double hj=1;
+				double F_f;
+				double F_b;
+				double D_qF;
+				double D_qqF;
+				double D_jF;
+				double D_jjF;
 				while(V<=0)
 				{
-					qhigh+=10;
-					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
+					g_qhigh+=10;
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
 				}
-				V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
-				a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
-				b=-10*jLow*V/sqrt(g_CE);
+				V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+				a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+				b=-10*g_jLow*V/sqrt(g_CE);
 				c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
-				while(b*b-4*a*c)
+				while(F<0)
 				{
-					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
-					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
-					b=-10*jLow*V/sqrt(g_CE);
-					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
-					F=b*b-4*a*c;
-					qhigh+=10;
-					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
-					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
-					b=-10*jLow*V/sqrt(g_CE);
-					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
-					dF=b*b-4*a*c;
-				}
 
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*g_jLow*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+
+					F=b*b-4*a*c;
+
+					V=g_voltage(g_SOC,g_area,(g_qhigh+hq)*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,(g_qhigh+hq)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*g_jLow*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					F_f=b*b-4*a*c;
+
+					V=g_voltage(g_SOC,g_area,(g_qhigh-hq)*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,(g_qhigh-hq)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*g_jLow*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					F_b=b*b-4*a*c;
+
+					D_qF = (F_f - F_b)/(2*hq);
+					D_qqF = (F_f+F_b-2*F)/(hq*hq);
+					g_qhigh-=D_qF/D_qqF;
+
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*g_jLow*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+
+					F=b*b-4*a*c;
 					
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,(g_jLow+hj),g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*(g_jLow+hj)*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+
+					F_f=b*b-4*a*c;
+
+					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,(g_jLow-hj),g_aspectratio,g_system,g_membrane);
+					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+					b=-10*(g_jLow-hj)*V/sqrt(g_CE);
+					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+
+					F_b=b*b-4*a*c;
+
+					D_jF = (F_f - F_b)/(2*hj);
+					D_jjF = (F_f + F_b - 2*F)/(hj*hj);
+					if(D_jjF!=0)
+					{
+					g_jLow-=0.1*D_jF/D_jjF;
+					}
+
+
+					MessageBox::Show(F.ToString() +"," + g_qhigh.ToString()+"," + g_jLow.ToString()+"," + V.ToString());
+					
+					
+				}
 				
-				
+				g_qhighpercurrent=g_qhigh/g_jLow;
 
 			}
 
 	public: double calculateCost(double jLow, double qhighpercurrent)
 			{
 				calculateArea(jLow,qhighpercurrent);
+				if(!g_areaReal)
+				{
+					return 999999;
+				}
 				double VeffAvg=calculateVeffAvg(jLow,qhighpercurrent);
 				double pcost=powerCost(g_area,qhighpercurrent*jLow,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[g_k]*1000/g_power;
 				double ecost=energyCost(VeffAvg,g_DOD/100,1500,g_system)[g_k];
@@ -2677,13 +2736,25 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_qhighpercurrent=qhighpercurrent;
 				g_jLow=jLow;
 				g_qhigh=g_qhighpercurrent*g_jLow;
+				g_areaReal=true;
 				double h = 0.1;
 				double cost = calculateCost(g_jLow,g_qhighpercurrent);
-				
+				if(!g_areaReal)
+				{
+					return 0;
+				}
 				(x)-=(h);
 				double costB=calculateCost(g_jLow,g_qhighpercurrent);
+				if(!g_areaReal)
+				{
+					return 0;
+				}
 				(x)+=(2*h);
 				double costF=calculateCost(g_jLow,g_qhighpercurrent);
+				if(!g_areaReal)
+				{
+					return 0;
+				}
 				double D_xcost = (costF-costB)/(2*h);
 				double D_xxcost = (costF+costB-2*cost)/(h*h);
 				//testGrid->Rows->Add(cost,x-h,costB,costF);
@@ -3216,7 +3287,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 while (abs(delcost)>=0.0001)
 			 {
 
-
+				 MessageBox::Show("Cost: " + cost);
 				 g_qhighpercurrent-=D_xcostoverD_xxcost((g_qhighpercurrent),g_jLow,g_qhighpercurrent);
 
 
@@ -3225,6 +3296,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
+				 
 				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow));
 				 i++;
 			 }

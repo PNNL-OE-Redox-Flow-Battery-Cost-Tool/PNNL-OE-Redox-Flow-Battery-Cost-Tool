@@ -44,6 +44,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 g_k : Public
     Double g_power : Public
     Double g_ep : Public
+    Boolean g_areaReal : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
@@ -68,7 +69,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
     global_initialization(): PrivateScope, Public, HideBySig
     calculateArea(Double, Double): PrivateScope, Public, HideBySig
-    fixArea(Double, Double): PrivateScope, Public, HideBySig
+    fixArea(): PrivateScope, Public, HideBySig
     calculateCost(Double, Double): PrivateScope, Public, HideBySig
     D_xcostoverD_xxcost(Double&, Double, Double): PrivateScope, Public, HideBySig
     optimizeFlow(Double, Double, Double): PrivateScope, Public, HideBySig
