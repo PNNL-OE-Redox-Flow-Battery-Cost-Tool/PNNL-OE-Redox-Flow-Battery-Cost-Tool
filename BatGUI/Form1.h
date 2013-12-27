@@ -2615,6 +2615,17 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						MessageBox::Show("Fixing area!");
 						g_areaReal=false;
 						fixArea();
+						/*V=g_voltage(g_SOC,1,10e9,jLow,g_aspectratio,g_system,g_membrane);
+						g_area=g_reqpowerpercell/(10*jLow*V);
+						while(i<20)
+						{
+						V=g_voltage(g_SOC,1,10e9,jLow,g_aspectratio,g_system,g_membrane);
+						a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+						b=-10*jLow*V/sqrt(g_CE);
+						c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+						i++;
+						}*/
+
 						}
 
 					}
@@ -2678,7 +2689,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					D_qF = (F_f - F_b)/(2*hq);
 					D_qqF = (F_f+F_b-2*F)/(hq*hq);
-					g_qhigh-=D_qF/D_qqF;
+					//g_qhigh-=D_qF/D_qqF;
+					g_qhigh-=1.5*F/D_qF;
 
 					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,g_jLow,g_aspectratio,g_system,g_membrane);
 					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
@@ -2702,10 +2714,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					F_b=b*b-4*a*c;
 
 					D_jF = (F_f - F_b)/(2*hj);
-					D_jjF = (F_f + F_b - 2*F)/(hj*hj);
-					if(D_jjF!=0)
+					//D_jjF = (F_f + F_b - 2*F)/(hj*hj);
+					/*if(D_jjF!=0)
 					{
 					g_jLow-=0.1*D_jF/D_jjF;
+					}*/
+					if (D_jF>0)
+					{
+						g_jLow+=1;
+					}
+					else
+					{
+						g_jLow-=1;
 					}
 
 
@@ -2721,12 +2741,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double calculateCost(double jLow, double qhighpercurrent)
 			{
 				calculateArea(jLow,qhighpercurrent);
+
 				if(!g_areaReal)
 				{
-					return 999999;
+					return 999999+jLow+qhighpercurrent;
 				}
+
 				double VeffAvg=calculateVeffAvg(jLow,qhighpercurrent);
+
+
 				double pcost=powerCost(g_area,qhighpercurrent*jLow,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[g_k]*1000/g_power;
+				
+
 				double ecost=energyCost(VeffAvg,g_DOD/100,1500,g_system)[g_k];
 				double totcost=pcost/g_ep+ecost;
 				return totcost;
@@ -2739,11 +2765,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_areaReal=true;
 				double h = 0.1;
 				double cost = calculateCost(g_jLow,g_qhighpercurrent);
+
 				if(!g_areaReal)
 				{
 					return 0;
 				}
 				(x)-=(h);
+
 				double costB=calculateCost(g_jLow,g_qhighpercurrent);
 				if(!g_areaReal)
 				{
@@ -2751,12 +2779,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				}
 				(x)+=(2*h);
 				double costF=calculateCost(g_jLow,g_qhighpercurrent);
+
 				if(!g_areaReal)
 				{
 					return 0;
 				}
+
 				double D_xcost = (costF-costB)/(2*h);
 				double D_xxcost = (costF+costB-2*cost)/(h*h);
+				if(D_xxcost==0)
+				{
+					return 0;
+				}
 				//testGrid->Rows->Add(cost,x-h,costB,costF);
 				return (D_xcost/D_xxcost);
 			}
@@ -2774,10 +2808,19 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double D_flow2Veff;
 				while((!optFlow))
 				{
+
 						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+						while(V==0)
+						{
+							flow+=10;
+							V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+						}
+
 						powerproduced=V*j*g_area*10;
 						powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+					
 						VEff = V*(powerproduced-powerloss)/powerproduced;
+						VEff=0;
 						V=g_voltage(SOC,g_area,(flow+flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
 						powerproduced=V*j*g_area*10;
 						powerloss=pLoss(g_area,(flow+flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
@@ -2788,7 +2831,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						VEffB = V*(powerproduced-powerloss)/powerproduced;
 						D_flowVeff=(VEffF-VEffB)/(2*flowres);
 						D_flow2Veff=(VEffF+VEffB-2*VEff)/(flowres*flowres);
+						if(D_flow2Veff!=0)
+						{
 						flow-=(D_flowVeff/D_flow2Veff);
+						}
 						if(abs(D_flowVeff/D_flow2Veff)<=0.01)
 						{
 							optFlow=true;
@@ -2823,6 +2869,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double powerloss;
 				double D_jP;
 				double Pb;
+
 				while (SOC<= SOCHigh)
 				{
 					powerAttained=false;
@@ -2830,7 +2877,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 
 					{
+
 					flow=optimizeFlow(j,flow,SOC);
+
+
 					V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 					powerproduced=V*j*g_area*10;
 					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
@@ -2848,14 +2898,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						powerAttained=true;
 					}
 					}
+
 					i++;
 					VEffAvg+=VEff;
 					SOC+=delSOC;
 				}
+
 				VEffAvg/=i;
 				return VEffAvg;
 			}
- 	private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 	//This executes when the calculate button is clicked, this is the bulk of the program.
 
 	dataOutput->Rows->Clear();
@@ -3288,6 +3340,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 {
 
 				 MessageBox::Show("Cost: " + cost);
+
 				 g_qhighpercurrent-=D_xcostoverD_xxcost((g_qhighpercurrent),g_jLow,g_qhighpercurrent);
 
 
