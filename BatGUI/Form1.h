@@ -70,6 +70,7 @@ under the leadership of Dr. Imre Gyuk.*/
 #define NOMINMAX
 #include <math.h>
 #include <vector>
+#include <cliext/vector>
 #include <stdlib.h>
 #include <string.h>
 #include <msclr\marshal_cppstd.h>
@@ -258,12 +259,19 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column31;
 
 
 
+
+
+
+
+
 	public: static int c = 0;
+
 	public:
 		Form1(void)
 		{
 			InitializeComponent();//user defined function takes all the pieces of GUI that have been defined and assigns location and/or text values
 			InitializeCostParameters();
+	
 			//
 			//TODO: Add the constructor code here
 			//
@@ -361,6 +369,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column32 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Power = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->spaBox = (gcnew System::Windows::Forms::TextBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
@@ -459,8 +469,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column30 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column31 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column32 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Power = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -841,6 +849,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			this->Column29->HeaderText = L"Current (mA/cm^2)";
 			this->Column29->Name = L"Column29";
+			// 
+			// Column32
+			// 
+			this->Column32->HeaderText = L"VEff";
+			this->Column32->Name = L"Column32";
+			// 
+			// Power
+			// 
+			this->Power->HeaderText = L"Column33";
+			this->Power->Name = L"Power";
 			// 
 			// label23
 			// 
@@ -1793,7 +1811,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
-			this->dataGridViewTextBoxColumn2->HeaderText = L"SOC (%)";
+			this->dataGridViewTextBoxColumn2->HeaderText = L"Cost";
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			// 
 			// dataGridViewTextBoxColumn4
@@ -1808,23 +1826,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// Column30
 			// 
-			this->Column30->HeaderText = L"VEff";
+			this->Column30->HeaderText = L"DOD";
 			this->Column30->Name = L"Column30";
 			// 
 			// Column31
 			// 
 			this->Column31->HeaderText = L"Power";
 			this->Column31->Name = L"Column31";
-			// 
-			// Column32
-			// 
-			this->Column32->HeaderText = L"VEff";
-			this->Column32->Name = L"Column32";
-			// 
-			// Power
-			// 
-			this->Power->HeaderText = L"Column33";
-			this->Power->Name = L"Power";
 			// 
 			// Form1
 			// 
@@ -2151,9 +2159,22 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;
     double Irea=t*Inew/pat;
     double Irec=t*Inew/pct;
+
+	//new stuff//
+	/*double tCond=0.001;
+	pat=conductivity(SOC,25,0);
+	pct=conductivity(SOC,25,1);
+
+	pat=26.9380896227+SOC*6.633254717;
+	pct=27.9639185214+20.5748693826*SOC;
+	Irea=tCond*Inew/pat;
+    Irec=tCond*Inew/pct;*/
+
     if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
     {
+
     V = V2[i]-V1[i]+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
+
     }
     else
     {
@@ -2186,6 +2207,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		V=0;
 	}
 	double scaleV=1/*1.138*/;
+
     return V*scaleV;
 }
 	public: double g_voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane)
@@ -2543,8 +2565,99 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_power;
 	public: double g_ep;
 	public: bool g_areaReal;
+
+
+	public: double conductivity(double SOC, double T, int posneg)
+			{
+				vector<vector<double> > condDataA = fileRead("ConductivityVA.csv");
+				vector<vector<double> > condDataC = fileRead("ConductivityVC.csv");
+				vector<vector<vector<double> > > g_condMatrixA;
+				vector<double> g_condTA;
+				vector<vector<vector<double> > > g_condMatrixC;
+				vector<double> g_condTC;
+				int i = 0;
+				int j = 0;
+				vector<double> X1;
+				vector<vector<double> > YMatrix;
+
+				i=1;
+	while(i<condDataA[0].size())
+	{
+		X1.push_back(condDataA[0][i]);
+		i++;
+	}
+	i=1;
+	while(i<condDataA.size())
+	{
+		j=1;
+		g_condTA.push_back(condDataA[i][0]);
+		YMatrix.resize(YMatrix.size()+1);
+		while(j<condDataA[0].size())
+		{
+			YMatrix[i-1].push_back(condDataA[i][j]);
+			j++;
+		}
+		i++;
+	}
+	vector<vector<double> > VMatrix;
+	
+	i=0;
+	while(i<YMatrix.size())
+	{
+		VMatrix=populateSpline2V(X1,YMatrix[i]);
+		g_condMatrixA.push_back(VMatrix);
+		i++;
+	}
+
+	/***************/
+	X1.clear();
+	YMatrix.clear();
+	VMatrix.clear();
+		i=1;
+	while(i<condDataC[0].size())
+	{
+		X1.push_back(condDataC[0][i]);
+		i++;
+	}
+	i=1;
+	while(i<condDataC.size())
+	{
+		j=1;
+		g_condTC.push_back(condDataC[i][0]);
+		YMatrix.resize(YMatrix.size()+1);
+		while(j<condDataC[0].size())
+		{
+			YMatrix[i-1].push_back(condDataC[i][j]);
+			j++;
+		}
+		i++;
+	}
+	
+	i=0;
+	while(i<YMatrix.size())
+	{
+		VMatrix=populateSpline2V(X1,YMatrix[i]);
+		g_condMatrixC.push_back(VMatrix);
+		i++;
+	}
+
+				if (posneg==0)
+				{
+				return interpolate2dSpline(g_condMatrixA,g_condTA,SOC,T);
+				}
+				if (posneg==1)
+				{
+					return interpolate2dSpline(g_condMatrixC,g_condTC,SOC,T);
+				}
+				else
+				{
+					return 0;
+				}
+			}
 	public: void global_initialization()
 			{
+				
+
 				//temp
 				g_k=2;
 				g_jLow=Convert::ToDouble(testCurrent->Text);
@@ -2597,24 +2710,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					if((4*a*c)>(b*b))
 					{
-						if(V==0)
+						while(V==0)
 						{
-							while((4*a*c)>(b*b))
-							{
+							//while((4*a*c)>(b*b)){
 								qhigh+=100;
 								V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
-								a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
+							/*	a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 								b=-10*jLow*V/sqrt(g_CE);
 								c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 
-							}
+							}*/
 							g_qhighpercurrent=qhigh/jLow;
 						}
-						else
-						{
-						MessageBox::Show("Fixing area!");
+						//MessageBox::Show("Fixing area!");
 						g_areaReal=false;
 						fixArea();
+						i=20;
+
 						/*V=g_voltage(g_SOC,1,10e9,jLow,g_aspectratio,g_system,g_membrane);
 						g_area=g_reqpowerpercell/(10*jLow*V);
 						while(i<20)
@@ -2626,11 +2738,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						i++;
 						}*/
 
-						}
-
 					}
-					
+					else
+					{
 					g_area=(-b-sqrt(b*b-4*a*c))/(2*a);
+					}
 					i++;
 
 				}
@@ -2729,7 +2841,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					}
 
 
-					MessageBox::Show(F.ToString() +"," + g_qhigh.ToString()+"," + g_jLow.ToString()+"," + V.ToString());
+					//MessageBox::Show(F.ToString() +"," + g_qhigh.ToString()+"," + g_jLow.ToString()+"," + V.ToString());
 					
 					
 				}
@@ -3334,23 +3446,24 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 g_qhighpercurrent=g_qhigh/g_jLow;
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
+			 double gamma=0.5;
 
-
-			 while (abs(delcost)>=0.0001)
+			 while (abs(delcost)>=0.01)
 			 {
 
-				 MessageBox::Show("Cost: " + cost);
+				 //MessageBox::Show("Cost: " + cost);
 
-				 g_qhighpercurrent-=D_xcostoverD_xxcost((g_qhighpercurrent),g_jLow,g_qhighpercurrent);
+				 g_qhighpercurrent-=gamma*D_xcostoverD_xxcost((g_qhighpercurrent),g_jLow,g_qhighpercurrent);
 
 
-				 g_jLow-=D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
+				 g_jLow-=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
 
+				 g_DOD-=1*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
 
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
 				 
-				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow));
+				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD);
 				 i++;
 			 }
 			 testBox->Text=cost.ToString();
