@@ -254,6 +254,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column30;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column31;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column33;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column34;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column35;
 
 
 
@@ -451,6 +454,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->testGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column30 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column31 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->testVEff = (gcnew System::Windows::Forms::TextBox());
 			this->testPowerOrig = (gcnew System::Windows::Forms::TextBox());
@@ -464,11 +472,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column30 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column31 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column33 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column34 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column35 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -1694,12 +1700,38 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// testGrid
 			// 
 			this->testGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->testGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->dataGridViewTextBoxColumn2, 
-				this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn3, this->Column30, this->Column31});
+			this->testGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->dataGridViewTextBoxColumn2, 
+				this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn3, this->Column30, this->Column31, this->Column33, this->Column34, 
+				this->Column35});
 			this->testGrid->Location = System::Drawing::Point(269, 192);
 			this->testGrid->Name = L"testGrid";
-			this->testGrid->Size = System::Drawing::Size(450, 182);
+			this->testGrid->Size = System::Drawing::Size(587, 182);
 			this->testGrid->TabIndex = 57;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this->dataGridViewTextBoxColumn2->HeaderText = L"Cost";
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this->dataGridViewTextBoxColumn4->HeaderText = L"Current (mA/cm^2)";
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this->dataGridViewTextBoxColumn3->HeaderText = L"Flow rate (ml/min/cell)";
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			// 
+			// Column30
+			// 
+			this->Column30->HeaderText = L"DOD";
+			this->Column30->Name = L"Column30";
+			// 
+			// Column31
+			// 
+			this->Column31->HeaderText = L"Power";
+			this->Column31->Name = L"Column31";
 			// 
 			// label29
 			// 
@@ -1809,30 +1841,20 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
-			// dataGridViewTextBoxColumn2
+			// Column33
 			// 
-			this->dataGridViewTextBoxColumn2->HeaderText = L"Cost";
-			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->Column33->HeaderText = L"Power Cost";
+			this->Column33->Name = L"Column33";
 			// 
-			// dataGridViewTextBoxColumn4
+			// Column34
 			// 
-			this->dataGridViewTextBoxColumn4->HeaderText = L"Current (mA/cm^2)";
-			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			this->Column34->HeaderText = L"Energy Cost";
+			this->Column34->Name = L"Column34";
 			// 
-			// dataGridViewTextBoxColumn3
+			// Column35
 			// 
-			this->dataGridViewTextBoxColumn3->HeaderText = L"Flow rate (ml/min/cell)";
-			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
-			// 
-			// Column30
-			// 
-			this->Column30->HeaderText = L"DOD";
-			this->Column30->Name = L"Column30";
-			// 
-			// Column31
-			// 
-			this->Column31->HeaderText = L"Power";
-			this->Column31->Name = L"Column31";
+			this->Column35->HeaderText = L"VEffAvg";
+			this->Column35->Name = L"Column35";
 			// 
 			// Form1
 			// 
@@ -2565,6 +2587,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_power;
 	public: double g_ep;
 	public: bool g_areaReal;
+	public: double g_VEffAvg;
+	public: double g_pCost;
+	public: double g_eCost;
 
 
 	public: double conductivity(double SOC, double T, int posneg)
@@ -2862,10 +2887,14 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double VeffAvg=calculateVeffAvg(jLow,qhighpercurrent);
 
 
-				double pcost=powerCost(g_area,qhighpercurrent*jLow,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[g_k]*1000/g_power;
+				double pcost=powerCost(g_area,qhighpercurrent*jLow*g_area,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[g_k]*1000/g_power;
 				
 
 				double ecost=energyCost(VeffAvg,g_DOD/100,1500,g_system)[g_k];
+				g_VEffAvg=VeffAvg;
+				g_pCost=pcost;
+				g_eCost=ecost;
+
 				double totcost=pcost/g_ep+ecost;
 				return totcost;
 			}
@@ -3447,8 +3476,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
 			 double gamma=0.5;
-
-			 while (abs(delcost)>=0.01)
+			 while ((abs(delcost)>=0.01) && (i<10))
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
@@ -3458,12 +3486,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 				 g_jLow-=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
 
-				 g_DOD-=1*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
+				 g_DOD-=2*gamma*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
 
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
 				 
-				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD);
+				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD,g_area,g_pCost,g_eCost,g_VEffAvg);
 				 i++;
 			 }
 			 testBox->Text=cost.ToString();
