@@ -69,6 +69,7 @@ under the leadership of Dr. Imre Gyuk.*/
 #pragma once
 #define NOMINMAX
 #include <math.h>
+#include <algorithm> 
 #include <vector>
 #include <cliext/vector>
 #include <stdlib.h>
@@ -257,6 +258,39 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column31;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column33;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column34;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column35;
+private: System::Windows::Forms::Panel^  panel7;
+
+private: System::Windows::Forms::Label^  label31;
+private: System::Windows::Forms::Label^  label30;
+private: System::Windows::Forms::TextBox^  currentMinBox;
+private: System::Windows::Forms::TextBox^  currentMaxBox;
+private: System::Windows::Forms::TextBox^  currentValueBox;
+private: System::Windows::Forms::CheckBox^  optCurrentBox;
+private: System::Windows::Forms::Label^  label34;
+private: System::Windows::Forms::Label^  label33;
+private: System::Windows::Forms::TextBox^  DODMinBox;
+
+private: System::Windows::Forms::TextBox^  DODMaxBox;
+
+private: System::Windows::Forms::TextBox^  DODValueBox;
+private: System::Windows::Forms::CheckBox^  optDODBox;
+
+
+private: System::Windows::Forms::Label^  label32;
+private: System::Windows::Forms::TextBox^  flowMinBox;
+
+private: System::Windows::Forms::TextBox^  flowMaxBox;
+
+private: System::Windows::Forms::TextBox^  flowValueBox;
+private: System::Windows::Forms::CheckBox^  optFlowBox;
+
+
+private: System::Windows::Forms::Label^  label35;
+private: System::Windows::Forms::TextBox^  ARMinBox;
+private: System::Windows::Forms::TextBox^  ARMaxBox;
+private: System::Windows::Forms::TextBox^  ARValueBox;
+private: System::Windows::Forms::CheckBox^  optARBox;
+private: System::Windows::Forms::Label^  label36;
 
 
 
@@ -368,6 +402,26 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->flowMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->flowMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->flowValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optFlowBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->DODMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->DODMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->DODValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optDODBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->currentMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->currentMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->currentValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optCurrentBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -459,6 +513,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column30 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column31 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column33 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column34 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column35 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->testVEff = (gcnew System::Windows::Forms::TextBox());
 			this->testPowerOrig = (gcnew System::Windows::Forms::TextBox());
@@ -471,10 +528,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->Column33 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column34 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column35 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ARMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->ARMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->ARValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optARBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label36 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -487,6 +545,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->BeginInit();
 			this->tabPage1->SuspendLayout();
+			this->panel7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
 			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
@@ -783,6 +842,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->panel7);
+			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->OutputGrid);
 			this->tabPage1->Controls->Add(this->label23);
 			this->tabPage1->Controls->Add(this->spaBox);
@@ -831,12 +892,227 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// panel7
+			// 
+			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel7->Controls->Add(this->ARMinBox);
+			this->panel7->Controls->Add(this->ARMaxBox);
+			this->panel7->Controls->Add(this->ARValueBox);
+			this->panel7->Controls->Add(this->optARBox);
+			this->panel7->Controls->Add(this->label36);
+			this->panel7->Controls->Add(this->flowMinBox);
+			this->panel7->Controls->Add(this->flowMaxBox);
+			this->panel7->Controls->Add(this->flowValueBox);
+			this->panel7->Controls->Add(this->optFlowBox);
+			this->panel7->Controls->Add(this->label35);
+			this->panel7->Controls->Add(this->DODMinBox);
+			this->panel7->Controls->Add(this->DODMaxBox);
+			this->panel7->Controls->Add(this->DODValueBox);
+			this->panel7->Controls->Add(this->optDODBox);
+			this->panel7->Controls->Add(this->label32);
+			this->panel7->Controls->Add(this->currentMinBox);
+			this->panel7->Controls->Add(this->currentMaxBox);
+			this->panel7->Controls->Add(this->currentValueBox);
+			this->panel7->Controls->Add(this->optCurrentBox);
+			this->panel7->Controls->Add(this->label34);
+			this->panel7->Controls->Add(this->label33);
+			this->panel7->Controls->Add(this->label31);
+			this->panel7->Controls->Add(this->label30);
+			this->panel7->Location = System::Drawing::Point(3, 157);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(457, 146);
+			this->panel7->TabIndex = 57;
+			// 
+			// flowMinBox
+			// 
+			this->flowMinBox->Location = System::Drawing::Point(389, 50);
+			this->flowMinBox->Name = L"flowMinBox";
+			this->flowMinBox->Size = System::Drawing::Size(58, 20);
+			this->flowMinBox->TabIndex = 30;
+			this->flowMinBox->Text = L"0";
+			// 
+			// flowMaxBox
+			// 
+			this->flowMaxBox->Location = System::Drawing::Point(313, 50);
+			this->flowMaxBox->Name = L"flowMaxBox";
+			this->flowMaxBox->Size = System::Drawing::Size(58, 20);
+			this->flowMaxBox->TabIndex = 29;
+			this->flowMaxBox->Text = L"1000";
+			// 
+			// flowValueBox
+			// 
+			this->flowValueBox->Location = System::Drawing::Point(164, 49);
+			this->flowValueBox->Name = L"flowValueBox";
+			this->flowValueBox->Size = System::Drawing::Size(58, 20);
+			this->flowValueBox->TabIndex = 28;
+			this->flowValueBox->Text = L"5";
+			// 
+			// optFlowBox
+			// 
+			this->optFlowBox->AutoSize = true;
+			this->optFlowBox->Checked = true;
+			this->optFlowBox->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->optFlowBox->Location = System::Drawing::Point(230, 52);
+			this->optFlowBox->Name = L"optFlowBox";
+			this->optFlowBox->Size = System::Drawing::Size(66, 17);
+			this->optFlowBox->TabIndex = 27;
+			this->optFlowBox->Text = L"Optimize";
+			this->optFlowBox->UseVisualStyleBackColor = true;
+			this->optFlowBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optFlowBox_CheckedChanged);
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(6, 53);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(153, 13);
+			this->label35->TabIndex = 26;
+			this->label35->Text = L"Low SOC Flow Rate (ml/min-A)";
+			// 
+			// DODMinBox
+			// 
+			this->DODMinBox->Location = System::Drawing::Point(389, 78);
+			this->DODMinBox->Name = L"DODMinBox";
+			this->DODMinBox->Size = System::Drawing::Size(58, 20);
+			this->DODMinBox->TabIndex = 25;
+			this->DODMinBox->Text = L"0";
+			// 
+			// DODMaxBox
+			// 
+			this->DODMaxBox->Location = System::Drawing::Point(313, 78);
+			this->DODMaxBox->Name = L"DODMaxBox";
+			this->DODMaxBox->Size = System::Drawing::Size(58, 20);
+			this->DODMaxBox->TabIndex = 24;
+			this->DODMaxBox->Text = L"100";
+			// 
+			// DODValueBox
+			// 
+			this->DODValueBox->Location = System::Drawing::Point(164, 78);
+			this->DODValueBox->Name = L"DODValueBox";
+			this->DODValueBox->Size = System::Drawing::Size(58, 20);
+			this->DODValueBox->TabIndex = 23;
+			this->DODValueBox->Text = L"70";
+			// 
+			// optDODBox
+			// 
+			this->optDODBox->AutoSize = true;
+			this->optDODBox->Checked = true;
+			this->optDODBox->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->optDODBox->Location = System::Drawing::Point(230, 80);
+			this->optDODBox->Name = L"optDODBox";
+			this->optDODBox->Size = System::Drawing::Size(66, 17);
+			this->optDODBox->TabIndex = 22;
+			this->optDODBox->Text = L"Optimize";
+			this->optDODBox->UseVisualStyleBackColor = true;
+			this->optDODBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optDODBox_CheckedChanged);
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(79, 81);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(81, 13);
+			this->label32->TabIndex = 21;
+			this->label32->Text = L"SOC Range (%)";
+			// 
+			// currentMinBox
+			// 
+			this->currentMinBox->Location = System::Drawing::Point(389, 25);
+			this->currentMinBox->Name = L"currentMinBox";
+			this->currentMinBox->Size = System::Drawing::Size(58, 20);
+			this->currentMinBox->TabIndex = 20;
+			this->currentMinBox->Text = L"50";
+			// 
+			// currentMaxBox
+			// 
+			this->currentMaxBox->Location = System::Drawing::Point(313, 25);
+			this->currentMaxBox->Name = L"currentMaxBox";
+			this->currentMaxBox->Size = System::Drawing::Size(58, 20);
+			this->currentMaxBox->TabIndex = 19;
+			this->currentMaxBox->Text = L"275";
+			// 
+			// currentValueBox
+			// 
+			this->currentValueBox->Location = System::Drawing::Point(164, 23);
+			this->currentValueBox->Name = L"currentValueBox";
+			this->currentValueBox->Size = System::Drawing::Size(58, 20);
+			this->currentValueBox->TabIndex = 18;
+			this->currentValueBox->Text = L"100";
+			// 
+			// optCurrentBox
+			// 
+			this->optCurrentBox->AutoSize = true;
+			this->optCurrentBox->Checked = true;
+			this->optCurrentBox->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->optCurrentBox->Location = System::Drawing::Point(230, 27);
+			this->optCurrentBox->Name = L"optCurrentBox";
+			this->optCurrentBox->Size = System::Drawing::Size(66, 17);
+			this->optCurrentBox->TabIndex = 17;
+			this->optCurrentBox->Text = L"Optimize";
+			this->optCurrentBox->UseVisualStyleBackColor = true;
+			this->optCurrentBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optCurrentBox_CheckedChanged);
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label34->Location = System::Drawing::Point(399, 0);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(30, 17);
+			this->label34->TabIndex = 16;
+			this->label34->Text = L"Min";
+			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label33->Location = System::Drawing::Point(327, 0);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(33, 17);
+			this->label33->TabIndex = 15;
+			this->label33->Text = L"Max";
+			this->label33->Click += gcnew System::EventHandler(this, &Form1::label33_Click);
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(14, 28);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(144, 13);
+			this->label31->TabIndex = 13;
+			this->label31->Text = L"Low SOC Current (mA/cm^2)";
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label30->Location = System::Drawing::Point(2, 0);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(81, 17);
+			this->label30->TabIndex = 12;
+			this->label30->Text = L"Parameters";
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(753, 202);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(125, 30);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Calculate";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
 			// OutputGrid
 			// 
 			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->Column27, 
 				this->Column28, this->Column29, this->Column32, this->Power});
-			this->OutputGrid->Location = System::Drawing::Point(70, 507);
+			this->OutputGrid->Location = System::Drawing::Point(503, 558);
 			this->OutputGrid->Name = L"OutputGrid";
 			this->OutputGrid->Size = System::Drawing::Size(352, 182);
 			this->OutputGrid->TabIndex = 56;
@@ -905,7 +1181,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label81->AutoSize = true;
 			this->label81->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label81->Location = System::Drawing::Point(119, 434);
+			this->label81->Location = System::Drawing::Point(128, 592);
 			this->label81->Name = L"label81";
 			this->label81->Size = System::Drawing::Size(67, 17);
 			this->label81->TabIndex = 51;
@@ -913,7 +1189,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// electronBox
 			// 
-			this->electronBox->Location = System::Drawing::Point(192, 434);
+			this->electronBox->Location = System::Drawing::Point(201, 592);
 			this->electronBox->Name = L"electronBox";
 			this->electronBox->Size = System::Drawing::Size(50, 20);
 			this->electronBox->TabIndex = 50;
@@ -921,7 +1197,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// LiVoltageBox
 			// 
-			this->LiVoltageBox->Location = System::Drawing::Point(194, 408);
+			this->LiVoltageBox->Location = System::Drawing::Point(203, 566);
 			this->LiVoltageBox->Name = L"LiVoltageBox";
 			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
 			this->LiVoltageBox->TabIndex = 48;
@@ -929,7 +1205,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// flowCapBox
 			// 
-			this->flowCapBox->Location = System::Drawing::Point(194, 382);
+			this->flowCapBox->Location = System::Drawing::Point(203, 540);
 			this->flowCapBox->Name = L"flowCapBox";
 			this->flowCapBox->Size = System::Drawing::Size(50, 20);
 			this->flowCapBox->TabIndex = 46;
@@ -937,7 +1213,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// channelSepBox
 			// 
-			this->channelSepBox->Location = System::Drawing::Point(101, 344);
+			this->channelSepBox->Location = System::Drawing::Point(97, 512);
 			this->channelSepBox->Name = L"channelSepBox";
 			this->channelSepBox->Size = System::Drawing::Size(50, 20);
 			this->channelSepBox->TabIndex = 43;
@@ -945,11 +1221,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// aspectRatioBox
 			// 
-			this->aspectRatioBox->Location = System::Drawing::Point(101, 295);
+			this->aspectRatioBox->Location = System::Drawing::Point(97, 463);
 			this->aspectRatioBox->Name = L"aspectRatioBox";
 			this->aspectRatioBox->Size = System::Drawing::Size(50, 20);
 			this->aspectRatioBox->TabIndex = 40;
 			this->aspectRatioBox->Text = L"1";
+			this->aspectRatioBox->Visible = false;
 			// 
 			// FOWBox
 			// 
@@ -1020,7 +1297,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label51->AutoSize = true;
 			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label51->Location = System::Drawing::Point(-1, 409);
+			this->label51->Location = System::Drawing::Point(8, 567);
 			this->label51->Name = L"label51";
 			this->label51->Size = System::Drawing::Size(189, 17);
 			this->label51->TabIndex = 49;
@@ -1031,7 +1308,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label90->AutoSize = true;
 			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(5, 383);
+			this->label90->Location = System::Drawing::Point(14, 541);
 			this->label90->Name = L"label90";
 			this->label90->Size = System::Drawing::Size(183, 17);
 			this->label90->TabIndex = 47;
@@ -1042,7 +1319,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label89->AutoSize = true;
 			this->label89->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label89->Location = System::Drawing::Point(7, 345);
+			this->label89->Location = System::Drawing::Point(3, 513);
 			this->label89->Name = L"label89";
 			this->label89->Size = System::Drawing::Size(89, 17);
 			this->label89->TabIndex = 44;
@@ -1053,7 +1330,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->interdigBox->AutoSize = true;
 			this->interdigBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->interdigBox->Location = System::Drawing::Point(9, 321);
+			this->interdigBox->Location = System::Drawing::Point(5, 489);
 			this->interdigBox->Name = L"interdigBox";
 			this->interdigBox->Size = System::Drawing::Size(109, 21);
 			this->interdigBox->TabIndex = 42;
@@ -1065,11 +1342,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label84->AutoSize = true;
 			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label84->Location = System::Drawing::Point(7, 296);
+			this->label84->Location = System::Drawing::Point(3, 464);
 			this->label84->Name = L"label84";
 			this->label84->Size = System::Drawing::Size(88, 17);
 			this->label84->TabIndex = 41;
 			this->label84->Text = L"Aspect Ratio";
+			this->label84->Visible = false;
 			// 
 			// label21
 			// 
@@ -1139,7 +1417,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel6->Controls->Add(this->label15);
 			this->panel6->Controls->Add(this->flowBox);
 			this->panel6->Controls->Add(this->label9);
-			this->panel6->Location = System::Drawing::Point(213, 236);
+			this->panel6->Location = System::Drawing::Point(3, 630);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(278, 49);
 			this->panel6->TabIndex = 23;
@@ -1217,7 +1495,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel4->Controls->Add(this->constcurrent);
 			this->panel4->Controls->Add(this->constpower);
-			this->panel4->Location = System::Drawing::Point(3, 235);
+			this->panel4->Location = System::Drawing::Point(0, 401);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(139, 50);
 			this->panel4->TabIndex = 21;
@@ -1448,21 +1726,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			this->progressBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->progressBar->Location = System::Drawing::Point(753, 201);
+			this->progressBar->Location = System::Drawing::Point(730, 472);
 			this->progressBar->Name = L"progressBar";
 			this->progressBar->Size = System::Drawing::Size(125, 28);
 			this->progressBar->TabIndex = 3;
+			this->progressBar->Visible = false;
 			// 
 			// calculate
 			// 
 			this->calculate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->calculate->Location = System::Drawing::Point(753, 236);
+			this->calculate->Location = System::Drawing::Point(730, 506);
 			this->calculate->Name = L"calculate";
 			this->calculate->Size = System::Drawing::Size(125, 30);
 			this->calculate->TabIndex = 0;
 			this->calculate->Text = L"Calculate!";
 			this->calculate->UseVisualStyleBackColor = true;
+			this->calculate->Visible = false;
 			this->calculate->Click += gcnew System::EventHandler(this, &Form1::calculate_Click);
 			// 
 			// panel2
@@ -1479,10 +1759,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel2->Controls->Add(this->jLowBox);
 			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->panel2->Location = System::Drawing::Point(3, 148);
+			this->panel2->Location = System::Drawing::Point(3, 314);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(310, 81);
 			this->panel2->TabIndex = 11;
+			this->panel2->Visible = false;
 			// 
 			// label14
 			// 
@@ -1494,6 +1775,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label14->Size = System::Drawing::Size(58, 17);
 			this->label14->TabIndex = 26;
 			this->label14->Text = L"mA/cm2";
+			this->label14->Visible = false;
 			// 
 			// label13
 			// 
@@ -1505,6 +1787,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label13->Size = System::Drawing::Size(58, 17);
 			this->label13->TabIndex = 25;
 			this->label13->Text = L"mA/cm2";
+			this->label13->Visible = false;
 			// 
 			// label12
 			// 
@@ -1516,6 +1799,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label12->Size = System::Drawing::Size(20, 17);
 			this->label12->TabIndex = 24;
 			this->label12->Text = L"%";
+			this->label12->Visible = false;
 			// 
 			// label3
 			// 
@@ -1527,6 +1811,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label3->Size = System::Drawing::Size(130, 17);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"Depth of Discharge";
+			this->label3->Visible = false;
 			// 
 			// DODBox
 			// 
@@ -1538,6 +1823,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->DODBox->Size = System::Drawing::Size(45, 23);
 			this->DODBox->TabIndex = 8;
 			this->DODBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {70, 0, 0, 0});
+			this->DODBox->Visible = false;
 			// 
 			// label2
 			// 
@@ -1547,6 +1833,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label2->Size = System::Drawing::Size(152, 17);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Min current at low SOC";
+			this->label2->Visible = false;
 			// 
 			// label1
 			// 
@@ -1558,6 +1845,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label1->Size = System::Drawing::Size(155, 17);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Max current at low SOC";
+			this->label1->Visible = false;
 			// 
 			// jHighBox
 			// 
@@ -1570,6 +1858,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->jHighBox->Size = System::Drawing::Size(45, 23);
 			this->jHighBox->TabIndex = 5;
 			this->jHighBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
+			this->jHighBox->Visible = false;
 			this->jHighBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jHighBox_ValueChanged);
 			// 
 			// jLowBox
@@ -1583,6 +1872,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->jLowBox->Size = System::Drawing::Size(45, 23);
 			this->jLowBox->TabIndex = 4;
 			this->jLowBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {100, 0, 0, 0});
+			this->jLowBox->Visible = false;
 			this->jLowBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jLowBox_ValueChanged);
 			// 
 			// panel1
@@ -1688,7 +1978,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage4->Controls->Add(this->label25);
 			this->tabPage4->Controls->Add(this->label24);
 			this->tabPage4->Controls->Add(this->testBox);
-			this->tabPage4->Controls->Add(this->button1);
 			this->tabPage4->Location = System::Drawing::Point(4, 22);
 			this->tabPage4->Name = L"tabPage4";
 			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
@@ -1732,6 +2021,21 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			this->Column31->HeaderText = L"Power";
 			this->Column31->Name = L"Column31";
+			// 
+			// Column33
+			// 
+			this->Column33->HeaderText = L"Power Cost";
+			this->Column33->Name = L"Column33";
+			// 
+			// Column34
+			// 
+			this->Column34->HeaderText = L"Energy Cost";
+			this->Column34->Name = L"Column34";
+			// 
+			// Column35
+			// 
+			this->Column35->HeaderText = L"VEffAvg";
+			this->Column35->Name = L"Column35";
 			// 
 			// label29
 			// 
@@ -1831,30 +2135,51 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
-			// button1
+			// ARMinBox
 			// 
-			this->button1->Location = System::Drawing::Point(28, 22);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Test";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			this->ARMinBox->Location = System::Drawing::Point(389, 103);
+			this->ARMinBox->Name = L"ARMinBox";
+			this->ARMinBox->ReadOnly = true;
+			this->ARMinBox->Size = System::Drawing::Size(58, 20);
+			this->ARMinBox->TabIndex = 35;
+			this->ARMinBox->Text = L"0.25";
 			// 
-			// Column33
+			// ARMaxBox
 			// 
-			this->Column33->HeaderText = L"Power Cost";
-			this->Column33->Name = L"Column33";
+			this->ARMaxBox->Location = System::Drawing::Point(313, 103);
+			this->ARMaxBox->Name = L"ARMaxBox";
+			this->ARMaxBox->ReadOnly = true;
+			this->ARMaxBox->Size = System::Drawing::Size(58, 20);
+			this->ARMaxBox->TabIndex = 34;
+			this->ARMaxBox->Text = L"4";
 			// 
-			// Column34
+			// ARValueBox
 			// 
-			this->Column34->HeaderText = L"Energy Cost";
-			this->Column34->Name = L"Column34";
+			this->ARValueBox->Location = System::Drawing::Point(164, 103);
+			this->ARValueBox->Name = L"ARValueBox";
+			this->ARValueBox->Size = System::Drawing::Size(58, 20);
+			this->ARValueBox->TabIndex = 33;
+			this->ARValueBox->Text = L"1";
 			// 
-			// Column35
+			// optARBox
 			// 
-			this->Column35->HeaderText = L"VEffAvg";
-			this->Column35->Name = L"Column35";
+			this->optARBox->AutoSize = true;
+			this->optARBox->Location = System::Drawing::Point(230, 105);
+			this->optARBox->Name = L"optARBox";
+			this->optARBox->Size = System::Drawing::Size(66, 17);
+			this->optARBox->TabIndex = 32;
+			this->optARBox->Text = L"Optimize";
+			this->optARBox->UseVisualStyleBackColor = true;
+			this->optARBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optARBox_CheckedChanged);
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Location = System::Drawing::Point(25, 105);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(136, 13);
+			this->label36->TabIndex = 31;
+			this->label36->Text = L"Aspect Ratio (width/height)";
 			// 
 			// Form1
 			// 
@@ -1878,6 +2203,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->panel7->ResumeLayout(false);
+			this->panel7->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
@@ -2522,8 +2849,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 }
 	public: double pLoss(double area, double flow,double aspectratio, double cwidth, double cdepth,int channels)
 { //calculates power loss due to pressure drop in cell in W
-    double width = sqrt(area/aspectratio); //cell width m
-    double height = width*aspectratio;
+    double width = sqrt(area*aspectratio); //cell width m
+    double height = width/aspectratio;
 	double Dh=2*cdepth*cwidth/(cdepth+cwidth);
 	double carea=cdepth*cwidth;
     double Q = flow/(60*1000*1000); // m^3/s
@@ -2531,14 +2858,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double visc = 6.60E-03;
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
 	double t = 0.004*tScaleFactor;
+	double segments = ceil(width/Convert::ToDouble(channelSepBox->Text));
 	double Pdrop=0;
 	if(interdigBox->Checked)
 	{
-		Pdrop=(Q/(t*width))*visc*width/K+32*width*Q*visc/(carea*Dh*Dh*channels);
+		Pdrop=(Q/(t*height))*visc*width/K/segments+32*width*Q*visc/(carea*Dh*Dh*channels);
 	}
 	else
 	{
-		Pdrop=(Q/(t*width))*visc*width/K+2*32*width*Q*visc/(carea*Dh*Dh*channels);
+		Pdrop=(Q/(t*width))*visc*height/K+2*32*width*Q*visc/(carea*Dh*Dh*channels);
 	}
   
 	
@@ -2773,7 +3101,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				}
 				double power = V*10*g_jLow*g_area/sqrt(0.98) - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 				testPowerNew->Text=power.ToString();
-			}
+			
+}
 	public: void fixArea()
 			{
 				double g_qhigh = g_qhighpercurrent*g_jLow;
@@ -3468,11 +3797,32 @@ private: System::Void jLowBox_ValueChanged(System::Object^  sender, System::Even
 private: System::Void dataOutput_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 dataOutput->Rows->Clear();
+			 bestTable->Rows->Clear();
 			 global_initialization();
 			 int i = 0;
-			 g_qhigh=Convert::ToDouble(testFlow->Text);
-			 g_jLow=Convert::ToDouble(testCurrent->Text);
-			 g_qhighpercurrent=g_qhigh/g_jLow;
+
+			 g_jLow=Convert::ToDouble(currentValueBox->Text);
+			 bool jLowOpt=(optCurrentBox->Checked);
+			 double jLowMax=Convert::ToDouble(currentMaxBox->Text);
+			 double jLowMin=Convert::ToDouble(currentMinBox->Text);
+
+			 g_qhighpercurrent=Convert::ToDouble(flowValueBox->Text)*100*100/1000;
+			 g_qhigh=g_qhighpercurrent*g_jLow;
+			 bool flowOpt=(optFlowBox->Checked);
+			 double flowMax=Convert::ToDouble(flowMaxBox->Text);
+			 double flowMin=Convert::ToDouble(flowMinBox->Text);
+
+			 g_DOD=Convert::ToDouble(DODValueBox->Text);
+			 bool DODOpt=(optDODBox->Checked);
+			 double DODMax=Convert::ToDouble(DODMaxBox->Text);
+			 double DODMin=Convert::ToDouble(DODMinBox->Text);
+
+			 g_aspectratio=Convert::ToDouble(ARValueBox->Text);
+			 bool AROpt=(optARBox->Checked);
+			 double ARMax=Convert::ToDouble(ARMaxBox->Text);
+			 double ARMin=Convert::ToDouble(ARMinBox->Text);
+
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
 			 double gamma=0.5;
@@ -3480,13 +3830,31 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
-
+				 if(flowOpt)
+				 {
 				 g_qhighpercurrent-=gamma*D_xcostoverD_xxcost((g_qhighpercurrent),g_jLow,g_qhighpercurrent);
-
-
+				 if(g_qhighpercurrent>flowMax){g_qhighpercurrent=flowMax;}
+				 if(g_qhighpercurrent<flowMin){g_qhighpercurrent=flowMin;}
+				 }
+				 if(jLowOpt)
+				 {
 				 g_jLow-=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
-
+				 if(g_jLow>jLowMax){g_jLow=jLowMax;}
+				 if(g_jLow<jLowMin){g_jLow=jLowMin;}
+				 }
+				 if(DODOpt)
+				 {
 				 g_DOD-=2*gamma*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
+				 if(g_DOD>DODMax){g_DOD=DODMax;}
+				 if(g_DOD<DODMin){g_DOD=DODMin;}
+				 }
+				 if(AROpt)
+				 {
+				 g_aspectratio-=2*gamma*D_xcostoverD_xxcost((g_aspectratio),g_jLow,g_qhighpercurrent);
+				 if(g_aspectratio>ARMax){g_aspectratio=ARMax;}
+				 if(g_aspectratio<ARMin){g_aspectratio=ARMin;}
+				 }
+
 
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
@@ -3494,7 +3862,79 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD,g_area,g_pCost,g_eCost,g_VEffAvg);
 				 i++;
 			 }
-			 testBox->Text=cost.ToString();
+			 double finalECost[3];
+			 double finalPCost[3];
+			 double finalTCost[3];
+			 int k=0;
+			 while(k<3)
+			 {
+				 finalPCost[k]=powerCost(g_area,g_qhighpercurrent*g_jLow*g_area,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[k]*1000/g_power;
+				 finalECost[k]=energyCost(g_VEffAvg,g_DOD/100,1500,g_system)[k];
+				 finalTCost[k]=finalECost[k]+finalPCost[k]/g_ep;
+				 k++;
+			 }
+			 bestTable->Rows->Add("Total $/kWh",finalTCost[2].ToString("C"),finalTCost[1].ToString("C"),finalTCost[0].ToString("C"));
+			 bestTable->Rows->Add("Energy $/kWh",finalECost[2].ToString("C"),finalECost[1].ToString("C"),finalECost[0].ToString("C"));
+			 bestTable->Rows->Add("Power $/kW",finalPCost[2].ToString("C"),finalPCost[1].ToString("C"),finalPCost[0].ToString("C"));
+			 bestTable->Rows->Add("Current mA/cm^2",g_jLow.ToString("F1"));
+			 bestTable->Rows->Add("Flow ml/min-A",(g_qhighpercurrent*1000/(100*100)).ToString("F1"));
+			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F1"));
+			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F1"));
+
+		 }
+private: System::Void label33_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void optCurrentBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if (optCurrentBox->Checked)
+			 {
+				 currentMaxBox->ReadOnly=false;
+				 currentMinBox->ReadOnly=false;
+			 }
+			 else
+			 {
+				 currentMaxBox->ReadOnly=true;
+				 currentMinBox->ReadOnly=true;
+			 }
+		 }
+
+
+private: System::Void optDODBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 			 if (optDODBox->Checked)
+			 {
+				 DODMaxBox->ReadOnly=false;
+				 DODMinBox->ReadOnly=false;
+			 }
+			 else
+			 {
+				 DODMaxBox->ReadOnly=true;
+				 DODMinBox->ReadOnly=true;
+			 }
+
+		 }
+private: System::Void optFlowBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 			 			 if (optFlowBox->Checked)
+			 {
+				 flowMaxBox->ReadOnly=false;
+				 flowMinBox->ReadOnly=false;
+			 }
+			 else
+			 {
+				 flowMaxBox->ReadOnly=true;
+				 flowMinBox->ReadOnly=true;
+			}
+
+		 }
+private: System::Void optARBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 			 			 			 if (optARBox->Checked)
+			 {
+				 ARMaxBox->ReadOnly=false;
+				 ARMinBox->ReadOnly=false;
+			 }
+			 else
+			 {
+				 ARMaxBox->ReadOnly=true;
+				 ARMinBox->ReadOnly=true;
+			}
 		 }
 };
 }
