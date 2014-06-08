@@ -291,6 +291,9 @@ private: System::Windows::Forms::TextBox^  ARMaxBox;
 private: System::Windows::Forms::TextBox^  ARValueBox;
 private: System::Windows::Forms::CheckBox^  optARBox;
 private: System::Windows::Forms::Label^  label36;
+private: System::Windows::Forms::Label^  label37;
+private: System::Windows::Forms::TextBox^  interpolationFileBox;
+private: System::Windows::Forms::Button^  button2;
 
 
 
@@ -403,6 +406,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->ARMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->ARMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->ARValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optARBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->flowMinBox = (gcnew System::Windows::Forms::TextBox());
 			this->flowMaxBox = (gcnew System::Windows::Forms::TextBox());
 			this->flowValueBox = (gcnew System::Windows::Forms::TextBox());
@@ -463,6 +471,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->flowBox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->interpolationFileBox = (gcnew System::Windows::Forms::TextBox());
 			this->SplineButton = (gcnew System::Windows::Forms::RadioButton());
 			this->ECModelButton = (gcnew System::Windows::Forms::RadioButton());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
@@ -528,11 +539,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->ARMinBox = (gcnew System::Windows::Forms::TextBox());
-			this->ARMaxBox = (gcnew System::Windows::Forms::TextBox());
-			this->ARValueBox = (gcnew System::Windows::Forms::TextBox());
-			this->optARBox = (gcnew System::Windows::Forms::CheckBox());
-			this->label36 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -923,6 +929,52 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel7->Size = System::Drawing::Size(457, 146);
 			this->panel7->TabIndex = 57;
 			// 
+			// ARMinBox
+			// 
+			this->ARMinBox->Location = System::Drawing::Point(389, 103);
+			this->ARMinBox->Name = L"ARMinBox";
+			this->ARMinBox->ReadOnly = true;
+			this->ARMinBox->Size = System::Drawing::Size(58, 20);
+			this->ARMinBox->TabIndex = 35;
+			this->ARMinBox->Text = L"0.25";
+			// 
+			// ARMaxBox
+			// 
+			this->ARMaxBox->Location = System::Drawing::Point(313, 103);
+			this->ARMaxBox->Name = L"ARMaxBox";
+			this->ARMaxBox->ReadOnly = true;
+			this->ARMaxBox->Size = System::Drawing::Size(58, 20);
+			this->ARMaxBox->TabIndex = 34;
+			this->ARMaxBox->Text = L"4";
+			// 
+			// ARValueBox
+			// 
+			this->ARValueBox->Location = System::Drawing::Point(164, 103);
+			this->ARValueBox->Name = L"ARValueBox";
+			this->ARValueBox->Size = System::Drawing::Size(58, 20);
+			this->ARValueBox->TabIndex = 33;
+			this->ARValueBox->Text = L"1";
+			// 
+			// optARBox
+			// 
+			this->optARBox->AutoSize = true;
+			this->optARBox->Location = System::Drawing::Point(230, 105);
+			this->optARBox->Name = L"optARBox";
+			this->optARBox->Size = System::Drawing::Size(66, 17);
+			this->optARBox->TabIndex = 32;
+			this->optARBox->Text = L"Optimize";
+			this->optARBox->UseVisualStyleBackColor = true;
+			this->optARBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optARBox_CheckedChanged);
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Location = System::Drawing::Point(25, 105);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(136, 13);
+			this->label36->TabIndex = 31;
+			this->label36->Text = L"Aspect Ratio (width/height)";
+			// 
 			// flowMinBox
 			// 
 			this->flowMinBox->Location = System::Drawing::Point(389, 50);
@@ -1116,6 +1168,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->OutputGrid->Name = L"OutputGrid";
 			this->OutputGrid->Size = System::Drawing::Size(352, 182);
 			this->OutputGrid->TabIndex = 56;
+			this->OutputGrid->Visible = false;
 			// 
 			// Column27
 			// 
@@ -1181,7 +1234,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label81->AutoSize = true;
 			this->label81->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label81->Location = System::Drawing::Point(128, 592);
+			this->label81->Location = System::Drawing::Point(125, 437);
 			this->label81->Name = L"label81";
 			this->label81->Size = System::Drawing::Size(67, 17);
 			this->label81->TabIndex = 51;
@@ -1189,7 +1242,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// electronBox
 			// 
-			this->electronBox->Location = System::Drawing::Point(201, 592);
+			this->electronBox->Location = System::Drawing::Point(198, 437);
 			this->electronBox->Name = L"electronBox";
 			this->electronBox->Size = System::Drawing::Size(50, 20);
 			this->electronBox->TabIndex = 50;
@@ -1197,7 +1250,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// LiVoltageBox
 			// 
-			this->LiVoltageBox->Location = System::Drawing::Point(203, 566);
+			this->LiVoltageBox->Location = System::Drawing::Point(198, 411);
 			this->LiVoltageBox->Name = L"LiVoltageBox";
 			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
 			this->LiVoltageBox->TabIndex = 48;
@@ -1205,15 +1258,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// flowCapBox
 			// 
-			this->flowCapBox->Location = System::Drawing::Point(203, 540);
+			this->flowCapBox->Location = System::Drawing::Point(381, 722);
 			this->flowCapBox->Name = L"flowCapBox";
 			this->flowCapBox->Size = System::Drawing::Size(50, 20);
 			this->flowCapBox->TabIndex = 46;
 			this->flowCapBox->Text = L"999999999999";
+			this->flowCapBox->Visible = false;
 			// 
 			// channelSepBox
 			// 
-			this->channelSepBox->Location = System::Drawing::Point(97, 512);
+			this->channelSepBox->Location = System::Drawing::Point(95, 388);
 			this->channelSepBox->Name = L"channelSepBox";
 			this->channelSepBox->Size = System::Drawing::Size(50, 20);
 			this->channelSepBox->TabIndex = 43;
@@ -1221,7 +1275,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// aspectRatioBox
 			// 
-			this->aspectRatioBox->Location = System::Drawing::Point(97, 463);
+			this->aspectRatioBox->Location = System::Drawing::Point(108, 697);
 			this->aspectRatioBox->Name = L"aspectRatioBox";
 			this->aspectRatioBox->Size = System::Drawing::Size(50, 20);
 			this->aspectRatioBox->TabIndex = 40;
@@ -1297,7 +1351,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label51->AutoSize = true;
 			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label51->Location = System::Drawing::Point(8, 567);
+			this->label51->Location = System::Drawing::Point(5, 411);
 			this->label51->Name = L"label51";
 			this->label51->Size = System::Drawing::Size(189, 17);
 			this->label51->TabIndex = 49;
@@ -1308,18 +1362,19 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label90->AutoSize = true;
 			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(14, 541);
+			this->label90->Location = System::Drawing::Point(192, 723);
 			this->label90->Name = L"label90";
 			this->label90->Size = System::Drawing::Size(183, 17);
 			this->label90->TabIndex = 47;
 			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
+			this->label90->Visible = false;
 			// 
 			// label89
 			// 
 			this->label89->AutoSize = true;
 			this->label89->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label89->Location = System::Drawing::Point(3, 513);
+			this->label89->Location = System::Drawing::Point(1, 389);
 			this->label89->Name = L"label89";
 			this->label89->Size = System::Drawing::Size(89, 17);
 			this->label89->TabIndex = 44;
@@ -1330,7 +1385,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->interdigBox->AutoSize = true;
 			this->interdigBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->interdigBox->Location = System::Drawing::Point(5, 489);
+			this->interdigBox->Location = System::Drawing::Point(3, 365);
 			this->interdigBox->Name = L"interdigBox";
 			this->interdigBox->Size = System::Drawing::Size(109, 21);
 			this->interdigBox->TabIndex = 42;
@@ -1342,7 +1397,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label84->AutoSize = true;
 			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label84->Location = System::Drawing::Point(3, 464);
+			this->label84->Location = System::Drawing::Point(14, 698);
 			this->label84->Name = L"label84";
 			this->label84->Size = System::Drawing::Size(88, 17);
 			this->label84->TabIndex = 41;
@@ -1421,6 +1476,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(278, 49);
 			this->panel6->TabIndex = 23;
+			this->panel6->Visible = false;
 			// 
 			// label15
 			// 
@@ -1432,6 +1488,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label15->Size = System::Drawing::Size(61, 17);
 			this->label15->TabIndex = 27;
 			this->label15->Text = L"ml/min/A";
+			this->label15->Visible = false;
 			// 
 			// flowBox
 			// 
@@ -1442,6 +1499,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->flowBox->Size = System::Drawing::Size(31, 23);
 			this->flowBox->TabIndex = 26;
 			this->flowBox->Text = L"5";
+			this->flowBox->Visible = false;
 			// 
 			// label9
 			// 
@@ -1453,16 +1511,48 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label9->Size = System::Drawing::Size(203, 17);
 			this->label9->TabIndex = 25;
 			this->label9->Text = L"Flow rate used for interpolation";
+			this->label9->Visible = false;
 			// 
 			// panel5
 			// 
 			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel5->Controls->Add(this->button2);
+			this->panel5->Controls->Add(this->label37);
+			this->panel5->Controls->Add(this->interpolationFileBox);
 			this->panel5->Controls->Add(this->SplineButton);
 			this->panel5->Controls->Add(this->ECModelButton);
-			this->panel5->Location = System::Drawing::Point(329, 92);
+			this->panel5->Location = System::Drawing::Point(319, 9);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(107, 50);
+			this->panel5->Size = System::Drawing::Size(132, 133);
 			this->panel5->TabIndex = 22;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(3, 96);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(95, 20);
+			this->button2->TabIndex = 59;
+			this->button2->Text = L"Load File";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
+			// label37
+			// 
+			this->label37->AutoSize = true;
+			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label37->Location = System::Drawing::Point(3, 47);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(112, 17);
+			this->label37->TabIndex = 36;
+			this->label37->Text = L"Interpolation File";
+			// 
+			// interpolationFileBox
+			// 
+			this->interpolationFileBox->Location = System::Drawing::Point(3, 70);
+			this->interpolationFileBox->Name = L"interpolationFileBox";
+			this->interpolationFileBox->Size = System::Drawing::Size(117, 20);
+			this->interpolationFileBox->TabIndex = 58;
 			// 
 			// SplineButton
 			// 
@@ -1475,6 +1565,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->SplineButton->TabIndex = 19;
 			this->SplineButton->Text = L"Interpolation";
 			this->SplineButton->UseVisualStyleBackColor = true;
+			this->SplineButton->CheckedChanged += gcnew System::EventHandler(this, &Form1::SplineButton_CheckedChanged);
 			// 
 			// ECModelButton
 			// 
@@ -1495,7 +1586,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel4->Controls->Add(this->constcurrent);
 			this->panel4->Controls->Add(this->constpower);
-			this->panel4->Location = System::Drawing::Point(0, 401);
+			this->panel4->Location = System::Drawing::Point(4, 309);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(139, 50);
 			this->panel4->TabIndex = 21;
@@ -1759,7 +1850,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel2->Controls->Add(this->jLowBox);
 			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->panel2->Location = System::Drawing::Point(3, 314);
+			this->panel2->Location = System::Drawing::Point(0, 549);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(310, 81);
 			this->panel2->TabIndex = 11;
@@ -2135,52 +2226,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
-			// ARMinBox
-			// 
-			this->ARMinBox->Location = System::Drawing::Point(389, 103);
-			this->ARMinBox->Name = L"ARMinBox";
-			this->ARMinBox->ReadOnly = true;
-			this->ARMinBox->Size = System::Drawing::Size(58, 20);
-			this->ARMinBox->TabIndex = 35;
-			this->ARMinBox->Text = L"0.25";
-			// 
-			// ARMaxBox
-			// 
-			this->ARMaxBox->Location = System::Drawing::Point(313, 103);
-			this->ARMaxBox->Name = L"ARMaxBox";
-			this->ARMaxBox->ReadOnly = true;
-			this->ARMaxBox->Size = System::Drawing::Size(58, 20);
-			this->ARMaxBox->TabIndex = 34;
-			this->ARMaxBox->Text = L"4";
-			// 
-			// ARValueBox
-			// 
-			this->ARValueBox->Location = System::Drawing::Point(164, 103);
-			this->ARValueBox->Name = L"ARValueBox";
-			this->ARValueBox->Size = System::Drawing::Size(58, 20);
-			this->ARValueBox->TabIndex = 33;
-			this->ARValueBox->Text = L"1";
-			// 
-			// optARBox
-			// 
-			this->optARBox->AutoSize = true;
-			this->optARBox->Location = System::Drawing::Point(230, 105);
-			this->optARBox->Name = L"optARBox";
-			this->optARBox->Size = System::Drawing::Size(66, 17);
-			this->optARBox->TabIndex = 32;
-			this->optARBox->Text = L"Optimize";
-			this->optARBox->UseVisualStyleBackColor = true;
-			this->optARBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optARBox_CheckedChanged);
-			// 
-			// label36
-			// 
-			this->label36->AutoSize = true;
-			this->label36->Location = System::Drawing::Point(25, 105);
-			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(136, 13);
-			this->label36->TabIndex = 31;
-			this->label36->Text = L"Aspect Ratio (width/height)";
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2384,7 +2429,141 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	datafile.close();
 	return datamatrix;
 }
-	public: double asinh(double x)
+		public: cliext::vector<cliext::vector<double > > cli_fileRead(string file)
+{//reads CSV file
+	ifstream datafile;
+	datafile.open(file);
+	string line;
+	cliext::vector<cliext::vector<double > > datamatrix;
+	int i = 0;
+	int j = 0;
+	datamatrix.resize(1);
+	while(datafile.good())
+	{
+	getline(datafile,line,',');
+	if(line=="n")
+	{
+		j=0;
+		i++;
+		datamatrix.resize(datamatrix.size()+1);
+		
+		getline(datafile,line);
+	
+		getline(datafile,line,',');
+	}
+	
+	datamatrix.at(i).push_back(atof(line.c_str()));
+	
+	j++;
+	}
+	datamatrix.resize(datamatrix.size()-1);
+	datafile.close();
+	return datamatrix;
+}
+		public: cliext::vector<cliext::vector<double> > cli_populateSpline2V(cliext::vector<double> X,cliext::vector<double> Y)
+{//coming up with function that interpolates of dataset (Y vs X) using cubic splines
+	
+
+	cliext::vector<double> A;
+	cliext::vector<double> C;
+	cliext::vector<double> B;
+	cliext::vector<double> D;
+	const int m=(int) X.size();
+	int n=m-1;
+	int i=0;
+	cliext::vector<cliext::vector<double> > splineMatrix;
+	if(m==2)
+	{
+
+		B.push_back((Y.at(1)-Y.at(0))/(X.at(1)-X.at(0)));
+		B.push_back(0);;
+		while(i<=1)
+		{
+		C.push_back(0);
+		D.push_back(0);
+		i++;
+		}
+		splineMatrix.push_back(X);
+		splineMatrix.push_back(Y);
+		splineMatrix.push_back(B);
+		splineMatrix.push_back(C);
+		splineMatrix.push_back(D);
+	}
+	else
+	{
+	i=1;
+	C.resize(n+1,0);
+	D.resize(n+1,0);
+	B.resize(n+1,0);
+	C.at(0)=0;
+	while(i<n)
+	{
+		B.at(i)=2/((X.at(i+1)-X.at(i))/(Y.at(i+1)-Y.at(i))+(X.at(i)-X.at(i-1))/(Y.at(i)-Y.at(i-1)));
+		i++;
+	}
+	B.at(0)=1.5*(Y.at(1)-Y.at(0))/(X.at(1)-X.at(0))-B.at(1)/2;
+	B.at(n)=1.5*(Y.at(n)-Y.at(n-1))/(X.at(n)-X.at(n-1))-B.at(n-1)/2;
+	D.at(0)=(B.at(1)-B.at(0)-2*C.at(0)*(X.at(1)-X.at(0)))/(3*pow(X.at(1)-X.at(0),2));
+	i=1;
+	while(i<n)
+	{
+		double delX=X.at(i+1)-X.at(i);
+		double e = Y.at(i+1)-Y.at(i)-B.at(i)*delX;
+		double f = B.at(i+1)-B.at(i);
+		double a = delX*delX;
+		double b = delX*delX*delX;
+		double c = 2*delX;
+		double d = 3*delX*delX;
+		C.at(i)=(e*d-b*f)/(a*d-b*c);
+		D.at(i)=(a*f-e*c)/(a*d-b*c);
+		i++;
+	}
+	i=0;
+	splineMatrix.push_back(X);
+	splineMatrix.push_back(Y);
+	splineMatrix.push_back(B);
+	splineMatrix.push_back(C);
+	splineMatrix.push_back(D);
+	}
+	return splineMatrix;
+}
+		public: double cli_interpolate2dSpline(cliext::vector<cliext::vector<cliext::vector<double> > > SuperMatrix, cliext::vector<double> j,double x,double y)
+{//get Y as f(2 independent variables)
+	cliext::vector<double> X1;
+	int i = 0;
+	int size=SuperMatrix.size();
+	while (i<size)
+	{
+		X1.push_back(cli_interpolateSplineV(x,SuperMatrix.at(i)));
+		i++;
+	}
+	cliext::vector<cliext::vector<double > > Matrix=cli_populateSpline2V(j,X1);
+	return cli_interpolateSplineV(y,Matrix);
+}	
+		public: double cli_interpolateSplineV(double x,cliext::vector<cliext::vector<double> > matrix)
+{//uses above interpolation functions to get Y at some X
+	int i = 0;
+	double y=0;
+	double delx;
+	int size = matrix.at(0).size();
+	while (i<size)
+	{
+		if(x>=matrix.at(0)[i])
+		{
+			
+			delx = x-matrix.at(0)[i];
+			y=matrix.at(1)[i]+matrix.at(2)[i]*delx+matrix.at(3)[i]*delx*delx+matrix.at(4)[i]*delx*delx*delx;
+		}
+		else if(x<matrix.at(0)[i])
+		{
+			break;
+			
+		}
+		i++;
+	}
+	return y;
+}		
+		public: double asinh(double x)
 {//mathematical function arc hyperbolic sine
     if(x>0)
         return log(x+sqrt(x*x+1));
@@ -2570,7 +2749,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//system is 0 for Fe-V, 1 for V-V
 	//membrane is 0 for Daramic, 1 for Nafion
 	//SuperMatrix and J are used for spline extrapolation
-	
+	if(SplineButton->Checked)
+	{
+
+		return cli_interpolate2dSpline(g_SuperMatrix,g_J,SOC,j);
+	}
 	int i = system; //0 for Fe-V, 1 for V-V
     const double F = 96485;// C/mol
     const double R = 8.314; // J/mol K
@@ -2871,7 +3054,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
   
 	
     double PEff=0.67; // pump efficiency
-    double powerLoss=Pdrop*Q/PEff;
+    double powerLoss=g_pDropFactor*Pdrop*Q/PEff;
     return powerLoss;
 }
 	public: void MarshalString ( String ^ s, string& os ) {
@@ -2918,6 +3101,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_VEffAvg;
 	public: double g_pCost;
 	public: double g_eCost;
+	public: array<double,3>^ g_interpolationMatrix;
+	public: int g_interpolationSizeX;
+	public: int g_interpolationSizeY;
+	public: cliext::vector <double> g_J;
+	public: cliext::vector <cliext::vector <cliext::vector <double>>> g_SuperMatrix;
+	public: double g_pDropFactor;
 
 
 	public: double conductivity(double SOC, double T, int posneg)
@@ -3012,6 +3201,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				
 
 				//temp
+				g_J.clear();
+				g_SuperMatrix.clear();
 				g_k=2;
 				g_jLow=Convert::ToDouble(testCurrent->Text);
 				g_qhigh=Convert::ToDouble(testFlow->Text);
@@ -3029,6 +3220,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_cdepth=0.002;
 				g_channels=10;
 				g_CE=0.98;
+				g_pDropFactor =  Convert::ToDouble(PBox->Text);
 				if(FeV->Checked)
 	{
 		g_system=0;
@@ -3266,6 +3458,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			}
 	public: double optimizeFlow(double j,double flow, double SOC)
 			{
+				if(SplineButton->Checked)
+				{
+					return flow;
+				}
 				double V;
 				double VEff;
 				double VEffF;
@@ -3342,6 +3538,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 				while (SOC<= SOCHigh)
 				{
+					if(constpower->Checked)
+					{
 					powerAttained=false;
 					while(!powerAttained)
 
@@ -3349,8 +3547,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					{
 
 					flow=optimizeFlow(j,flow,SOC);
-
-
 					V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 					powerproduced=V*j*g_area*10;
 					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
@@ -3368,6 +3564,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						powerAttained=true;
 					}
 					}
+					}
+					else
+					{
+						flow=optimizeFlow(j,flow,SOC);
+						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+						VEff =V*(powerproduced-powerloss)/powerproduced;
+					}
 
 					i++;
 					VEffAvg+=VEff;
@@ -3376,6 +3581,82 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 				VEffAvg/=i;
 				return VEffAvg;
+			}
+	public: void interpolationSetup()
+			{
+	int i;
+	int k;
+	string file;
+	String^ filename;
+	if((interpolationFileBox->Text)->Length==0)
+		{
+			if(openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+				{	
+					filename=openFileDialog1->FileName;
+					MarshalString(filename,file);
+					interpolationFileBox->Text=filename;
+				}
+			else
+				{
+					return;
+				}
+		}
+	else
+		{
+			filename=interpolationFileBox->Text;
+			MarshalString(filename,file);
+		}
+	cliext::vector<cliext::vector<double> > dataMatrix=cli_fileRead(file);
+	i=0;
+	k=0;
+	cliext::vector<double> X1;
+	cliext::vector<cliext::vector<double> > YMatrix;
+	i=1;
+	while(i<dataMatrix[0].size())
+	{
+		X1.push_back(dataMatrix.at(0)[i]);
+		i++;
+	}
+
+	i=1;
+	while(i<dataMatrix.size())
+	{
+
+		k=1;
+		g_J.push_back(dataMatrix.at(i)[0]);
+		YMatrix.resize(YMatrix.size()+1);
+		while(k<dataMatrix.at(0).size())
+		{
+			YMatrix.at(i-1).push_back(dataMatrix.at(i)[k]);
+			k++;
+		}
+		i++;
+	}
+	cliext::vector<cliext::vector<double> > VMatrix;
+	
+	i=0;
+	while(i<YMatrix.size())
+	{
+		VMatrix=cli_populateSpline2V(X1,YMatrix.at(i));
+		g_SuperMatrix.push_back(VMatrix);
+		i++;
+	}
+	double DODMax=(100*(X1.at(X1.size()-1)-X1.at(0))-1);
+	double jMin=(g_J.at(0));
+	double jMax=(g_J.at(g_J.size()-1));
+		if(Convert::ToDouble(DODMaxBox->Text)>DODMax)
+	{
+		DODMaxBox->Text=DODMax.ToString();
+	}
+		if(Convert::ToDouble(currentMinBox->Text)<jMin)
+	{
+		currentMinBox->Text=jMin.ToString();
+	}
+		if(Convert::ToDouble(currentMaxBox->Text)>jMax)
+	{
+		currentMaxBox->Text=jMax.ToString();
+	}
+
 			}
 private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 	//This executes when the calculate button is clicked, this is the bulk of the program.
@@ -3801,7 +4082,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 bestTable->Rows->Clear();
 			 global_initialization();
 			 int i = 0;
-
+			 	if(SplineButton->Checked)
+			 {
+				 interpolationSetup();
+			 }
 			 g_jLow=Convert::ToDouble(currentValueBox->Text);
 			 bool jLowOpt=(optCurrentBox->Checked);
 			 double jLowMax=Convert::ToDouble(currentMaxBox->Text);
@@ -3826,6 +4110,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
 			 double gamma=0.5;
+
 			 while ((abs(delcost)>=0.01) && (i<10))
 			 {
 
@@ -3880,6 +4165,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 bestTable->Rows->Add("Flow ml/min-A",(g_qhighpercurrent*1000/(100*100)).ToString("F1"));
 			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F1"));
 			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F1"));
+			 bestTable->Rows->Add("Area cm^2",(g_area*100*100).ToString("F1"));
 
 		 }
 private: System::Void label33_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -3935,6 +4221,25 @@ private: System::Void optARBox_CheckedChanged(System::Object^  sender, System::E
 				 ARMaxBox->ReadOnly=true;
 				 ARMinBox->ReadOnly=true;
 			}
+		 }
+private: System::Void SplineButton_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(SplineButton->Checked)
+			 {
+				 flowMaxBox->ReadOnly=true;
+				 flowMinBox->ReadOnly=true;
+				 optFlowBox->Checked=false;
+			 }
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+				{	
+					interpolationFileBox->Text=(openFileDialog1->FileName);
+				}
+			else
+				{
+					return;
+				}
+
 		 }
 };
 }
