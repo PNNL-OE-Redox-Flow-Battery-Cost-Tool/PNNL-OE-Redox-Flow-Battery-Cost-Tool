@@ -50,6 +50,16 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double g_VEffAvg : Public
     Double g_pCost : Public
     Double g_eCost : Public
+    Double[,,] g_interpolationMatrix : Public
+    Int32 g_interpolationSizeX : Public
+    Int32 g_interpolationSizeY : Public
+    cliext.vector<double> g_J IsByValue : Public, InitOnly
+    cliext.vector<cliext::vector<cliext::vector<double> > > g_SuperMatrix IsByValue : Public, InitOnly
+    Double g_pDropFactor : Public
+    cliext.vector<cliext::vector<cliext::vector<double> > > g_3dinterpolation IsByValue : Public, InitOnly
+    cliext.vector<double> g_3dSOCRange IsByValue : Public, InitOnly
+    cliext.vector<double> g_3dJRange IsByValue : Public, InitOnly
+    cliext.vector<double> g_3dFlowRange IsByValue : Public, InitOnly
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
@@ -60,6 +70,10 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     interpolateSplineV(Double, vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*): PrivateScope, Public, HideBySig
     interpolate2dSpline(vector<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >\,std::allocator<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > > > >*, vector<double\,std::allocator<double> >*, Double, Double): PrivateScope, Public, HideBySig
     fileRead(vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >*, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
+    cli_fileRead(vector<cliext::vector<double> >&, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
+    cli_populateSpline2V(vector<cliext::vector<double> >&, vector<double> IsByValue, vector<double> IsByValue): PrivateScope, Public, HideBySig
+    cli_interpolate2dSpline(vector<cliext::vector<cliext::vector<double> > > IsByValue, vector<double> IsByValue, Double, Double): PrivateScope, Public, HideBySig
+    cli_interpolateSplineV(Double, vector<cliext::vector<double> > IsByValue): PrivateScope, Public, HideBySig
     asinh(Double): PrivateScope, Public, HideBySig
     voltage(Double, Double, Double, Double, Double, Int32, Int32, vector<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > >\,std::allocator<std::vector<std::vector<double\,std::allocator<double> >\,std::allocator<std::vector<double\,std::allocator<double> > > > > >* IsImplicitlyDereferenced, vector<double\,std::allocator<double> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     g_voltage(Double, Double, Double, Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
@@ -73,6 +87,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     MarshalString(String, basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     slope(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
     conductivity(Double, Double, Int32): PrivateScope, Public, HideBySig
+    Interpolation3d(Double, Double, Double): PrivateScope, Public, HideBySig
     global_initialization(): PrivateScope, Public, HideBySig
     calculateArea(Double, Double): PrivateScope, Public, HideBySig
     fixArea(): PrivateScope, Public, HideBySig
@@ -80,3 +95,4 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     D_xcostoverD_xxcost(Double&, Double, Double): PrivateScope, Public, HideBySig
     optimizeFlow(Double, Double, Double): PrivateScope, Public, HideBySig
     calculateVeffAvg(Double, Double): PrivateScope, Public, HideBySig
+    interpolationSetup(): PrivateScope, Public, HideBySig

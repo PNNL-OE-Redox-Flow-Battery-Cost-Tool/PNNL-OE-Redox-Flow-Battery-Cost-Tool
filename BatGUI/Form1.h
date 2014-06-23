@@ -233,7 +233,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column16;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column14;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column21;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Digits;
-private: System::Windows::Forms::TabPage^  tabPage4;
+private: System::Windows::Forms::TabPage^  tabpage4;
+
+
 private: System::Windows::Forms::Button^  button1;
 private: System::Windows::Forms::TextBox^  testBox;
 private: System::Windows::Forms::TextBox^  testFlow;
@@ -294,6 +296,20 @@ private: System::Windows::Forms::Label^  label36;
 private: System::Windows::Forms::Label^  label37;
 private: System::Windows::Forms::TextBox^  interpolationFileBox;
 private: System::Windows::Forms::Button^  button2;
+private: System::Windows::Forms::RadioButton^  InterpolationButton3d;
+private: System::Windows::Forms::Label^  label38;
+private: System::Windows::Forms::TextBox^  Int3dVBox;
+
+
+private: System::Windows::Forms::TextBox^  Int3dFlowBox;
+private: System::Windows::Forms::TextBox^  Int3dJBox;
+private: System::Windows::Forms::Label^  label39;
+private: System::Windows::Forms::Label^  label40;
+private: System::Windows::Forms::Label^  label41;
+private: System::Windows::Forms::TextBox^  Int3dSOCBox;
+
+private: System::Windows::Forms::Button^  button3;
+
 
 
 
@@ -471,6 +487,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->flowBox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->InterpolationButton3d = (gcnew System::Windows::Forms::RadioButton());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label37 = (gcnew System::Windows::Forms::Label());
 			this->interpolationFileBox = (gcnew System::Windows::Forms::TextBox());
@@ -517,7 +534,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->tabpage4 = (gcnew System::Windows::Forms::TabPage());
 			this->testGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -539,6 +556,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label38 = (gcnew System::Windows::Forms::Label());
+			this->Int3dVBox = (gcnew System::Windows::Forms::TextBox());
+			this->Int3dFlowBox = (gcnew System::Windows::Forms::TextBox());
+			this->Int3dJBox = (gcnew System::Windows::Forms::TextBox());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->Int3dSOCBox = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -564,7 +590,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			this->tabPage4->SuspendLayout();
+			this->tabpage4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -1516,6 +1542,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// panel5
 			// 
 			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel5->Controls->Add(this->InterpolationButton3d);
 			this->panel5->Controls->Add(this->button2);
 			this->panel5->Controls->Add(this->label37);
 			this->panel5->Controls->Add(this->interpolationFileBox);
@@ -1523,12 +1550,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel5->Controls->Add(this->ECModelButton);
 			this->panel5->Location = System::Drawing::Point(319, 9);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(132, 133);
+			this->panel5->Size = System::Drawing::Size(132, 142);
 			this->panel5->TabIndex = 22;
+			// 
+			// InterpolationButton3d
+			// 
+			this->InterpolationButton3d->AutoSize = true;
+			this->InterpolationButton3d->Location = System::Drawing::Point(4, 43);
+			this->InterpolationButton3d->Name = L"InterpolationButton3d";
+			this->InterpolationButton3d->Size = System::Drawing::Size(98, 17);
+			this->InterpolationButton3d->TabIndex = 60;
+			this->InterpolationButton3d->TabStop = true;
+			this->InterpolationButton3d->Text = L"3d Interpolation";
+			this->InterpolationButton3d->UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(3, 96);
+			this->button2->Location = System::Drawing::Point(3, 117);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(95, 20);
 			this->button2->TabIndex = 59;
@@ -1541,7 +1579,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label37->AutoSize = true;
 			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label37->Location = System::Drawing::Point(3, 47);
+			this->label37->Location = System::Drawing::Point(3, 63);
 			this->label37->Name = L"label37";
 			this->label37->Size = System::Drawing::Size(112, 17);
 			this->label37->TabIndex = 36;
@@ -1549,7 +1587,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// interpolationFileBox
 			// 
-			this->interpolationFileBox->Location = System::Drawing::Point(3, 70);
+			this->interpolationFileBox->Location = System::Drawing::Point(3, 91);
 			this->interpolationFileBox->Name = L"interpolationFileBox";
 			this->interpolationFileBox->Size = System::Drawing::Size(117, 20);
 			this->interpolationFileBox->TabIndex = 58;
@@ -1670,7 +1708,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel3->Controls->Add(this->powerBox);
 			this->panel3->Location = System::Drawing::Point(117, 6);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(196, 136);
+			this->panel3->Size = System::Drawing::Size(196, 145);
 			this->panel3->TabIndex = 17;
 			// 
 			// label68
@@ -2046,7 +2084,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage5);
-			this->tabControl1->Controls->Add(this->tabPage4);
+			this->tabControl1->Controls->Add(this->tabpage4);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->RightToLeftLayout = true;
@@ -2054,28 +2092,37 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
-			// tabPage4
+			// tabpage4
 			// 
-			this->tabPage4->Controls->Add(this->testGrid);
-			this->tabPage4->Controls->Add(this->label29);
-			this->tabPage4->Controls->Add(this->testVEff);
-			this->tabPage4->Controls->Add(this->testPowerOrig);
-			this->tabPage4->Controls->Add(this->testPowerNew);
-			this->tabPage4->Controls->Add(this->label27);
-			this->tabPage4->Controls->Add(this->label28);
-			this->tabPage4->Controls->Add(this->testFlow);
-			this->tabPage4->Controls->Add(this->testCurrent);
-			this->tabPage4->Controls->Add(this->label26);
-			this->tabPage4->Controls->Add(this->label25);
-			this->tabPage4->Controls->Add(this->label24);
-			this->tabPage4->Controls->Add(this->testBox);
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(886, 746);
-			this->tabPage4->TabIndex = 5;
-			this->tabPage4->Text = L"Test tab";
-			this->tabPage4->UseVisualStyleBackColor = true;
+			this->tabpage4->Controls->Add(this->label38);
+			this->tabpage4->Controls->Add(this->Int3dVBox);
+			this->tabpage4->Controls->Add(this->Int3dFlowBox);
+			this->tabpage4->Controls->Add(this->Int3dJBox);
+			this->tabpage4->Controls->Add(this->label39);
+			this->tabpage4->Controls->Add(this->label40);
+			this->tabpage4->Controls->Add(this->label41);
+			this->tabpage4->Controls->Add(this->Int3dSOCBox);
+			this->tabpage4->Controls->Add(this->button3);
+			this->tabpage4->Controls->Add(this->testGrid);
+			this->tabpage4->Controls->Add(this->label29);
+			this->tabpage4->Controls->Add(this->testVEff);
+			this->tabpage4->Controls->Add(this->testPowerOrig);
+			this->tabpage4->Controls->Add(this->testPowerNew);
+			this->tabpage4->Controls->Add(this->label27);
+			this->tabpage4->Controls->Add(this->label28);
+			this->tabpage4->Controls->Add(this->testFlow);
+			this->tabpage4->Controls->Add(this->testCurrent);
+			this->tabpage4->Controls->Add(this->label26);
+			this->tabpage4->Controls->Add(this->label25);
+			this->tabpage4->Controls->Add(this->label24);
+			this->tabpage4->Controls->Add(this->testBox);
+			this->tabpage4->Location = System::Drawing::Point(4, 22);
+			this->tabpage4->Name = L"tabpage4";
+			this->tabpage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabpage4->Size = System::Drawing::Size(886, 746);
+			this->tabpage4->TabIndex = 5;
+			this->tabpage4->Text = L"Test tab";
+			this->tabpage4->UseVisualStyleBackColor = true;
 			// 
 			// testGrid
 			// 
@@ -2083,7 +2130,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->dataGridViewTextBoxColumn2, 
 				this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn3, this->Column30, this->Column31, this->Column33, this->Column34, 
 				this->Column35});
-			this->testGrid->Location = System::Drawing::Point(269, 192);
+			this->testGrid->Location = System::Drawing::Point(279, 133);
 			this->testGrid->Name = L"testGrid";
 			this->testGrid->Size = System::Drawing::Size(587, 182);
 			this->testGrid->TabIndex = 57;
@@ -2226,6 +2273,83 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(40, 350);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(124, 24);
+			this->button3->TabIndex = 58;
+			this->button3->Text = L"Interpolation Test";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			// 
+			// label38
+			// 
+			this->label38->AutoSize = true;
+			this->label38->Location = System::Drawing::Point(47, 475);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(14, 13);
+			this->label38->TabIndex = 66;
+			this->label38->Text = L"V";
+			// 
+			// Int3dVBox
+			// 
+			this->Int3dVBox->Location = System::Drawing::Point(94, 472);
+			this->Int3dVBox->Name = L"Int3dVBox";
+			this->Int3dVBox->Size = System::Drawing::Size(90, 20);
+			this->Int3dVBox->TabIndex = 65;
+			// 
+			// Int3dFlowBox
+			// 
+			this->Int3dFlowBox->Location = System::Drawing::Point(95, 387);
+			this->Int3dFlowBox->Name = L"Int3dFlowBox";
+			this->Int3dFlowBox->Size = System::Drawing::Size(90, 20);
+			this->Int3dFlowBox->TabIndex = 64;
+			this->Int3dFlowBox->Text = L"5";
+			// 
+			// Int3dJBox
+			// 
+			this->Int3dJBox->Location = System::Drawing::Point(94, 413);
+			this->Int3dJBox->Name = L"Int3dJBox";
+			this->Int3dJBox->Size = System::Drawing::Size(90, 20);
+			this->Int3dJBox->TabIndex = 63;
+			this->Int3dJBox->Text = L"160";
+			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Location = System::Drawing::Point(48, 395);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(26, 13);
+			this->label39->TabIndex = 62;
+			this->label39->Text = L"flow";
+			// 
+			// label40
+			// 
+			this->label40->AutoSize = true;
+			this->label40->Location = System::Drawing::Point(48, 420);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(40, 13);
+			this->label40->TabIndex = 61;
+			this->label40->Text = L"current";
+			// 
+			// label41
+			// 
+			this->label41->AutoSize = true;
+			this->label41->Location = System::Drawing::Point(48, 449);
+			this->label41->Name = L"label41";
+			this->label41->Size = System::Drawing::Size(29, 13);
+			this->label41->TabIndex = 60;
+			this->label41->Text = L"SOC";
+			// 
+			// Int3dSOCBox
+			// 
+			this->Int3dSOCBox->Location = System::Drawing::Point(95, 446);
+			this->Int3dSOCBox->Name = L"Int3dSOCBox";
+			this->Int3dSOCBox->Size = System::Drawing::Size(90, 20);
+			this->Int3dSOCBox->TabIndex = 59;
+			this->Int3dSOCBox->Text = L"0.1";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2268,8 +2392,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
-			this->tabPage4->ResumeLayout(false);
-			this->tabPage4->PerformLayout();
+			this->tabpage4->ResumeLayout(false);
+			this->tabpage4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->EndInit();
 			this->ResumeLayout(false);
 
@@ -2754,6 +2878,17 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 		return cli_interpolate2dSpline(g_SuperMatrix,g_J,SOC,j);
 	}
+	if(InterpolationButton3d->Checked)
+	{
+		if(g_area==0)
+		{
+		return Interpolation3d(g_3dFlowRange.at(g_3dFlowRange.size()-1),j,SOC);
+		}
+		else
+		{
+		return Interpolation3d(flow/g_area,j,SOC);
+		}
+	}
 	int i = system; //0 for Fe-V, 1 for V-V
     const double F = 96485;// C/mol
     const double R = 8.314; // J/mol K
@@ -3107,6 +3242,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: cliext::vector <double> g_J;
 	public: cliext::vector <cliext::vector <cliext::vector <double>>> g_SuperMatrix;
 	public: double g_pDropFactor;
+	public: cliext::vector <cliext::vector <cliext::vector <double>>> g_3dinterpolation;
+	public: cliext::vector <double> g_3dSOCRange;
+	public: cliext::vector <double> g_3dJRange;
+	public: cliext::vector <double> g_3dFlowRange;
+
 
 
 	public: double conductivity(double SOC, double T, int posneg)
@@ -3196,9 +3336,103 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					return 0;
 				}
 			}
+	public: double Interpolation3d(double flow, double j, double SOC)
+			{
+				int i = 0;
+				double f;
+
+				if(flow<g_3dFlowRange.at(0))
+				{
+					return 0;
+				}
+				if(flow>g_3dFlowRange.at(g_3dFlowRange.size()-1)||(flow!=flow))
+				{
+					flow=g_3dFlowRange.at(g_3dFlowRange.size()-1);
+				}
+				if(j<g_3dJRange.at(0)||j>g_3dJRange.at(g_3dJRange.size()-1))
+				{
+					return 0;
+				}
+				if(SOC<g_3dSOCRange.at(0)||SOC>g_3dSOCRange.at(g_3dSOCRange.size()-1))
+				{
+					return 0;
+				}
+				while((g_3dFlowRange.at(i)<=flow)&&(i<(g_3dFlowRange.size()-1)))
+				{
+					i++;
+				}
+				i--;
+				if(i>=3)
+				{
+					//MessageBox::Show("Out of bounds!");
+				}
+				if(i<0)
+				{
+					//MessageBox::Show("Out of bounds!");
+					return 0;
+				}
+				double flowLow=g_3dFlowRange.at(i);
+				double flowHigh=g_3dFlowRange.at(i+1);
+				int k=0;
+								while((g_3dJRange.at(k)<=j)&&(k<(g_3dJRange.size()-1)))
+				{
+					k++;
+				}
+				double jLow=g_3dJRange.at(k-1);
+				double jHigh=g_3dJRange.at(k);
+				int l=0;
+								while((g_3dSOCRange.at(l)<=SOC)&&(l<(g_3dSOCRange.size()-1)))
+				{
+					l++;
+				}
+				double SOCLow=g_3dSOCRange.at(l-1);
+				double SOCHigh=g_3dSOCRange.at(l);
+				double vertices [2][2][2] = {{{g_3dinterpolation.at(i)[k][l],g_3dinterpolation.at(i)[k][l+1]},{g_3dinterpolation.at(i)[k+1][l],g_3dinterpolation.at(i)[k+1][l+1]}},{{g_3dinterpolation.at(i+1)[k][l],g_3dinterpolation.at(i+1)[k][l+1]},{g_3dinterpolation.at(i+1)[k+1][l],g_3dinterpolation.at(i+1)[k+1][l+1]}}};
+				double d = (flow-flowLow)/(flowHigh-flowLow);
+				//double corners [2][2] = {{vertices[0][0][0]*(1-d)+d*vertices[1][0][0],vertices[0][0][1]*(1-d)+d*vertices[1][0][1]},{vertices[0][1][0]*(1-d)+d*vertices[1][1][0],vertices[0][1][1]*(1-d)+d*vertices[1][1][1]}};
+				double c00=vertices[0][0][0]*(1-d)+d*vertices[1][0][0];
+				double c01=vertices[0][0][1]*(1-d)+d*vertices[1][0][1];
+				double c10=vertices[0][1][0]*(1-d)+d*vertices[1][1][0];
+				double c11=vertices[0][1][1]*(1-d)+d*vertices[1][1][1];
+				d=(j-jLow)/(jHigh-jLow);
+				//double points [2] = {corners[0][0]*(1-d)+d*corners[1][0],corners[0][1]*(1-d)+d*corners[1][1]};
+				double c0=c00*(1-d)+d*c01;
+				double c1=c10*(1-d)+d*c11;
+				d=(SOC-SOCLow)/(SOCHigh-SOCLow);
+				//f=points[0]*(1-d)+d*points[1];
+				f=c0*(1-d)+d*c1;
+				return f;
+
+			}
 	public: void global_initialization()
 			{
 				
+				//temp vector initialization
+				g_3dJRange.clear();
+				g_3dJRange.push_back(0);
+				g_3dJRange.push_back(160);
+				g_3dJRange.push_back(240);
+				g_3dJRange.push_back(320);
+				g_3dFlowRange.clear();
+				g_3dFlowRange.push_back(0*1000/(3*0.26*0.3));
+				g_3dFlowRange.push_back(1.2*1000/(3*0.26*0.3));
+				g_3dFlowRange.push_back(2.4*1000/(3*0.26*0.3));
+				g_3dFlowRange.push_back(3.6*1000/(3*0.26*0.3));
+				g_3dFlowRange.push_back(4.8*1000/(3*0.26*0.3));
+				g_3dinterpolation.clear();
+				g_3dinterpolation.push_back(cli_fileRead("3CellLID0LPM.csv"));
+				g_3dinterpolation.push_back(cli_fileRead("3CellLID1.2LPM.csv"));
+				g_3dinterpolation.push_back(cli_fileRead("3CellLID2.4LPM.csv"));
+				g_3dinterpolation.push_back(cli_fileRead("3CellLID3.6LPM.csv"));
+				g_3dinterpolation.push_back(cli_fileRead("3CellLID4.8LPM.csv"));
+				int k = 1;
+				g_3dSOCRange.clear();
+				while (k<g_3dinterpolation[0][0].size())
+				{
+					g_3dSOCRange.push_back(g_3dinterpolation.at(0)[0][k]);
+					k++;
+				}
+				//double a = Interpolation3d(1.8*1000/(3*0.26*0.3),160,0.5);
 
 				//temp
 				g_J.clear();
@@ -3247,7 +3481,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double a;
 				double b;
 				double c;
-				while (i<20)
+				while (i<5)
 				{
 					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
 					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
@@ -4106,7 +4340,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 bool AROpt=(optARBox->Checked);
 			 double ARMax=Convert::ToDouble(ARMaxBox->Text);
 			 double ARMin=Convert::ToDouble(ARMinBox->Text);
-
+			 g_areaReal=true;
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
 			 double gamma=0.5;
@@ -4240,6 +4474,16 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 					return;
 				}
 
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 global_initialization();
+			 double flow = Convert::ToDouble(Int3dFlowBox->Text);
+			 double j = Convert::ToDouble(Int3dJBox->Text);
+			 double SOC = Convert::ToDouble(Int3dSOCBox->Text);
+			 flow=flow*j*100*100/1000;
+			 double V = Interpolation3d(flow,j,SOC);
+
+			 Int3dVBox->Text=V.ToString();
 		 }
 };
 }
