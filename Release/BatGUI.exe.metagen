@@ -56,6 +56,7 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     cliext.vector<double> g_J IsByValue : Public, InitOnly
     cliext.vector<cliext::vector<cliext::vector<double> > > g_SuperMatrix IsByValue : Public, InitOnly
     Double g_pDropFactor : Public
+    Double g_pDropFactorSlope : Public
     cliext.vector<cliext::vector<cliext::vector<double> > > g_3dinterpolation IsByValue : Public, InitOnly
     cliext.vector<double> g_3dSOCRange IsByValue : Public, InitOnly
     cliext.vector<double> g_3dJRange IsByValue : Public, InitOnly
