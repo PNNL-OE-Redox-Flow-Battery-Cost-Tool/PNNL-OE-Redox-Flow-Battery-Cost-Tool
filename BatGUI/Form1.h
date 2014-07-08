@@ -90,6 +90,7 @@ namespace BatGUI {//rest of program included within this bracket
 	using namespace System::Data;//sub-directory under System
 	using namespace System::Drawing;//sub-directory under System
 	using namespace System::Data::OleDb;//sub-directory under System
+	using namespace System::Threading;
 	/// <summary>
 	/// Summary for Form1
 	/// </summary>
@@ -135,9 +136,9 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::Label^  label81;//label is inert text to define each textbox; there will be a label called label 81
 	private: System::Windows::Forms::TextBox^  electronBox;//look under forms directory for Textbox^ and make text box called electronBox; there will be a textbox called electronBox
 	private: System::Windows::Forms::TextBox^  LiVoltageBox;
-	private: System::Windows::Forms::TextBox^  flowCapBox;
+
 	private: System::Windows::Forms::TextBox^  channelSepBox;
-	private: System::Windows::Forms::TextBox^  aspectRatioBox;
+
 	private: System::Windows::Forms::TextBox^  FOWBox;
 	private: System::Windows::Forms::TextBox^  FOHBox;
 	private: System::Windows::Forms::TextBox^  MOBox;
@@ -147,10 +148,10 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::TextBox^  ThicknessBox;
 	private: System::Windows::Forms::TextBox^  CondBox;
 	private: System::Windows::Forms::Label^  label51;
-	private: System::Windows::Forms::Label^  label90;
+
 	private: System::Windows::Forms::Label^  label89;
 	private: System::Windows::Forms::CheckBox^  interdigBox;
-	private: System::Windows::Forms::Label^  label84;
+
 	private: System::Windows::Forms::Label^  label21;
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
@@ -158,10 +159,10 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::Label^  label17;
 	private: System::Windows::Forms::Label^  label16;
 	private: System::Windows::Forms::Label^  textasf;
-	private: System::Windows::Forms::Panel^  panel6;//Initializing panel 6 in GUI
-	private: System::Windows::Forms::Label^  label15;
-	private: System::Windows::Forms::TextBox^  flowBox;
-	private: System::Windows::Forms::Label^  label9;
+			 //Initializing panel 6 in GUI
+
+
+
 	private: System::Windows::Forms::Panel^  panel5;
 	private: System::Windows::Forms::RadioButton^  SplineButton;
 	private: System::Windows::Forms::RadioButton^  ECModelButton;
@@ -187,18 +188,18 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::TextBox^  energyBox;
 	private: System::Windows::Forms::TextBox^  epBox;
 	private: System::Windows::Forms::TextBox^  powerBox;
-	private: System::Windows::Forms::ProgressBar^  progressBar;
-	private: System::Windows::Forms::Button^  calculate;//there will be a button called calculate
-	private: System::Windows::Forms::Panel^  panel2;
-	private: System::Windows::Forms::Label^  label14;
-	private: System::Windows::Forms::Label^  label13;
-	private: System::Windows::Forms::Label^  label12;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::NumericUpDown^  DODBox;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::NumericUpDown^  jHighBox;
-	private: System::Windows::Forms::NumericUpDown^  jLowBox;
+
+			 //there will be a button called calculate
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::RadioButton^  LiOrgButton;
 	private: System::Windows::Forms::Label^  label4;
@@ -423,6 +424,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->PSlopeBox = (gcnew System::Windows::Forms::TextBox());
+			this->label42 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->ARMinBox = (gcnew System::Windows::Forms::TextBox());
 			this->ARMaxBox = (gcnew System::Windows::Forms::TextBox());
@@ -461,9 +464,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label81 = (gcnew System::Windows::Forms::Label());
 			this->electronBox = (gcnew System::Windows::Forms::TextBox());
 			this->LiVoltageBox = (gcnew System::Windows::Forms::TextBox());
-			this->flowCapBox = (gcnew System::Windows::Forms::TextBox());
 			this->channelSepBox = (gcnew System::Windows::Forms::TextBox());
-			this->aspectRatioBox = (gcnew System::Windows::Forms::TextBox());
 			this->FOWBox = (gcnew System::Windows::Forms::TextBox());
 			this->FOHBox = (gcnew System::Windows::Forms::TextBox());
 			this->MOBox = (gcnew System::Windows::Forms::TextBox());
@@ -473,10 +474,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->ThicknessBox = (gcnew System::Windows::Forms::TextBox());
 			this->CondBox = (gcnew System::Windows::Forms::TextBox());
 			this->label51 = (gcnew System::Windows::Forms::Label());
-			this->label90 = (gcnew System::Windows::Forms::Label());
 			this->label89 = (gcnew System::Windows::Forms::Label());
 			this->interdigBox = (gcnew System::Windows::Forms::CheckBox());
-			this->label84 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
@@ -484,10 +483,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->textasf = (gcnew System::Windows::Forms::Label());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->flowBox = (gcnew System::Windows::Forms::TextBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->InterpolationButton3d = (gcnew System::Windows::Forms::RadioButton());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -517,18 +512,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->energyBox = (gcnew System::Windows::Forms::TextBox());
 			this->epBox = (gcnew System::Windows::Forms::TextBox());
 			this->powerBox = (gcnew System::Windows::Forms::TextBox());
-			this->progressBar = (gcnew System::Windows::Forms::ProgressBar());
-			this->calculate = (gcnew System::Windows::Forms::Button());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->DODBox = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->jHighBox = (gcnew System::Windows::Forms::NumericUpDown());
-			this->jLowBox = (gcnew System::Windows::Forms::NumericUpDown());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->LiOrgButton = (gcnew System::Windows::Forms::RadioButton());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -567,8 +550,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->label42 = (gcnew System::Windows::Forms::Label());
-			this->PSlopeBox = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -583,15 +564,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->SuspendLayout();
 			this->panel7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
-			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->BeginInit();
 			this->panel3->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabpage4->SuspendLayout();
@@ -890,9 +866,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Controls->Add(this->label81);
 			this->tabPage1->Controls->Add(this->electronBox);
 			this->tabPage1->Controls->Add(this->LiVoltageBox);
-			this->tabPage1->Controls->Add(this->flowCapBox);
 			this->tabPage1->Controls->Add(this->channelSepBox);
-			this->tabPage1->Controls->Add(this->aspectRatioBox);
 			this->tabPage1->Controls->Add(this->FOWBox);
 			this->tabPage1->Controls->Add(this->FOHBox);
 			this->tabPage1->Controls->Add(this->MOBox);
@@ -902,10 +876,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Controls->Add(this->ThicknessBox);
 			this->tabPage1->Controls->Add(this->CondBox);
 			this->tabPage1->Controls->Add(this->label51);
-			this->tabPage1->Controls->Add(this->label90);
 			this->tabPage1->Controls->Add(this->label89);
 			this->tabPage1->Controls->Add(this->interdigBox);
-			this->tabPage1->Controls->Add(this->label84);
 			this->tabPage1->Controls->Add(this->label21);
 			this->tabPage1->Controls->Add(this->label19);
 			this->tabPage1->Controls->Add(this->label20);
@@ -913,14 +885,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Controls->Add(this->label17);
 			this->tabPage1->Controls->Add(this->label16);
 			this->tabPage1->Controls->Add(this->textasf);
-			this->tabPage1->Controls->Add(this->panel6);
 			this->tabPage1->Controls->Add(this->panel5);
 			this->tabPage1->Controls->Add(this->panel4);
 			this->tabPage1->Controls->Add(this->bestTable);
 			this->tabPage1->Controls->Add(this->panel3);
-			this->tabPage1->Controls->Add(this->progressBar);
-			this->tabPage1->Controls->Add(this->calculate);
-			this->tabPage1->Controls->Add(this->panel2);
 			this->tabPage1->Controls->Add(this->panel1);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
@@ -929,6 +897,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// PSlopeBox
+			// 
+			this->PSlopeBox->Location = System::Drawing::Point(592, 433);
+			this->PSlopeBox->Name = L"PSlopeBox";
+			this->PSlopeBox->Size = System::Drawing::Size(65, 20);
+			this->PSlopeBox->TabIndex = 59;
+			this->PSlopeBox->Text = L"0";
+			// 
+			// label42
+			// 
+			this->label42->AutoSize = true;
+			this->label42->Location = System::Drawing::Point(492, 437);
+			this->label42->Name = L"label42";
+			this->label42->Size = System::Drawing::Size(97, 13);
+			this->label42->TabIndex = 58;
+			this->label42->Text = L"Scale PDrop Slope";
 			// 
 			// panel7
 			// 
@@ -1288,15 +1273,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiVoltageBox->TabIndex = 48;
 			this->LiVoltageBox->Text = L"3.8";
 			// 
-			// flowCapBox
-			// 
-			this->flowCapBox->Location = System::Drawing::Point(381, 722);
-			this->flowCapBox->Name = L"flowCapBox";
-			this->flowCapBox->Size = System::Drawing::Size(50, 20);
-			this->flowCapBox->TabIndex = 46;
-			this->flowCapBox->Text = L"999999999999";
-			this->flowCapBox->Visible = false;
-			// 
 			// channelSepBox
 			// 
 			this->channelSepBox->Location = System::Drawing::Point(95, 388);
@@ -1304,15 +1280,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->channelSepBox->Size = System::Drawing::Size(50, 20);
 			this->channelSepBox->TabIndex = 43;
 			this->channelSepBox->Text = L"0.1";
-			// 
-			// aspectRatioBox
-			// 
-			this->aspectRatioBox->Location = System::Drawing::Point(108, 697);
-			this->aspectRatioBox->Name = L"aspectRatioBox";
-			this->aspectRatioBox->Size = System::Drawing::Size(50, 20);
-			this->aspectRatioBox->TabIndex = 40;
-			this->aspectRatioBox->Text = L"1";
-			this->aspectRatioBox->Visible = false;
 			// 
 			// FOWBox
 			// 
@@ -1389,18 +1356,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label51->TabIndex = 49;
 			this->label51->Text = L"Li+ Organic OCV (50% SOC)";
 			// 
-			// label90
-			// 
-			this->label90->AutoSize = true;
-			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(192, 723);
-			this->label90->Name = L"label90";
-			this->label90->Size = System::Drawing::Size(183, 17);
-			this->label90->TabIndex = 47;
-			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
-			this->label90->Visible = false;
-			// 
 			// label89
 			// 
 			this->label89->AutoSize = true;
@@ -1423,18 +1378,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->interdigBox->TabIndex = 42;
 			this->interdigBox->Text = L"Interdigitated";
 			this->interdigBox->UseVisualStyleBackColor = true;
-			// 
-			// label84
-			// 
-			this->label84->AutoSize = true;
-			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label84->Location = System::Drawing::Point(14, 698);
-			this->label84->Name = L"label84";
-			this->label84->Size = System::Drawing::Size(88, 17);
-			this->label84->TabIndex = 41;
-			this->label84->Text = L"Aspect Ratio";
-			this->label84->Visible = false;
 			// 
 			// label21
 			// 
@@ -1498,52 +1441,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->textasf->Size = System::Drawing::Size(72, 13);
 			this->textasf->TabIndex = 26;
 			this->textasf->Text = L"Scale E Cond";
-			// 
-			// panel6
-			// 
-			this->panel6->Controls->Add(this->label15);
-			this->panel6->Controls->Add(this->flowBox);
-			this->panel6->Controls->Add(this->label9);
-			this->panel6->Location = System::Drawing::Point(3, 630);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(278, 49);
-			this->panel6->TabIndex = 23;
-			this->panel6->Visible = false;
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(192, 10);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(61, 17);
-			this->label15->TabIndex = 27;
-			this->label15->Text = L"ml/min/A";
-			this->label15->Visible = false;
-			// 
-			// flowBox
-			// 
-			this->flowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->flowBox->Location = System::Drawing::Point(155, 7);
-			this->flowBox->Name = L"flowBox";
-			this->flowBox->Size = System::Drawing::Size(31, 23);
-			this->flowBox->TabIndex = 26;
-			this->flowBox->Text = L"5";
-			this->flowBox->Visible = false;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(7, 10);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(203, 17);
-			this->label9->TabIndex = 25;
-			this->label9->Text = L"Flow rate used for interpolation";
-			this->label9->Visible = false;
 			// 
 			// panel5
 			// 
@@ -1856,159 +1753,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->powerBox->Size = System::Drawing::Size(65, 23);
 			this->powerBox->TabIndex = 12;
 			this->powerBox->Text = L"1000";
-			// 
-			// progressBar
-			// 
-			this->progressBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->progressBar->Location = System::Drawing::Point(730, 472);
-			this->progressBar->Name = L"progressBar";
-			this->progressBar->Size = System::Drawing::Size(125, 28);
-			this->progressBar->TabIndex = 3;
-			this->progressBar->Visible = false;
-			// 
-			// calculate
-			// 
-			this->calculate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->calculate->Location = System::Drawing::Point(730, 506);
-			this->calculate->Name = L"calculate";
-			this->calculate->Size = System::Drawing::Size(125, 30);
-			this->calculate->TabIndex = 0;
-			this->calculate->Text = L"Calculate!";
-			this->calculate->UseVisualStyleBackColor = true;
-			this->calculate->Visible = false;
-			this->calculate->Click += gcnew System::EventHandler(this, &Form1::calculate_Click);
-			// 
-			// panel2
-			// 
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel2->Controls->Add(this->label14);
-			this->panel2->Controls->Add(this->label13);
-			this->panel2->Controls->Add(this->label12);
-			this->panel2->Controls->Add(this->label3);
-			this->panel2->Controls->Add(this->DODBox);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->jHighBox);
-			this->panel2->Controls->Add(this->jLowBox);
-			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->panel2->Location = System::Drawing::Point(0, 549);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(310, 81);
-			this->panel2->TabIndex = 11;
-			this->panel2->Visible = false;
-			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(217, 56);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(58, 17);
-			this->label14->TabIndex = 26;
-			this->label14->Text = L"mA/cm2";
-			this->label14->Visible = false;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(217, 30);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(58, 17);
-			this->label13->TabIndex = 25;
-			this->label13->Text = L"mA/cm2";
-			this->label13->Visible = false;
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(217, 4);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(20, 17);
-			this->label12->TabIndex = 24;
-			this->label12->Text = L"%";
-			this->label12->Visible = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(25, 4);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(130, 17);
-			this->label3->TabIndex = 9;
-			this->label3->Text = L"Depth of Discharge";
-			this->label3->Visible = false;
-			// 
-			// DODBox
-			// 
-			this->DODBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->DODBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->DODBox->Location = System::Drawing::Point(164, 2);
-			this->DODBox->Name = L"DODBox";
-			this->DODBox->Size = System::Drawing::Size(45, 23);
-			this->DODBox->TabIndex = 8;
-			this->DODBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {70, 0, 0, 0});
-			this->DODBox->Visible = false;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(8, 56);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(152, 17);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"Min current at low SOC";
-			this->label2->Visible = false;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(5, 30);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(155, 17);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"Max current at low SOC";
-			this->label1->Visible = false;
-			// 
-			// jHighBox
-			// 
-			this->jHighBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->jHighBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->jHighBox->Location = System::Drawing::Point(164, 28);
-			this->jHighBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
-			this->jHighBox->Name = L"jHighBox";
-			this->jHighBox->Size = System::Drawing::Size(45, 23);
-			this->jHighBox->TabIndex = 5;
-			this->jHighBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
-			this->jHighBox->Visible = false;
-			this->jHighBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jHighBox_ValueChanged);
-			// 
-			// jLowBox
-			// 
-			this->jLowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->jLowBox->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
-			this->jLowBox->Location = System::Drawing::Point(164, 54);
-			this->jLowBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {275, 0, 0, 0});
-			this->jLowBox->Name = L"jLowBox";
-			this->jLowBox->Size = System::Drawing::Size(45, 23);
-			this->jLowBox->TabIndex = 4;
-			this->jLowBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {100, 0, 0, 0});
-			this->jLowBox->Visible = false;
-			this->jLowBox->ValueChanged += gcnew System::EventHandler(this, &Form1::jLowBox_ValueChanged);
+			this->powerBox->TextChanged += gcnew System::EventHandler(this, &Form1::powerBox_TextChanged);
 			// 
 			// panel1
 			// 
@@ -2356,23 +2101,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
-			// label42
-			// 
-			this->label42->AutoSize = true;
-			this->label42->Location = System::Drawing::Point(492, 437);
-			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(97, 13);
-			this->label42->TabIndex = 58;
-			this->label42->Text = L"Scale PDrop Slope";
-			// 
-			// PSlopeBox
-			// 
-			this->PSlopeBox->Location = System::Drawing::Point(592, 433);
-			this->PSlopeBox->Name = L"PSlopeBox";
-			this->PSlopeBox->Size = System::Drawing::Size(65, 20);
-			this->PSlopeBox->TabIndex = 59;
-			this->PSlopeBox->Text = L"1";
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2398,8 +2126,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
-			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			this->panel4->ResumeLayout(false);
@@ -2407,11 +2133,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->DODBox))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jHighBox))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jLowBox))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
@@ -2717,174 +2438,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     else
         return -log(x+sqrt(x*x+1));
 }
-	public: double voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane,vector<vector<vector<double> > >& SuperMatrix,vector<double>& J)
-{
-	//electrochemical model
-	//SOC as fraction
-	//area is active cell area in m^2
-	//flow is flow rate ml/min/cell
-	//j is current density in mA/cm^2
-	//aspect ratio is height:width  (height being the direction of flow)
-	//system is 0 for Fe-V, 1 for V-V
-	//membrane is 0 for Daramic, 1 for Nafion
-	//SuperMatrix and J are used for spline extrapolation
-	
-	int i = system; //0 for Fe-V, 1 for V-V
-    const double F = 96485;// C/mol
-    const double R = 8.314; // J/mol K
-    double V;
-    double width = sqrt(area/aspectratio); //cell width m
-    double height = width*aspectratio;
-	double V2[2] = {0.77,1.004}; //V
-//	V2[1]+=2;
-	double V1[2]={-0.085,-.41}; //V
-    double Q = flow/(60*1000*1000); // m^3/s
-	double TCent[2]={45,45};
-
-	if (SplineButton->Checked)
-	{
-		return interpolate2dSpline(SuperMatrix,J,SOC,j);
-	}
-	if(VVGen1->Checked)
-	{
-		TCent[1]=35;
-	}
-    double T = TCent[i]+273.15; // K
-    double Ci1 = 1750; // initial concentration of chemical 1, mol/m^3
-	if(VVGen1->Checked)
-	{
-		Ci1=1500;
-	}
-	if(FeV->Checked)
-	{
-		Ci1=1750;
-	}
-	if(VVGen2->Checked)
-	{
-		Ci1=2000;
-	}
-	if(LiOrgButton->Checked)
-	{
-		Ci1= Convert::ToDouble(LiConcBox->Text);
-	}
-	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
-	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
-    double t=0.004*tScaleFactor; //cell thickness m
-    double I=j*width*height*100*100/1000; //current A
-	double A[2] = {2,4};
-	A[i]*= Convert::ToDouble(ThRedBox->Text);
-	double chi[2] = {4,0};
-	double n = Convert::ToDouble(electronBox->Text);
-    double delSOC=I*A[i]/(n*2*Q*Ci1*F);
-    double SOCrxn=SOC-delSOC;
-    double Inew=j*(1+chi[i]*delSOC*2)*100*100/1000;
-    double eps=0.94; //porosity
-    double a = 39000*eps/4;//CHECK THIS
-	a*=Convert::ToDouble(spaBox->Text);
-    double Km=0.00016*pow(Q/(eps*width*t),0.4);
-    double Conc1neg=Ci1*SOCrxn-Inew/(t*F*a*Km/eps); // V 2+
-    double Conc1pos=Ci1-Conc1neg; //V 3+
-    double Conc2pos=Ci2*SOCrxn-Inew/(t*F*a*Km/eps); // V 5+
-    double Conc2neg=Ci2-Conc2pos; //V 4+
-	double kScaleFactor = Convert::ToDouble(KBox->Text);
-    double k1=8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
-	double k2[2]={1.6/100000*exp((F*0.77/R)*(T-298)/(298*T)),0.00000068*exp((F*V2[i]/R)*(T-298)/(298*T))};
-    if(LiOrgButton->Checked)
-	{
-		k1*=1;
-		k2[system]*=1;
-	}
-	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
-	double mt[2]={450e-6,175e-6}; //membrane thickness m
-	double condM[2]={53.65395346,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
-    double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
-	double iconcH[2]={5300,1000};
-	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn-Inew/(t*F*a*Km)};
-	double concCl[2]={1500,0};
-	double concH2SO4[2]={3800,5000};
-    int ZV2=2;
-    int ZV3=3;
-    int ZFe2=2;
-    int ZFe3=3;
-	int ZV4=2;
-	int ZV5=1;
-    int ZH=1;
-    int ZCl=-1;
-    int ZH2SO4=-1;
-	double bruggman[2]={1.5,0};
-	double reduction[2]={2.75/pow(eps,bruggman[i]),0.73/pow(eps,bruggman[i])};
-	if(VVGen1->Checked)
-	{
-		reduction[1]=0.833/pow(eps,bruggman[i]);
-	}
-	double DV2=(2.4E-10)/reduction[system];
-    double DV3=(2.4E-10)/reduction[system];
-	double DV4=(3.9E-10)/reduction[system];
-	double DV5=(3.9E-10)/reduction[system];
-    double DFe2=(2.5E-10)/reduction[system];
-    double DFe3=(2.5E-10)/reduction[system];
-	double DH=(9.31E-09)/reduction[system];
-    double DCl=(2.032E-09)/reduction[system];
-    double DH2SO4=(1.33E-09)/reduction[system];
-	double condScaleFactor = Convert::ToDouble(CondBox->Text);
-	double pa=(F*F/(T*R))*(ZV2*ZV2*DV2*Conc1neg+ZV3*ZV3*DV3*Conc1pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]);
-    double pat=pa*(1+1.711464*(T-273-23)/100)*condScaleFactor;
-	double pc[2]={(F*F/(T*R))*(ZFe2*ZFe2*DFe2*Conc2neg+ZFe3*ZFe3*DFe3*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]),(F*F/(T*R))*(ZV4*ZV4*DV4*Conc2neg+ZV5*ZV5*DV5*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i])};
-    double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;
-    double Irea=t*Inew/pat;
-    double Irec=t*Inew/pct;
-
-	//new stuff//
-	/*double tCond=0.001;
-	pat=conductivity(SOC,25,0);
-	pct=conductivity(SOC,25,1);
-
-	pat=26.9380896227+SOC*6.633254717;
-	pct=27.9639185214+20.5748693826*SOC;
-	Irea=tCond*Inew/pat;
-    Irec=tCond*Inew/pct;*/
-
-    if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
-    {
-
-    V = V2[i]-V1[i]+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
-
-    }
-    else
-    {
-    V=0;
-    }
-	if(LiOrgButton->Checked)
-	{
-		double VLiA[] = {3.193552576,3.298606737,3.422420435,3.516218117,3.602508955,3.662540986,3.670044043,3.673797466,3.700060059,3.73382571,3.752585246,3.767595148,3.790104319,3.812617278,3.835126449,3.898911903,3.932295015,3.977286844,4.12524213,4.152428876};
-		std::vector<double> VLi (&VLiA[0], &VLiA[0]+20);
-		double SOCLiA[] = {0.009631481,0.015312908,0.026677674,0.039934338,0.05697862,0.085387667,0.115688613,0.168717178,0.195232417,0.252048601,0.316440021,0.388408589,0.469844291,0.538025241,0.600522852,0.674383318,0.721711346,0.797815335,0.972556012,1};
-		std::vector<double> SOCLi (&SOCLiA[0], &SOCLiA[0]+20);
-		std::vector<vector<double> > LiMatrix= populateSpline2V(SOCLi,VLi);
-		double OCVLi = interpolateSplineV(SOC,LiMatrix)-3.8+Convert::ToDouble(LiVoltageBox->Text);
-		
-		//etaneg = 0;
-		//etapos = 0;
-		pat = A[1]*10*condScaleFactor/(10); //S/m
-		pct = pat; //temp
-		condM[membrane]=2.5/(10); //S/m
-		//t=0.5/1000;
-		Irea = t*Inew/pat;
-		Irec = t*Inew/pct;
-		mt[membrane]=7*(25e-6); // m
-		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
-		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
-
-	}
-	if(Conc1neg<=0 || Conc2neg<=0 || Conc1pos<=0 || Conc2pos<=0)
-	{
-		V=0;
-	}
-	double scaleV=1/*1.138*/;
-
-    return V*scaleV;
-}
 	public: double g_voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane)
 {
 	//electrochemical model
@@ -2974,8 +2527,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
     double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
-	double mt[2]={450e-6,175e-6}; //membrane thickness m
-	double condM[2]={53.65395346,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
+	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
+	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 	double iconcH[2]={5300,1000};
 	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn-Inew/(t*F*a*Km)};
@@ -3195,7 +2748,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double Dh=2*cdepth*cwidth/(cdepth+cwidth);
 	double carea=cdepth*cwidth;
     double Q = flow/(60*1000*1000); // m^3/s
-    double K = 1.09438E-10; // m^2
+    double K = 3.982E-10;//1.09438E-10 // m^2
 	double visc = 6.60E-03;
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
 	double t = 0.004*tScaleFactor;
@@ -3212,7 +2765,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
   
 	
     double PEff=0.67; // pump efficiency
-    double powerLoss=(g_pDropFactor+g_SOC*g_pDropFactorSlope)*Pdrop*Q/PEff;
+    double powerLoss=2*(g_pDropFactor+g_SOC*g_pDropFactorSlope)*Pdrop*Q/PEff;
     return powerLoss;
 }
 	public: void MarshalString ( String ^ s, string& os ) {
@@ -3270,6 +2823,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: cliext::vector <double> g_3dSOCRange;
 	public: cliext::vector <double> g_3dJRange;
 	public: cliext::vector <double> g_3dFlowRange;
+	public: cliext::vector <double>finalECost;
+	public: cliext::vector <double>finalPCost;
+	public: cliext::vector <double>finalTCost;
 
 
 
@@ -3465,7 +3021,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_jLow=Convert::ToDouble(testCurrent->Text);
 				g_qhigh=Convert::ToDouble(testFlow->Text);
 				g_qhighpercurrent=g_qhigh/g_jLow;
-				g_DOD=(double)DODBox->Value;
+				g_DOD=Convert::ToDouble(DODValueBox->Text);
 				//end temp
 				g_power=Convert::ToDouble(powerBox->Text)*1000;
 				g_ep=Convert::ToDouble(epBox->Text);
@@ -3473,13 +3029,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_cells=Convert::ToDouble(cellBox->Text);
 				g_stacks=Convert::ToDouble(stackBox->Text);
 				g_reqpowerpercell=g_reqpower/(g_cells*g_stacks);
-				g_aspectratio=Convert::ToDouble(aspectRatioBox->Text);
+				g_aspectratio=Convert::ToDouble(ARValueBox->Text);
 				g_cwidth=0.005;
 				g_cdepth=0.002;
 				g_channels=10;
 				g_CE=0.98;
 				g_pDropFactor =  Convert::ToDouble(PBox->Text);
 				g_pDropFactorSlope = Convert::ToDouble(PSlopeBox->Text);
+				finalECost.resize(3,0);
+				finalPCost.resize(3,0);
+				finalTCost.resize(3,0);
 				if(FeV->Checked)
 	{
 		g_system=0;
@@ -3654,7 +3213,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_qhighpercurrent=g_qhigh/g_jLow;
 
 			}
-
 	public: double calculateCost(double jLow, double qhighpercurrent)
 			{
 				calculateArea(jLow,qhighpercurrent);
@@ -3917,428 +3475,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 
 			}
-private: System::Void calculate_Click(System::Object^  sender, System::EventArgs^  e) {
-	//This executes when the calculate button is clicked, this is the bulk of the program.
-
-	dataOutput->Rows->Clear();
-	bestTable->Rows->Clear();
-	costChart->Series[0]->Points->Clear();
-	int system; // 0 for Fe-V, 1 for V-V
-	int membrane; // 0 for Daramic, 1 for Nafion, 2 for IEX
-	if(FeV->Checked)
-	{
-		system=0;
-		membrane=0;
-	}
-	if(VVGen1->Checked || VVGen2->Checked)
-	{
-		system=1;
-		membrane=1;
-	}
-	if(LiOrgButton->Checked)
-	{
-		system=1;
-		membrane=1;
-	}
-
-	double SOCLow=(100-(double)DODBox->Value)/200;
-	double battime=Convert::ToDouble(epBox->Text);
-	double SOC=SOCLow;
-	double SOCHigh=1.0001-SOCLow;
-	double jres=0.1;
-	double j=jres;
-	double areares=0.01;
-	double SOCres=0.01;
-	double highflow=0;
-	double flow=0;
-	double optFlow=0;
-	double flowres=0;
-	double flowdensres=0.001;
-	double area=areares;
-	double V=0;
-	double VEff=0;
-	double optV=0;
-	double power=Convert::ToDouble(powerBox->Text)*1000;
-	double cells=Convert::ToDouble(cellBox->Text);	
-	double stacks=Convert::ToDouble(stackBox->Text);
-	double jLow=(double)jLowBox->Value;
-	double jHigh=(double)jHighBox->Value;
-	double jLowRes=5;
-	progressBar->Value=0;
-	progressBar->Maximum=((jHigh-jLow)/jLowRes);
-	double cellPower=power/(cells*stacks);
-	double aspectratio=Convert::ToDouble(aspectRatioBox->Text);
-	double digitSep = Convert::ToDouble(channelSepBox->Text);
-	int digits=1;
-	double powerloss=0;
-	double powerproduced=0;
-	double prevPower=0;
-	bool optflow;
-	double Vavg;
-	double pcost[3];
-	double ecost[3];
-	double totcost[3];
-	int i=0;
-	int k=0;
-	int h=0;
-	int z=0;
-	double units=0;
-	typedef exprtk::expression<double>     expression_t;
-
-	double manucost=0;
-	double bestpcost[3]={0,0,0};
-	double bestecost[3]={0,0,0};
-	double besttcost[3]={0,0,0};
-	double bestj[3]={0,0,0};
-	double lastj=0;
-	double flowavg=0;
-	double CE[3]={0.90,0.98,0.95};
-	bool powerAttained=false;
-	double cdepth=0.002;//0.002//m
-	double cwidth=0.005;//m
-	double pumpEff;
-	double shuntEff;
-	double electrochemEff;
-	double pumpEffAvg;
-	double shuntEffAvg;
-	double electrochemEffAvg;
-	double Kred=2.4886;//2.4886
-	double jCap[3]={300,180,100};
-	double pDropFactor =  Convert::ToDouble(PBox->Text);
-	int channels=10;
-	vector<vector<double> > dataMatrix;
-	vector<vector<vector<double> > > SuperMatrix;
-	vector<double> J;
-	double iflow=Convert::ToDouble(flowBox->Text);
-
-	if(SplineButton->Checked)
-	{
-		//loads spline interpolation
-	i=0;
-	k=0;
-	vector<double> X1;
-	string file;
-	if(openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
-	{	
-	String^ filename=openFileDialog1->FileName;
-	MarshalString(filename,file);
-	}
-	else
-	{
-		return;
-	}
-
-	vector<vector<double> > dataMatrix=fileRead(file);
-	vector<vector<double> > YMatrix;
-	i=1;
-	while(i<dataMatrix[0].size())
-	{
-		X1.push_back(dataMatrix[0][i]);
-		i++;
-	}
-	i=1;
-	while(i<dataMatrix.size())
-	{
-		k=1;
-		J.push_back(dataMatrix[i][0]);
-		YMatrix.resize(YMatrix.size()+1);
-		while(k<dataMatrix[0].size())
-		{
-			YMatrix[i-1].push_back(dataMatrix[i][k]);
-			k++;
-		}
-		i++;
-	}
-	vector<vector<double> > VMatrix;
-	
-	i=0;
-	while(i<YMatrix.size())
-	{
-		VMatrix=populateSpline2V(X1,YMatrix[i]);
-		SuperMatrix.push_back(VMatrix);
-		i++;
-	}
-	}
-	double prevpowerloss;
-	double powerslope;
-	double cellheight;
-	double cellwidth;
-	double flowcap = Convert::ToDouble(flowCapBox->Text);
-	while(jLow<=jHigh)
-	{
-	i=0;
-	Vavg=0;
-	SOC=SOCLow;
-	flowavg=0;
-	pumpEffAvg=0;
-	shuntEffAvg=0;
-	electrochemEffAvg=0;
-	while (SOC<=SOCHigh)
-	{
-		if(SOC==SOCLow)
-		{
-			j=jLow;
-			V=voltage(SOC,1,10e9,j,aspectratio,system,membrane,SuperMatrix,J);
-			area=cellPower/(10*j*V);
-			if (area<=0)
+	public: void optimize()
 			{
-				MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high. Try adjusting current density range.");
-				return;
-			}
-			
-		}
-		prevPower=0;
-		powerAttained=false;
-		while(!powerAttained)
-		{
-			flowres=area*100*100*flowdensres;
-			optflow=false;
-			optV=0;
-			flow=flowres;
-			powerproduced=0;
-			prevpowerloss=0;
-			if(interdigBox->Checked)
-			{
-			cellwidth = sqrt(area/aspectratio);
-			cellheight = sqrt(area*aspectratio);
-			digits = cellheight/digitSep;
-			if(digits%2==0)
-			{
-				digits--;
-			}
-			channels=1;
-			}
-			while(!optflow)
-			{
-				if(SplineButton->Checked)
-				{
-					flow=iflow*area*100*100*j/1000;
-					optflow=true;
-				}
-				V=voltage(SOC,area,flow,j,aspectratio,system,membrane,SuperMatrix,J);
-				powerloss=pLoss(area,flow,aspectratio,cwidth,cdepth,channels);
-				if(interdigBox->Checked)
-				{
-					V=voltage(SOC,area/digits,flow/digits,j,1/(aspectratio*digits),system,membrane,SuperMatrix,J);
-					powerloss = digits*pLoss(area/digits,flow/digits,1/(aspectratio*digits),cwidth,cdepth,channels);
-					if ((flow/area)>=flowcap)
-					{
-						optflow=true;
-					}
-				}
-				powerslope=slope(V*10*j*area,powerproduced,powerloss,prevpowerloss);
-
-				if((powerslope<1)&&(V>0)&&(VEff=0))
-				{
-
-					MessageBox::Show("Can't support this current!");
-					return;
-
-				}
-				powerproduced=V*j*10*area;
-			
-				if((powerproduced-powerloss)>0)
-				{
-					VEff=V*(powerproduced-powerloss)/powerproduced;
-				}
-				else
-				{
-					VEff=0;
-				}
-				if(VEff>=optV)
-				{
-					optV=VEff;
-					flow+=flowres;
-					
-				}
-				else
-				{
-					
-					optflow=true;
-				}
-				prevpowerloss=powerloss;
-			}
-			if(interdigBox->Checked)
-			{
-			powerloss*=1/(aspectratio*digits*digits);
-			}
-			powerloss*=pDropFactor;
-			pumpEff=powerloss/powerproduced;
-			shuntEff=shuntLoss(V,area,cwidth,cdepth,aspectratio,channels,cells)/(cells*powerproduced);
-			electrochemEff=1-(V/voltage(SOC,area,flow,0,aspectratio,system,membrane,SuperMatrix,J));
-
-			powerloss+=(shuntLoss(V,area,cwidth,cdepth,aspectratio,channels,cells)/(cells));
-			VEff=V*(powerproduced*sqrt(CE[membrane])-powerloss)/powerproduced;
-			if(SOC==SOCLow)
-			{
-				
-				
-				if(j*VEff*area*10>=cellPower)
-				{
-					powerAttained=true;
-					testPowerOrig->Text=(j*VEff*area*10).ToString();
-					highflow=flow;
-				}
-				else
-				{
-
-						areares=0.0005;
-						if(j*VEff*area*10>=prevPower)
-						{
-							prevPower=j*VEff*area*10;
-							if(prevPower*2<cellPower)
-							{
-								area*=cellPower/prevPower;
-							}
-							else
-							{
-							area+=areares;
-							}
-						}
-						else
-						{
-							if(V*j>((j+jres)*voltage(SOC,area,flow,j+jres,aspectratio,system,membrane,SuperMatrix,J)))
-							{
-							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too high. Try adjusting current density range.");
-							}
-							else
-							{
-							MessageBox::Show("Cannot produce the required power at the following current: " +j+ " mA/cm^2. This current may be too low. Try adjusting current density range.");
-							}
-							return;
-						}
-						
-						/*
-						if(abs(cellPower-prevPower)>(cellPower*0.5))
-						{
-						area*=cellPower/prevPower;
-						}
-						else
-						{
-							if(prevPower>cellPower)
-							{
-								area-=areares;
-							}
-							else
-							{
-								area+=areares;
-							}
-						}*/
-
-					
-
-				
-				}
-				
-			}
-			else
-			{
-				if(constpower->Checked)
-				{
-				if(j*VEff*area*10<=cellPower)
-				{
-					powerAttained=true;
-					
-				}
-				else
-				{
-					j-=jres;
-				}
-				}
-				else
-				{
-					powerAttained=true;
-				}
-			}
-			
-
-		}
-
-		pumpEffAvg+=pumpEff;
-		shuntEffAvg+=shuntEff;
-		electrochemEffAvg+=electrochemEff;
-		
-		Vavg+=VEff;
-		i++;
-		OutputGrid->Rows->Add(SOC,flow,j,VEff,powerproduced*sqrt(CE[membrane])-powerloss);
-		SOC+=SOCres;;
-	
-		flowavg+=flow;
-	}
-	
-	flowavg/=i;
-	Vavg/=i;
-	pumpEffAvg/=i;
-	shuntEffAvg/=i;
-	electrochemEffAvg/=i;
-	k = 0;
-	while (k<3)
-	{
-	pcost[k]=powerCost(area,highflow,cells,aspectratio,power,stacks,system,membrane)[k]*1000/power;
-	ecost[k]=energyCost(Vavg,SOCHigh-SOCLow,1500,system)[k];
-	totcost[k]=pcost[k]/battime+ecost[k];
-	k++;
-	}
-	
-	k=0;
-	while(k<3)
-	{
-
-		if(((jLow<=jCap[k]) && (totcost[k] < besttcost[k])) || besttcost[k]==0)
-		{
-			bestj[k]=jLow;
-
-			besttcost[k]=totcost[k];
-			bestecost[k]=ecost[k];
-			bestpcost[k]=pcost[k];
-
-			
-
-		}
-		k++;
-	}
-	k=0;
-	costChart->Series[0]->Points->AddXY(jLow,totcost[2]);
-	progressBar->Increment(1);
-	double onewayEff=1-pumpEffAvg-shuntEffAvg-electrochemEffAvg;
-	dataOutput->Rows->Add(jLow,totcost[2].ToString("C"),totcost[1].ToString("C"),totcost[0].ToString("C"),Vavg.ToString("F3"),area.ToString("F4"),onewayEff.ToString("F3"),ecost[2].ToString("C"),ecost[1].ToString("C"),ecost[0].ToString("C"),pcost[2].ToString("C"),pcost[1].ToString("C"),pcost[0].ToString("C"),electrochemEffAvg,pumpEffAvg,shuntEffAvg,area,flowavg,highflow);
-	jLow+=jLowRes;
-	}
-	bestTable->Rows->Add("High current density",bestj[2],bestj[1],bestj[0]);
-	bestTable->Rows->Add("Total $/kWh",besttcost[2].ToString("C"),besttcost[1].ToString("C"),besttcost[0].ToString("C"));
-	bestTable->Rows->Add("Energy $/kWh",bestecost[2].ToString("C"),bestecost[1].ToString("C"),bestecost[0].ToString("C"));
-	bestTable->Rows->Add("Power $/kW",bestpcost[2].ToString("C"),bestpcost[1].ToString("C"),bestpcost[0].ToString("C"));
 				 
-			 }
-private: System::Void epBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			 //Runs when energy to power ratio box is changed to update energy box
-			 double power = Convert::ToDouble(powerBox->Text);
-			 double ep = Convert::ToDouble(epBox->Text);
-			 energyBox->Text=(power*ep).ToString();
-		 }
-private: System::Void energyBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			 //Runs when energy box is changed to update energy to power ratio box
-			 double power = Convert::ToDouble(powerBox->Text);
-			 double energy = Convert::ToDouble(energyBox->Text);
-			 epBox->Text=(energy/power).ToString();
-		 }
-private: System::Void jHighBox_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-			 if ((jHighBox->Value)<(jLowBox->Value))
-			 {
-				 jLowBox->Value=(jHighBox->Value);
-			 }
-		 }
-private: System::Void jLowBox_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-			 if ((jHighBox->Value)<(jLowBox->Value))
-			 {
-				 jHighBox->Value=(jLowBox->Value);
-			 }
-		 }
-private: System::Void dataOutput_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-		 }
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			 dataOutput->Rows->Clear();
-			 bestTable->Rows->Clear();
 			 global_initialization();
 			 int i = 0;
 			 	if(SplineButton->Checked)
@@ -4406,25 +3545,49 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD,g_area,g_pCost,g_eCost,g_VEffAvg);
 				 i++;
 			 }
-			 double finalECost[3];
-			 double finalPCost[3];
-			 double finalTCost[3];
 			 int k=0;
 			 while(k<3)
 			 {
-				 finalPCost[k]=powerCost(g_area,g_qhighpercurrent*g_jLow*g_area,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[k]*1000/g_power;
-				 finalECost[k]=energyCost(g_VEffAvg,g_DOD/100,1500,g_system)[k];
-				 finalTCost[k]=finalECost[k]+finalPCost[k]/g_ep;
+				 finalPCost.at(k)=(powerCost(g_area,g_qhighpercurrent*g_jLow*g_area,g_cells,g_aspectratio,g_power,g_stacks,g_system,g_membrane)[k]*1000/g_power);
+				 finalECost.at(k)=(energyCost(g_VEffAvg,g_DOD/100,1500,g_system)[k]);
+				 finalTCost.at(k)=(finalECost.at(k)+finalPCost.at(k)/g_ep);
 				 k++;
 			 }
-			 bestTable->Rows->Add("Total $/kWh",finalTCost[2].ToString("C"),finalTCost[1].ToString("C"),finalTCost[0].ToString("C"));
-			 bestTable->Rows->Add("Energy $/kWh",finalECost[2].ToString("C"),finalECost[1].ToString("C"),finalECost[0].ToString("C"));
-			 bestTable->Rows->Add("Power $/kW",finalPCost[2].ToString("C"),finalPCost[1].ToString("C"),finalPCost[0].ToString("C"));
+			}
+public: void Finished()
+		{
+			 bestTable->Rows->Add("Total $/kWh",finalTCost.at(2).ToString("C"),finalTCost.at(1).ToString("C"),finalTCost.at(0).ToString("C"));
+			 bestTable->Rows->Add("Energy $/kWh",finalECost.at(2).ToString("C"),finalECost.at(1).ToString("C"),finalECost.at(0).ToString("C"));
+			 bestTable->Rows->Add("Power $/kW",finalPCost.at(2).ToString("C"),finalPCost.at(1).ToString("C"),finalPCost.at(0).ToString("C"));
 			 bestTable->Rows->Add("Current mA/cm^2",g_jLow.ToString("F1"));
 			 bestTable->Rows->Add("Flow ml/min-A",(g_qhighpercurrent*1000/(100*100)).ToString("F1"));
 			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F1"));
 			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F1"));
 			 bestTable->Rows->Add("Area cm^2",(g_area*100*100).ToString("F1"));
+		}
+private: System::Void epBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 //Runs when energy to power ratio box is changed to update energy box
+			 double power = Convert::ToDouble(powerBox->Text);
+			 double ep = Convert::ToDouble(epBox->Text);
+			 energyBox->Text=(power*ep).ToString();
+		 }
+private: System::Void energyBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 //Runs when energy box is changed to update energy to power ratio box
+			 double power = Convert::ToDouble(powerBox->Text);
+			 double energy = Convert::ToDouble(energyBox->Text);
+			 epBox->Text=(energy/power).ToString();
+		 }
+private: System::Void dataOutput_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 dataOutput->Rows->Clear();
+			 bestTable->Rows->Clear();
+			 /*Thread^ thisThread = gcnew Thread(
+         gcnew ThreadStart(this,&Form1::optimize));
+         thisThread->Start();
+		 Finished();*/
+			 optimize();
+			 Finished();
 
 		 }
 private: System::Void label33_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -4509,6 +3672,12 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 			 double V = Interpolation3d(flow,j,SOC);
 
 			 Int3dVBox->Text=V.ToString();
+		 }
+private: System::Void powerBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 double power = Convert::ToDouble(powerBox->Text);
+			 double ep = Convert::ToDouble(epBox->Text);
+			 energyBox->Text=(power*ep).ToString();
+
 		 }
 };
 }
