@@ -64,6 +64,14 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     cliext.vector<double> finalECost IsByValue : Public, InitOnly
     cliext.vector<double> finalPCost IsByValue : Public, InitOnly
     cliext.vector<double> finalTCost IsByValue : Public, InitOnly
+    Double g_chemCost : Public
+    Double g_AlPlateCost : Public
+    Double g_PCSCost : Public
+    Double g_feltCost : Public
+    Double g_membraneCost : Public
+    Double g_pumpsCost : Public
+    Double g_frameCost : Public
+    Double g_bipolarPlateCost : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static

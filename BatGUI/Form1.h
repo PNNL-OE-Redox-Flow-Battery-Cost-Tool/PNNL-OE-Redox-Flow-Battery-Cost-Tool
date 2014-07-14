@@ -211,10 +211,10 @@ private: System::Windows::Forms::Label^  label22;
 private: System::Windows::Forms::TextBox^  LiConcBox;
 private: System::Windows::Forms::Label^  label23;
 private: System::Windows::Forms::TextBox^  spaBox;
-private: System::Windows::Forms::DataGridView^  OutputGrid;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column27;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column28;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column29;
+
+
+
+
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
@@ -251,8 +251,8 @@ private: System::Windows::Forms::Label^  label28;
 private: System::Windows::Forms::Label^  label29;
 private: System::Windows::Forms::TextBox^  testVEff;
 private: System::Windows::Forms::DataGridView^  testGrid;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column32;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Power;
+
+
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn2;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
@@ -312,6 +312,14 @@ private: System::Windows::Forms::TextBox^  Int3dSOCBox;
 private: System::Windows::Forms::Button^  button3;
 private: System::Windows::Forms::TextBox^  PSlopeBox;
 private: System::Windows::Forms::Label^  label42;
+private: System::Windows::Forms::DataGridView^  componentCostGrid;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column27;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column28;
+private: System::Windows::Forms::CheckBox^  stoichFlowBox;
+private: System::Windows::Forms::Label^  label1;
+private: System::Windows::Forms::TextBox^  gammaBox;
+private: System::Windows::Forms::RadioButton^  FeCr;
+
 
 
 
@@ -424,6 +432,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->gammaBox = (gcnew System::Windows::Forms::TextBox());
+			this->stoichFlowBox = (gcnew System::Windows::Forms::CheckBox());
+			this->componentCostGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PSlopeBox = (gcnew System::Windows::Forms::TextBox());
 			this->label42 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
@@ -451,12 +465,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column28 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column32 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Power = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->spaBox = (gcnew System::Windows::Forms::TextBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
@@ -550,6 +558,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
+			this->FeCr = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -562,8 +571,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->BeginInit();
 			this->tabPage1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->componentCostGrid))->BeginInit();
 			this->panel7->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->BeginInit();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bestTable))->BeginInit();
@@ -854,11 +863,14 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->label1);
+			this->tabPage1->Controls->Add(this->gammaBox);
+			this->tabPage1->Controls->Add(this->stoichFlowBox);
+			this->tabPage1->Controls->Add(this->componentCostGrid);
 			this->tabPage1->Controls->Add(this->PSlopeBox);
 			this->tabPage1->Controls->Add(this->label42);
 			this->tabPage1->Controls->Add(this->panel7);
 			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->OutputGrid);
 			this->tabPage1->Controls->Add(this->label23);
 			this->tabPage1->Controls->Add(this->spaBox);
 			this->tabPage1->Controls->Add(this->label22);
@@ -897,6 +909,53 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(543, 510);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(43, 13);
+			this->label1->TabIndex = 63;
+			this->label1->Text = L"Gamma";
+			// 
+			// gammaBox
+			// 
+			this->gammaBox->Location = System::Drawing::Point(592, 507);
+			this->gammaBox->Name = L"gammaBox";
+			this->gammaBox->Size = System::Drawing::Size(65, 20);
+			this->gammaBox->TabIndex = 62;
+			this->gammaBox->Text = L"0.5";
+			// 
+			// stoichFlowBox
+			// 
+			this->stoichFlowBox->AutoSize = true;
+			this->stoichFlowBox->Location = System::Drawing::Point(8, 458);
+			this->stoichFlowBox->Name = L"stoichFlowBox";
+			this->stoichFlowBox->Size = System::Drawing::Size(109, 17);
+			this->stoichFlowBox->TabIndex = 61;
+			this->stoichFlowBox->Text = L"Stoichmetric Flow";
+			this->stoichFlowBox->UseVisualStyleBackColor = true;
+			// 
+			// componentCostGrid
+			// 
+			this->componentCostGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->componentCostGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {this->Column27, 
+				this->Column28});
+			this->componentCostGrid->Location = System::Drawing::Point(613, 540);
+			this->componentCostGrid->Name = L"componentCostGrid";
+			this->componentCostGrid->Size = System::Drawing::Size(247, 175);
+			this->componentCostGrid->TabIndex = 60;
+			// 
+			// Column27
+			// 
+			this->Column27->HeaderText = L"Component";
+			this->Column27->Name = L"Column27";
+			// 
+			// Column28
+			// 
+			this->Column28->HeaderText = L"Cost ($/kWh)";
+			this->Column28->Name = L"Column28";
 			// 
 			// PSlopeBox
 			// 
@@ -1175,42 +1234,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->button1->Text = L"Calculate";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
-			// 
-			// OutputGrid
-			// 
-			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->Column27, 
-				this->Column28, this->Column29, this->Column32, this->Power});
-			this->OutputGrid->Location = System::Drawing::Point(503, 558);
-			this->OutputGrid->Name = L"OutputGrid";
-			this->OutputGrid->Size = System::Drawing::Size(352, 182);
-			this->OutputGrid->TabIndex = 56;
-			this->OutputGrid->Visible = false;
-			// 
-			// Column27
-			// 
-			this->Column27->HeaderText = L"SOC (%)";
-			this->Column27->Name = L"Column27";
-			// 
-			// Column28
-			// 
-			this->Column28->HeaderText = L"Flow rate (ml/min/cell)";
-			this->Column28->Name = L"Column28";
-			// 
-			// Column29
-			// 
-			this->Column29->HeaderText = L"Current (mA/cm^2)";
-			this->Column29->Name = L"Column29";
-			// 
-			// Column32
-			// 
-			this->Column32->HeaderText = L"VEff";
-			this->Column32->Name = L"Column32";
-			// 
-			// Power
-			// 
-			this->Power->HeaderText = L"Column33";
-			this->Power->Name = L"Power";
 			// 
 			// label23
 			// 
@@ -1758,6 +1781,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// panel1
 			// 
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->FeCr);
 			this->panel1->Controls->Add(this->LiOrgButton);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->VVGen2);
@@ -1765,7 +1789,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->Controls->Add(this->FeV);
 			this->panel1->Location = System::Drawing::Point(3, 6);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(108, 104);
+			this->panel1->Size = System::Drawing::Size(108, 145);
 			this->panel1->TabIndex = 10;
 			// 
 			// LiOrgButton
@@ -1801,7 +1825,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen2->Name = L"VVGen2";
 			this->VVGen2->Size = System::Drawing::Size(90, 21);
 			this->VVGen2->TabIndex = 2;
-			this->VVGen2->TabStop = true;
 			this->VVGen2->Text = L"V-V Gen II";
 			this->VVGen2->UseVisualStyleBackColor = true;
 			// 
@@ -2101,6 +2124,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
+			// FeCr
+			// 
+			this->FeCr->AutoSize = true;
+			this->FeCr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->FeCr->Location = System::Drawing::Point(3, 104);
+			this->FeCr->Name = L"FeCr";
+			this->FeCr->Size = System::Drawing::Size(61, 21);
+			this->FeCr->TabIndex = 13;
+			this->FeCr->Text = L"Fe-Cr";
+			this->FeCr->UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2123,9 +2158,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataOutput))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->componentCostGrid))->EndInit();
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->OutputGrid))->EndInit();
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			this->panel4->ResumeLayout(false);
@@ -2160,6 +2195,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 								CostParameters->Rows->Add("Chemical Sythesis","0.8","0.8","0.8","$/kg");//12
 								CostParameters->Rows->Add("Tank","0.4061","0.3502","0.2943","$/gall");//13
 								CostParameters->Rows->Add("Sulfuric Acid","85","70","50","$/ton");//14
+								CostParameters->Rows->Add("Chromium Chloride","3.2","2.9","2.6","$/kg");//15
 								
 
 				}
@@ -2653,10 +2689,21 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double pumpGPMCost[3]={CostTab(3,8,units),CostTab(2,8,units),CostTab(1,8,units)};
     double AIplates=cells*stacks/stacks*2;
 	double AIplatecost[3]={CostTab(3,9,units),CostTab(2,9,units),CostTab(1,9,units)};
+	
 	int j = 0;
 	while (j<3)
 	{
-
+	if (FeCr->Checked)
+	{
+		AIplatecost[j]*=1.1;
+		pcs[j]*=1.1;
+		membranecost[membrane][j]*=1.1;
+		pumpBaseCost[i]*=1.1;
+		pumpGPMCost[i]*=1.1;
+		framecost[j]*=1.1;
+		bipolarcost[j]*=1.1;
+		feltcost[j]*=1.21;
+	}
     double totcost=AIplates*AIplatecost[j]+pcs[j]*power+(feltcost[j]*feltarea)+(membranearea*membranecost[membrane][j])+2*(pumpBaseCost[i]+pumpGPMCost[i]*GPM)+framearea*framecost[j]+bipolararea*bipolarcost[j];
 	if(VVGen1->Checked)
 	{
@@ -2665,6 +2712,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double other=1/0.982; //bolts, pvc, other minor costs
     totcost*=other;
 	powerCost[j]=totcost;
+	if(j==2)
+	{
+		g_AlPlateCost=AIplates*AIplatecost[j]*1000/g_power/g_ep;
+		g_PCSCost=pcs[j]*power*1000/g_power/g_ep;
+		g_feltCost=(feltcost[j]*feltarea)*1000/g_power/g_ep;
+		g_membraneCost=(membranearea*membranecost[membrane][j])*1000/g_power/g_ep;
+		g_pumpsCost=2*(pumpBaseCost[i]+pumpGPMCost[i]*GPM)*1000/g_power/g_ep;
+		g_frameCost=framearea*framecost[j]*1000/g_power/g_ep;
+		g_bipolarPlateCost=bipolararea*bipolarcost[j]*1000/g_power/g_ep;
+	}
 	j++;
 	}
     return powerCost;
@@ -2678,9 +2735,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double n = Convert::ToDouble(electronBox->Text);
     const double F = 96485;
 	double units;
-	double chemcost[2][3]={{CostTab(3,10,units),CostTab(2,10,units),CostTab(1,10,units)},{CostTab(3,11,units),CostTab(2,11,units),CostTab(1,11,units)}}; //$/kg
-    double chemMW[2]={181.88,162.2}; // g/mol
-    double chemmult[2]={2,1};// mol e/mol
+	double chemcost[3][3]={{CostTab(3,10,units),CostTab(2,10,units),CostTab(1,10,units)},{CostTab(3,11,units),CostTab(2,11,units),CostTab(1,11,units)},{CostTab(3,15,units),CostTab(2,15,units),CostTab(1,15,units)}}; //$/kg
+    double chemMW[3]={181.88,162.2,158.4}; // g/mol
+    double chemmult[3]={2,1,1};// mol e/mol
     double sythesis=0.98;
 	double sythcost[3]={CostTab(3,12,units),CostTab(2,12,units),CostTab(1,12,units)}; //$/kg;
 	double labourcost[3]={1,1,1};
@@ -2703,11 +2760,23 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	{
 		if(system==0)
 		{
-			chemtotal=(2*chemMW[0]*(chemcost[0][i]+sythcost[i])*3600)/(Veff*F*chemmult[0]*DOD*sythesis)+2*chemMW[1]*chemcost[1][2]*3600/(Veff*F*chemmult[1]*DOD*sythesis);
+			if(FeCr->Checked)
+			{
+				chemtotal=(2*chemMW[2]*(chemcost[2][i]+sythcost[i])*3600)/(Veff*F*chemmult[2]*DOD*sythesis)+2*chemMW[1]*chemcost[1][2]*3600/(Veff*F*chemmult[1]*DOD*sythesis);
+			}
+			else
+			{
+				chemtotal=(2*chemMW[0]*(chemcost[0][i]+sythcost[i])*3600)/(Veff*F*chemmult[0]*DOD*sythesis)+2*chemMW[1]*chemcost[1][2]*3600/(Veff*F*chemmult[1]*DOD*sythesis);
+			}
+			
 		}
 		if(system==1)
 		{
 			chemtotal=(2*chemMW[0]*(chemcost[0][i]+sythcost[i])*3600)/(Veff*F*chemmult[0]*DOD*sythesis);
+		}
+		if(i==2)
+		{
+			g_chemCost=chemtotal/n;
 		}
 		energyCost[i]=chemtotal/n+costpergallon[i]*gallons+labourcost[i]+H2SO4total[i];
 		i++;
@@ -2766,6 +2835,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	
     double PEff=0.67; // pump efficiency
     double powerLoss=2*(g_pDropFactor+g_SOC*g_pDropFactorSlope)*Pdrop*Q/PEff;
+	if(stoichFlowBox->Checked)
+	{
+		powerLoss/=g_SOC;
+	}
     return powerLoss;
 }
 	public: void MarshalString ( String ^ s, string& os ) {
@@ -2826,6 +2899,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: cliext::vector <double>finalECost;
 	public: cliext::vector <double>finalPCost;
 	public: cliext::vector <double>finalTCost;
+	public: double g_chemCost;
+	public: double g_AlPlateCost;
+	public: double g_PCSCost;
+	public: double g_feltCost;
+	public: double g_membraneCost;
+	public: double g_pumpsCost;
+	public: double g_frameCost;
+	public: double g_bipolarPlateCost;
+
 
 
 
@@ -3040,6 +3122,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				finalPCost.resize(3,0);
 				finalTCost.resize(3,0);
 				if(FeV->Checked)
+	{
+		g_system=0;
+		g_membrane=0;
+	}
+				if(FeCr->Checked)
 	{
 		g_system=0;
 		g_membrane=0;
@@ -3507,7 +3594,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 g_areaReal=true;
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
-			 double gamma=0.5;
+			 double gamma=Convert::ToDouble(gammaBox->Text);
 
 			 while ((abs(delcost)>=0.01) && (i<10))
 			 {
@@ -3527,7 +3614,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				 }
 				 if(DODOpt)
 				 {
-				 g_DOD-=2*gamma*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
+				 g_DOD-=gamma*D_xcostoverD_xxcost((g_DOD),g_jLow,g_qhighpercurrent);
 				 if(g_DOD>DODMax){g_DOD=DODMax;}
 				 if(g_DOD<DODMin){g_DOD=DODMin;}
 				 }
@@ -3564,6 +3651,15 @@ public: void Finished()
 			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F1"));
 			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F1"));
 			 bestTable->Rows->Add("Area cm^2",(g_area*100*100).ToString("F1"));
+			 bestTable->Rows->Add("V Effective",g_VEffAvg.ToString("F3"));
+			 componentCostGrid->Rows->Add("Chemicals",g_chemCost.ToString("C"));
+			 componentCostGrid->Rows->Add("Al End Plate",g_AlPlateCost.ToString("C"));
+			 componentCostGrid->Rows->Add("PCS",g_PCSCost.ToString("C"));
+			 componentCostGrid->Rows->Add("Felt",g_feltCost.ToString("C"));
+			 componentCostGrid->Rows->Add("Membrane",g_membraneCost.ToString("C"));
+			 componentCostGrid->Rows->Add("Pumps",g_pumpsCost.ToString("C"));
+			 componentCostGrid->Rows->Add("PVC Frame",g_frameCost.ToString("C"));
+			 componentCostGrid->Rows->Add("Bipolar Plate",g_bipolarPlateCost.ToString("C"));
 		}
 private: System::Void epBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 //Runs when energy to power ratio box is changed to update energy box
@@ -3582,6 +3678,7 @@ private: System::Void dataOutput_CellContentClick(System::Object^  sender, Syste
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 dataOutput->Rows->Clear();
 			 bestTable->Rows->Clear();
+			 componentCostGrid->Rows->Clear();
 			 /*Thread^ thisThread = gcnew Thread(
          gcnew ThreadStart(this,&Form1::optimize));
          thisThread->Start();
