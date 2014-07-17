@@ -3480,6 +3480,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					i++;
 					VEffAvg+=VEff;
+					dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff);
 					g_SOC+=delSOC;
 				}
 
