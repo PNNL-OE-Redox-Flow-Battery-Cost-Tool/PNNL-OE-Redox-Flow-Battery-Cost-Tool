@@ -3390,7 +3390,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
 					
 						VEff = V*(powerproduced-powerloss)/powerproduced;
-						VEff=0;
+						//VEff=0;
 						V=g_voltage(SOC,g_area,(flow+flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
 						powerproduced=V*j*g_area*10;
 						powerloss=pLoss(g_area,(flow+flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
@@ -3480,7 +3480,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					i++;
 					VEffAvg+=VEff;
-					dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff);
+					dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff,j,flow);
 					g_SOC+=delSOC;
 				}
 
