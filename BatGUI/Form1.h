@@ -2601,6 +2601,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;
     double Irea=t*Inew/pat;
     double Irec=t*Inew/pct;
+	g_etapos=etapos;
+	g_etaneg=etaneg;
+	g_Irea=Irea;
+	g_Irec=Irec;
     if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
     {
     V = V2[i]-V1[i]+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
@@ -2907,6 +2911,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	public: double g_pumpsCost;
 	public: double g_frameCost;
 	public: double g_bipolarPlateCost;
+	public: double g_etapos;
+	public: double g_etaneg;
+	public: double g_Irea;
+	public: double g_Irec;
+
 
 
 
@@ -3480,7 +3489,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					i++;
 					VEffAvg+=VEff;
-					dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff,j,flow);
+					dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff,j,flow,g_etapos,g_etaneg,g_Irea,g_Irec);
 					g_SOC+=delSOC;
 				}
 

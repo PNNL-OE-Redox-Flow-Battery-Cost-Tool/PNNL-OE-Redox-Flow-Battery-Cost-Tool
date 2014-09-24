@@ -72,6 +72,10 @@ Class BatGUI.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double g_pumpsCost : Public
     Double g_frameCost : Public
     Double g_bipolarPlateCost : Public
+    Double g_etapos : Public
+    Double g_etaneg : Public
+    Double g_Irea : Public
+    Double g_Irec : Public
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] ProcessList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.DataGridView] VariableList : Public, Static
     System.Collections.Generic.List`1[System.Windows.Forms.TextBox] UnitsList : Public, Static
