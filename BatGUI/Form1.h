@@ -1356,7 +1356,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiVoltageBox->Name = L"LiVoltageBox";
 			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
 			this->LiVoltageBox->TabIndex = 48;
-			this->LiVoltageBox->Text = L"1.96";
+			this->LiVoltageBox->Text = L"1.94";
 			// 
 			// channelSepBox
 			// 
@@ -2596,6 +2596,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	if(LiOrgButton->Checked)
 	{
+		T=273.15+60;
 		Ci1= Convert::ToDouble(LiConcBox->Text);
 	}
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
@@ -2625,8 +2626,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		k1*=1;
 		k2[system]*=1;
 	}
-	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double etaneg=-R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    double etapos=R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
 	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
 	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
@@ -2686,11 +2687,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		//etapos = 0;
 		pat = A[1]*10*condScaleFactor/(10); //S/m
 		pct = pat; //temp
-		condM[membrane]=0.002;//2.5/(10); //S/m
+		condM[membrane]=0.32;//0.088;//2.5/(10); //S/m
 		//t=0.5/1000;
 		Irea = t*Inew/pat;
 		Irec = t*Inew/pct;
-		mt[membrane]=7*25e-6;//7*(25e-6); // m
+		mt[membrane]=25e-6;//7*(25e-6); // m
 		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
 
@@ -2700,6 +2701,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		V=0;
 	}
 	double scaleV=1/*1.138*/;
+	if (V<=0)
+	{
+		return 0;
+	}
     return V*scaleV;
 }
 	public: double CostTab(int column,int row,double units)
@@ -2856,7 +2861,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//aspect ratio - height/width of cell
 	//channels - number of flow channels in cell
 	//cells - cells per stack
-	return 0;
+	cwidth=g_cwidth;
 	double resistivity=0.05;//ohm m (1/Convert::ToDouble(CondBox->Text))
 	double length=sqrt(area/aspectratio);
 	double carea=cdepth*cwidth*channels;
@@ -3294,6 +3299,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 				b=-10*g_jLow*V/sqrt(g_CE);
 				c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+				F=b*b-4*a*c;
 				while(F<0)
 				{
 
@@ -3327,7 +3333,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 
 					F=b*b-4*a*c;
-					
+					/*
 					V=g_voltage(g_SOC,g_area,g_qhigh*g_area,(g_jLow+hj),g_aspectratio,g_system,g_membrane);
 					a= pLoss(g_area,g_qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
 					b=-10*(g_jLow+hj)*V/sqrt(g_CE);
@@ -3343,11 +3349,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					F_b=b*b-4*a*c;
 
 					D_jF = (F_f - F_b)/(2*hj);
-					//D_jjF = (F_f + F_b - 2*F)/(hj*hj);
-					/*if(D_jjF!=0)
-					{
-					g_jLow-=0.1*D_jF/D_jjF;
-					}*/
+					D_jjF = (F_f + F_b - 2*F)/(hj*hj);
+					
 					if (D_jF>0)
 					{
 						g_jLow+=1;
@@ -3356,7 +3359,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					{
 						g_jLow-=1;
 					}
-
+					*/
 
 					//MessageBox::Show(F.ToString() +"," + g_qhigh.ToString()+"," + g_jLow.ToString()+"," + V.ToString());
 					
@@ -3395,7 +3398,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_jLow=jLow;
 				g_qhigh=g_qhighpercurrent*g_jLow;
 				g_areaReal=true;
-				double h = 0.0001;
+				double h = 0.001;
 				double cost = calculateCost(g_jLow,g_qhighpercurrent);
 
 				if(!g_areaReal)
@@ -3446,8 +3449,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 
 						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
-						while(V==0)
+						while(V<=0)
 						{
+							if(flow!=flow)
+							{
+								flow=0;
+							}
 							flow+=10;
 							V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 						}
@@ -3484,7 +3491,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			}
 	public: double calculateVeffAvg(double jLow, double qhighpercurrent)
 			{
-				double delSOC = 0.01;
+				double delSOC = 0.01;//*g_DOD/50;
 				double SOCLow = (100-g_DOD)/200;
 				double SOCHigh = 1.0000001-SOCLow;
 				double flow=qhighpercurrent*jLow;
@@ -3505,7 +3512,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double powerloss;
 				double D_jP;
 				double Pb;
-
+				double del;
 				while (g_SOC<= SOCHigh)
 				{
 					if(constpower->Checked)
@@ -3528,7 +3535,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					Pb=powerproduced-powerloss;
 					D_jP=((power-Pb)/jres);
-					j-=((power-g_reqpowerpercell)/D_jP);
+					del=0.1*((power-g_reqpowerpercell)/D_jP);
+					if(del>=0)
+					{
+						j-=del;
+					}
+					else
+					{
+						j=j;
+					}
 					if(abs((power-g_reqpowerpercell)/D_jP)<=0.001)
 					{
 						powerAttained=true;
@@ -3669,7 +3684,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 double delcost=cost;
 			 double gamma=Convert::ToDouble(gammaBox->Text);
 
-			 while ((abs(delcost)>=0.01) && (i<20))
+			 double del;
+
+			 while ((abs(delcost)>=0.01) && (i<10))
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
@@ -3681,7 +3698,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				 }
 				 if(jLowOpt)
 				 {
-				 g_jLow-=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
+				 del=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
+				 //MessageBox::Show(del.ToString("F3"));
+				 g_jLow-=del;
 				 if(g_jLow>jLowMax){g_jLow=jLowMax;}
 				 if(g_jLow<jLowMin){g_jLow=jLowMin;}
 				 }
@@ -3707,7 +3726,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
 				 
-				 testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD,g_area,g_pCost,g_eCost,g_VEffAvg);
+				 //testGrid->Rows->Add(cost,g_jLow,(g_qhighpercurrent*g_jLow),g_DOD,g_area,g_pCost,g_eCost,g_VEffAvg);
 				 i++;
 			 }
 			 int k=0;
