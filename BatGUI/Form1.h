@@ -319,6 +319,11 @@ private: System::Windows::Forms::CheckBox^  stoichFlowBox;
 private: System::Windows::Forms::Label^  label1;
 private: System::Windows::Forms::TextBox^  gammaBox;
 private: System::Windows::Forms::RadioButton^  FeCr;
+private: System::Windows::Forms::TextBox^  FlowChanMinBox;
+private: System::Windows::Forms::TextBox^  FlowChanMaxBox;
+private: System::Windows::Forms::TextBox^  flowChanValueBox;
+private: System::Windows::Forms::CheckBox^  optFlowChanBox;
+private: System::Windows::Forms::Label^  label2;
 
 
 
@@ -441,6 +446,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->PSlopeBox = (gcnew System::Windows::Forms::TextBox());
 			this->label42 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->FlowChanMinBox = (gcnew System::Windows::Forms::TextBox());
+			this->FlowChanMaxBox = (gcnew System::Windows::Forms::TextBox());
+			this->flowChanValueBox = (gcnew System::Windows::Forms::TextBox());
+			this->optFlowChanBox = (gcnew System::Windows::Forms::CheckBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->ARMinBox = (gcnew System::Windows::Forms::TextBox());
 			this->ARMaxBox = (gcnew System::Windows::Forms::TextBox());
 			this->ARValueBox = (gcnew System::Windows::Forms::TextBox());
@@ -521,6 +531,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->epBox = (gcnew System::Windows::Forms::TextBox());
 			this->powerBox = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->FeCr = (gcnew System::Windows::Forms::RadioButton());
 			this->LiOrgButton = (gcnew System::Windows::Forms::RadioButton());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->VVGen2 = (gcnew System::Windows::Forms::RadioButton());
@@ -558,7 +569,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->FeCr = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -977,6 +987,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// panel7
 			// 
 			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel7->Controls->Add(this->FlowChanMinBox);
+			this->panel7->Controls->Add(this->FlowChanMaxBox);
+			this->panel7->Controls->Add(this->flowChanValueBox);
+			this->panel7->Controls->Add(this->optFlowChanBox);
+			this->panel7->Controls->Add(this->label2);
 			this->panel7->Controls->Add(this->ARMinBox);
 			this->panel7->Controls->Add(this->ARMaxBox);
 			this->panel7->Controls->Add(this->ARValueBox);
@@ -1002,8 +1017,55 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel7->Controls->Add(this->label30);
 			this->panel7->Location = System::Drawing::Point(3, 157);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(457, 146);
+			this->panel7->Size = System::Drawing::Size(457, 157);
 			this->panel7->TabIndex = 57;
+			this->panel7->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel7_Paint);
+			// 
+			// FlowChanMinBox
+			// 
+			this->FlowChanMinBox->Location = System::Drawing::Point(389, 128);
+			this->FlowChanMinBox->Name = L"FlowChanMinBox";
+			this->FlowChanMinBox->ReadOnly = true;
+			this->FlowChanMinBox->Size = System::Drawing::Size(58, 20);
+			this->FlowChanMinBox->TabIndex = 40;
+			this->FlowChanMinBox->Text = L"1";
+			// 
+			// FlowChanMaxBox
+			// 
+			this->FlowChanMaxBox->Location = System::Drawing::Point(313, 128);
+			this->FlowChanMaxBox->Name = L"FlowChanMaxBox";
+			this->FlowChanMaxBox->ReadOnly = true;
+			this->FlowChanMaxBox->Size = System::Drawing::Size(58, 20);
+			this->FlowChanMaxBox->TabIndex = 39;
+			this->FlowChanMaxBox->Text = L"40";
+			// 
+			// flowChanValueBox
+			// 
+			this->flowChanValueBox->Location = System::Drawing::Point(164, 128);
+			this->flowChanValueBox->Name = L"flowChanValueBox";
+			this->flowChanValueBox->Size = System::Drawing::Size(58, 20);
+			this->flowChanValueBox->TabIndex = 38;
+			this->flowChanValueBox->Text = L"5";
+			// 
+			// optFlowChanBox
+			// 
+			this->optFlowChanBox->AutoSize = true;
+			this->optFlowChanBox->Location = System::Drawing::Point(230, 130);
+			this->optFlowChanBox->Name = L"optFlowChanBox";
+			this->optFlowChanBox->Size = System::Drawing::Size(66, 17);
+			this->optFlowChanBox->TabIndex = 37;
+			this->optFlowChanBox->Text = L"Optimize";
+			this->optFlowChanBox->UseVisualStyleBackColor = true;
+			this->optFlowChanBox->CheckedChanged += gcnew System::EventHandler(this, &Form1::optFlowChanBox_CheckedChanged);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(25, 130);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(127, 13);
+			this->label2->TabIndex = 36;
+			this->label2->Text = L"Flow Channel Width (mm)";
 			// 
 			// ARMinBox
 			// 
@@ -1294,7 +1356,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiVoltageBox->Name = L"LiVoltageBox";
 			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
 			this->LiVoltageBox->TabIndex = 48;
-			this->LiVoltageBox->Text = L"3.8";
+			this->LiVoltageBox->Text = L"1.96";
 			// 
 			// channelSepBox
 			// 
@@ -1343,6 +1405,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->PBox->Size = System::Drawing::Size(65, 20);
 			this->PBox->TabIndex = 31;
 			this->PBox->Text = L"1";
+			this->PBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// KBox
 			// 
@@ -1550,7 +1613,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel4->Controls->Add(this->constcurrent);
 			this->panel4->Controls->Add(this->constpower);
-			this->panel4->Location = System::Drawing::Point(4, 309);
+			this->panel4->Location = System::Drawing::Point(466, 205);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(139, 50);
 			this->panel4->TabIndex = 21;
@@ -1573,7 +1636,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->constpower->Checked = true;
 			this->constpower->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->constpower->Location = System::Drawing::Point(4, 0);
+			this->constpower->Location = System::Drawing::Point(4, 3);
 			this->constpower->Name = L"constpower";
 			this->constpower->Size = System::Drawing::Size(125, 21);
 			this->constpower->TabIndex = 18;
@@ -1792,6 +1855,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->Size = System::Drawing::Size(108, 145);
 			this->panel1->TabIndex = 10;
 			// 
+			// FeCr
+			// 
+			this->FeCr->AutoSize = true;
+			this->FeCr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->FeCr->Location = System::Drawing::Point(3, 104);
+			this->FeCr->Name = L"FeCr";
+			this->FeCr->Size = System::Drawing::Size(61, 21);
+			this->FeCr->TabIndex = 13;
+			this->FeCr->Text = L"Fe-Cr";
+			this->FeCr->UseVisualStyleBackColor = true;
+			// 
 			// LiOrgButton
 			// 
 			this->LiOrgButton->AutoSize = true;
@@ -1825,6 +1900,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen2->Name = L"VVGen2";
 			this->VVGen2->Size = System::Drawing::Size(90, 21);
 			this->VVGen2->TabIndex = 2;
+			this->VVGen2->TabStop = true;
 			this->VVGen2->Text = L"V-V Gen II";
 			this->VVGen2->UseVisualStyleBackColor = true;
 			// 
@@ -2123,18 +2199,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Name = L"testBox";
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
-			// 
-			// FeCr
-			// 
-			this->FeCr->AutoSize = true;
-			this->FeCr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->FeCr->Location = System::Drawing::Point(3, 104);
-			this->FeCr->Name = L"FeCr";
-			this->FeCr->Size = System::Drawing::Size(61, 21);
-			this->FeCr->TabIndex = 13;
-			this->FeCr->Text = L"Fe-Cr";
-			this->FeCr->UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -2626,11 +2690,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		//etapos = 0;
 		pat = A[1]*10*condScaleFactor/(10); //S/m
 		pct = pat; //temp
-		condM[membrane]=2.5/(10); //S/m
+		condM[membrane]=0.002;//2.5/(10); //S/m
 		//t=0.5/1000;
 		Irea = t*Inew/pat;
 		Irec = t*Inew/pct;
-		mt[membrane]=7*(25e-6); // m
+		mt[membrane]=7*25e-6;//7*(25e-6); // m
 		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
 
@@ -2796,7 +2860,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//aspect ratio - height/width of cell
 	//channels - number of flow channels in cell
 	//cells - cells per stack
-	double resistivity=0.05;//ohm m
+	return 0;
+	double resistivity=0.05;//ohm m (1/Convert::ToDouble(CondBox->Text))
 	double length=sqrt(area/aspectratio);
 	double carea=cdepth*cwidth*channels;
 	double Rs=resistivity*length/carea;
@@ -2818,6 +2883,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 { //calculates power loss due to pressure drop in cell in W
     double width = sqrt(area*aspectratio); //cell width m
     double height = width/aspectratio;
+	cwidth=g_cwidth;
 	double Dh=2*cdepth*cwidth/(cdepth+cwidth);
 	double carea=cdepth*cwidth;
     double Q = flow/(60*1000*1000); // m^3/s
@@ -3338,7 +3404,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				g_jLow=jLow;
 				g_qhigh=g_qhighpercurrent*g_jLow;
 				g_areaReal=true;
-				double h = 0.1;
+				double h = 0.0001;
 				double cost = calculateCost(g_jLow,g_qhighpercurrent);
 
 				if(!g_areaReal)
@@ -3366,7 +3432,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 					return 0;
 				}
-				//testGrid->Rows->Add(cost,x-h,costB,costF);
+				testGrid->Rows->Add(cost,x-h,costB,costF);
 				return (D_xcost/D_xxcost);
 			}
 	public: double optimizeFlow(double j,double flow, double SOC)
@@ -3589,8 +3655,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 g_qhighpercurrent=Convert::ToDouble(flowValueBox->Text)*100*100/1000;
 			 g_qhigh=g_qhighpercurrent*g_jLow;
 			 bool flowOpt=(optFlowBox->Checked);
-			 double flowMax=Convert::ToDouble(flowMaxBox->Text);
-			 double flowMin=Convert::ToDouble(flowMinBox->Text);
+			 double flowMax=10*Convert::ToDouble(flowMaxBox->Text);
+			 double flowMin=10*Convert::ToDouble(flowMinBox->Text);
 
 			 g_DOD=Convert::ToDouble(DODValueBox->Text);
 			 bool DODOpt=(optDODBox->Checked);
@@ -3601,12 +3667,18 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 bool AROpt=(optARBox->Checked);
 			 double ARMax=Convert::ToDouble(ARMaxBox->Text);
 			 double ARMin=Convert::ToDouble(ARMinBox->Text);
+
+			 g_cwidth=0.001*Convert::ToDouble(flowChanValueBox->Text);
+			 bool FlowChanOpt=(optFlowChanBox->Checked);
+			 double FlowChanMax=0.001*Convert::ToDouble(FlowChanMaxBox->Text);
+			 double FlowChanMin=0.001*Convert::ToDouble(FlowChanMinBox->Text);
+
 			 g_areaReal=true;
 			 double cost = calculateCost(g_jLow,g_qhighpercurrent);
 			 double delcost=cost;
 			 double gamma=Convert::ToDouble(gammaBox->Text);
 
-			 while ((abs(delcost)>=0.01) && (i<10))
+			 while ((abs(delcost)>=0.01) && (i<20))
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
@@ -3634,7 +3706,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				 if(g_aspectratio>ARMax){g_aspectratio=ARMax;}
 				 if(g_aspectratio<ARMin){g_aspectratio=ARMin;}
 				 }
-
+				 if(FlowChanOpt)
+				 {
+				 g_cwidth-=gamma*D_xcostoverD_xxcost((g_cwidth),g_jLow,g_qhighpercurrent);
+				 if(g_cwidth>FlowChanMax){g_cwidth=FlowChanMax;}
+				 if(g_cwidth<FlowChanMin){g_cwidth=FlowChanMin;}
+				 }
 
 				 delcost=calculateCost(g_jLow,g_qhighpercurrent)-cost;
 				 cost=cost + delcost;
@@ -3656,12 +3733,13 @@ public: void Finished()
 			 bestTable->Rows->Add("Total $/kWh",finalTCost.at(2).ToString("C"),finalTCost.at(1).ToString("C"),finalTCost.at(0).ToString("C"));
 			 bestTable->Rows->Add("Energy $/kWh",finalECost.at(2).ToString("C"),finalECost.at(1).ToString("C"),finalECost.at(0).ToString("C"));
 			 bestTable->Rows->Add("Power $/kW",finalPCost.at(2).ToString("C"),finalPCost.at(1).ToString("C"),finalPCost.at(0).ToString("C"));
-			 bestTable->Rows->Add("Current mA/cm^2",g_jLow.ToString("F1"));
-			 bestTable->Rows->Add("Flow ml/min-A",(g_qhighpercurrent*1000/(100*100)).ToString("F1"));
-			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F1"));
-			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F1"));
-			 bestTable->Rows->Add("Area cm^2",(g_area*100*100).ToString("F1"));
-			 bestTable->Rows->Add("V Effective",g_VEffAvg.ToString("F3"));
+			 bestTable->Rows->Add("Current mA/cm^2",g_jLow.ToString("F2"));
+			 bestTable->Rows->Add("Flow ml/min-A",(g_qhighpercurrent*1000/(100*100)).ToString("F2"));
+			 bestTable->Rows->Add("SOC Range %",g_DOD.ToString("F2"));
+			 bestTable->Rows->Add("Aspect Ratio",g_aspectratio.ToString("F2"));
+			 bestTable->Rows->Add("Area cm^2",(g_area*100*100).ToString("F2"));
+			 bestTable->Rows->Add("V Effective V",g_VEffAvg.ToString("F3"));
+			 bestTable->Rows->Add("Channel Width mm",(g_cwidth*1000).ToString("F2"));
 			 componentCostGrid->Rows->Add("Chemicals",g_chemCost.ToString("C"));
 			 componentCostGrid->Rows->Add("Al End Plate",g_AlPlateCost.ToString("C"));
 			 componentCostGrid->Rows->Add("PCS",g_PCSCost.ToString("C"));
@@ -3784,6 +3862,21 @@ private: System::Void powerBox_TextChanged(System::Object^  sender, System::Even
 			 double power = Convert::ToDouble(powerBox->Text);
 			 double ep = Convert::ToDouble(epBox->Text);
 			 energyBox->Text=(power*ep).ToString();
+
+		 }
+private: System::Void panel7_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		 }
+private: System::Void optFlowChanBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 			 			 			 			 if (optFlowChanBox->Checked)
+			 {
+				 FlowChanMaxBox->ReadOnly=false;
+				 FlowChanMinBox->ReadOnly=false;
+			 }
+			 else
+			 {
+				 FlowChanMaxBox->ReadOnly=true;
+				 FlowChanMinBox->ReadOnly=true;
+			}
 
 		 }
 };
