@@ -2596,6 +2596,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	if(LiOrgButton->Checked)
 	{
+		T=60+273.15;
 		Ci1= Convert::ToDouble(LiConcBox->Text);
 	}
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
@@ -2625,8 +2626,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		k1*=1;
 		k2[system]*=1;
 	}
-	double etaneg=-2*R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=2*R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double etaneg=-R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    double etapos=R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
 	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
 	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
@@ -2677,6 +2678,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     {
     V=0;
     }
+
 	if(LiOrgButton->Checked)
 	{
 		/*double VLiA[] = {3.193552576,3.298606737,3.422420435,3.516218117,3.602508955,3.662540986,3.670044043,3.673797466,3.700060059,3.73382571,3.752585246,3.767595148,3.790104319,3.812617278,3.835126449,3.898911903,3.932295015,3.977286844,4.12524213,4.152428876};
@@ -2690,11 +2692,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		//etapos = 0;
 		pat = A[1]*10*condScaleFactor/(10); //S/m
 		pct = pat; //temp
-		condM[membrane]=0.002;//2.5/(10); //S/m
+		condM[membrane]=0.32;//2.5/(10); //S/m
 		//t=0.5/1000;
 		Irea = t*Inew/pat;
 		Irec = t*Inew/pct;
-		mt[membrane]=7*25e-6;//7*(25e-6); // m
+		mt[membrane]=25e-6;//7*(25e-6); // m
 		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
 
@@ -2860,7 +2862,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//aspect ratio - height/width of cell
 	//channels - number of flow channels in cell
 	//cells - cells per stack
-	return 0;
+	//return 0;
 	double resistivity=0.05;//ohm m (1/Convert::ToDouble(CondBox->Text))
 	double length=sqrt(area/aspectratio);
 	double carea=cdepth*cwidth*channels;
@@ -3678,7 +3680,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 double delcost=cost;
 			 double gamma=Convert::ToDouble(gammaBox->Text);
 
-			 while ((abs(delcost)>=0.01) && (i<20))
+			 while ((abs(delcost)>=0.01) && (i<10))
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
