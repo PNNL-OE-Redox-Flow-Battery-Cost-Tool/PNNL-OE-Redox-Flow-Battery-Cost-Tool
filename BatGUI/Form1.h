@@ -324,6 +324,24 @@ private: System::Windows::Forms::TextBox^  FlowChanMaxBox;
 private: System::Windows::Forms::TextBox^  flowChanValueBox;
 private: System::Windows::Forms::CheckBox^  optFlowChanBox;
 private: System::Windows::Forms::Label^  label2;
+private: System::Windows::Forms::DataGridView^  PerformanceTest;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column29;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column32;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column36;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column37;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column38;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column39;
+private: System::Windows::Forms::Button^  button4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column40;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column41;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column42;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column43;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column44;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column45;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column46;
+
+
+
 
 
 
@@ -539,6 +557,14 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabpage4 = (gcnew System::Windows::Forms::TabPage());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->PerformanceTest = (gcnew System::Windows::Forms::DataGridView());
+			this->Column29 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column32 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column36 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column37 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column38 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column39 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->Int3dVBox = (gcnew System::Windows::Forms::TextBox());
 			this->Int3dFlowBox = (gcnew System::Windows::Forms::TextBox());
@@ -569,6 +595,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
+			this->Column40 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column41 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column42 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column43 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column44 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column45 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column46 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -590,6 +623,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabpage4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->PerformanceTest))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -1944,6 +1978,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// tabpage4
 			// 
+			this->tabpage4->Controls->Add(this->button4);
+			this->tabpage4->Controls->Add(this->PerformanceTest);
 			this->tabpage4->Controls->Add(this->label38);
 			this->tabpage4->Controls->Add(this->Int3dVBox);
 			this->tabpage4->Controls->Add(this->Int3dFlowBox);
@@ -1973,6 +2009,58 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabpage4->TabIndex = 5;
 			this->tabpage4->Text = L"Test tab";
 			this->tabpage4->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(261, 456);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 68;
+			this->button4->Text = L"Test";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click);
+			// 
+			// PerformanceTest
+			// 
+			this->PerformanceTest->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->PerformanceTest->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(13) {this->Column29, 
+				this->Column32, this->Column36, this->Column37, this->Column38, this->Column39, this->Column40, this->Column41, this->Column42, 
+				this->Column43, this->Column44, this->Column45, this->Column46});
+			this->PerformanceTest->Location = System::Drawing::Point(261, 318);
+			this->PerformanceTest->Name = L"PerformanceTest";
+			this->PerformanceTest->Size = System::Drawing::Size(460, 131);
+			this->PerformanceTest->TabIndex = 67;
+			this->PerformanceTest->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick);
+			// 
+			// Column29
+			// 
+			this->Column29->HeaderText = L"SOC";
+			this->Column29->Name = L"Column29";
+			// 
+			// Column32
+			// 
+			this->Column32->HeaderText = L"teffpos";
+			this->Column32->Name = L"Column32";
+			// 
+			// Column36
+			// 
+			this->Column36->HeaderText = L"teffneg";
+			this->Column36->Name = L"Column36";
+			// 
+			// Column37
+			// 
+			this->Column37->HeaderText = L"SOCrxnpos";
+			this->Column37->Name = L"Column37";
+			// 
+			// Column38
+			// 
+			this->Column38->HeaderText = L"SOCrxnneg";
+			this->Column38->Name = L"Column38";
+			// 
+			// Column39
+			// 
+			this->Column39->HeaderText = L"V";
+			this->Column39->Name = L"Column39";
 			// 
 			// label38
 			// 
@@ -2057,7 +2145,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->dataGridViewTextBoxColumn2, 
 				this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn3, this->Column30, this->Column31, this->Column33, this->Column34, 
 				this->Column35});
-			this->testGrid->Location = System::Drawing::Point(279, 133);
+			this->testGrid->Location = System::Drawing::Point(259, 96);
 			this->testGrid->Name = L"testGrid";
 			this->testGrid->Size = System::Drawing::Size(587, 182);
 			this->testGrid->TabIndex = 57;
@@ -2200,6 +2288,41 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
+			// Column40
+			// 
+			this->Column40->HeaderText = L"A";
+			this->Column40->Name = L"Column40";
+			// 
+			// Column41
+			// 
+			this->Column41->HeaderText = L"B";
+			this->Column41->Name = L"Column41";
+			// 
+			// Column42
+			// 
+			this->Column42->HeaderText = L"D";
+			this->Column42->Name = L"Column42";
+			// 
+			// Column43
+			// 
+			this->Column43->HeaderText = L"G";
+			this->Column43->Name = L"Column43";
+			// 
+			// Column44
+			// 
+			this->Column44->HeaderText = L"H";
+			this->Column44->Name = L"Column44";
+			// 
+			// Column45
+			// 
+			this->Column45->HeaderText = L"tmin";
+			this->Column45->Name = L"Column45";
+			// 
+			// Column46
+			// 
+			this->Column46->HeaderText = L"beta";
+			this->Column46->Name = L"Column46";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2237,6 +2360,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->ResumeLayout(false);
 			this->tabpage4->ResumeLayout(false);
 			this->tabpage4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->PerformanceTest))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->testGrid))->EndInit();
 			this->ResumeLayout(false);
 
@@ -2540,6 +2664,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 }
 	public: double g_voltage(double SOC, double area, double flow, double j,double aspectratio,int system, int membrane)
 {
+	if(area!=area)
+	{
+		return 0;
+	}
 	//electrochemical model
 	//SOC as fraction
 	//area is active cell area in m^2
@@ -2571,69 +2699,126 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double V;
     double width = sqrt(area/aspectratio); //cell width m
     double height = width*aspectratio;
-	double V2[2] = {0.77,1.004}; //V
+	double V2 = 1.004; //V
 //	V2[1]+=2;
-	double V1[2]={-0.085,-.41}; //V
+	double V1=-.41; //V
     double Q = flow/(60*1000*1000); // m^3/s
-	double TCent[2]={45,45};
-	if(VVGen1->Checked)
-	{
-		TCent[1]=35;
-	}
-    double T = TCent[i]+273.15; // K
+	double TCent=45;
+	double T = TCent+273.15; // K
     double Ci1 = 1750; // initial concentration of chemical 1, mol/m^3
+	double pa=(26.94+6.63*SOC)*1.05; //S/m
+	double pc=(27.96+20.57*SOC)*1.05; //S/m
+	double kScaleFactor = Convert::ToDouble(KBox->Text);
+	double condScaleFactor = Convert::ToDouble(CondBox->Text);
+    double k1=kScaleFactor*8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
+	double k2=kScaleFactor*0.00000068*exp((F*V2/R)*(T-298)/(298*T));//{1.6/100000*exp((F*0.77/R)*(T-298)/(298*T)),0.00000068*exp((F*V2[i]/R)*(T-298)/(298*T))};
 	if(VVGen1->Checked)
 	{
+		V2 = 1.004;
+		V1=-.41;
 		Ci1=1500;
+		TCent=35;
+		T = TCent+273.15;
+		pa=(26.94+6.63*SOC); //S/m
+		pc=(27.96+20.57*SOC); //S/m
+		k1=kScaleFactor*8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
+		k2=kScaleFactor*0.00000068*exp((F*V2/R)*(T-298)/(298*T));
 	}
 	if(FeV->Checked)
 	{
+		V2=0.77;
+		V1=-0.085;
 		Ci1=1750;
+		TCent=45;
+		T = TCent+273.15;
+		pa=50;
+		pc=50;
+		k1=kScaleFactor*8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
+		k2=kScaleFactor*1.6/100000*exp((F*0.77/R)*(T-298)/(298*T));
 	}
 	if(VVGen2->Checked)
 	{
+		V2 = 1.004;
+		V1=-.41;
 		Ci1=2000;
+		TCent=50;
+		T = TCent+273.15;
+		pa=(26.94+6.63*SOC)*1.05; //S/m
+		pc=(27.96+20.57*SOC)*1.05; //S/m
+		k1=kScaleFactor*3.55666666666667E-06;
+		k2=kScaleFactor*7.06666666666667E-06;
 	}
 	if(LiOrgButton->Checked)
 	{
-		T=60+273.15;
+		V2=Convert::ToDouble(LiVoltageBox->Text);
+		V1=0;
+		TCent=60;
+		T = TCent+273.15;
 		Ci1= Convert::ToDouble(LiConcBox->Text);
+		pa = 10*condScaleFactor/(10); //S/m
+		pc = pa;
 	}
+
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
-    double t=0.004*tScaleFactor; //cell thickness m
+    double t=0.0019*tScaleFactor; //cell thickness m
+	double teff[2]={t,t};
     double I=j*width*height*100*100/1000; //current A
-	double A[2] = {2,4};
-	A[i]*= Convert::ToDouble(ThRedBox->Text);
-	double chi[2] = {4,0};
+	//double A[2] = {2,4};
+	//A[i]*= Convert::ToDouble(ThRedBox->Text);
+	//double chi[2] = {4,0};
 	double n = Convert::ToDouble(electronBox->Text);
-    double delSOC=I*A[i]/(n*2*Q*Ci1*F);
-    double SOCrxn=SOC-delSOC;
-    double Inew=j*(1+chi[i]*delSOC*2)*100*100/1000;
-    double eps=0.94; //porosity
-    double a = 39000*eps/4;//CHECK THIS
+
+    //double Inew=j*(1+chi[i]*delSOC*2)*100*100/1000;
+    double eps=0.93; //porosity
+    double a = 17000;//39000*eps/4;//CHECK THIS
 	a*=Convert::ToDouble(spaBox->Text);
-    double Km=0.00016*pow(Q/(eps*width*t),0.4);
-    double Conc1neg=Ci1*SOCrxn-Inew/(t*F*a*Km/eps); // V 2+
-    double Conc1pos=Ci1-Conc1neg; //V 3+
-    double Conc2pos=Ci2*SOCrxn-Inew/(t*F*a*Km/eps); // V 5+
-    double Conc2neg=Ci2-Conc2pos; //V 4+
-	double kScaleFactor = Convert::ToDouble(KBox->Text);
-    double k1=8.7/1000000*exp((F*0.255/R)*(T-298)/(298*T));
-	double k2[2]={1.6/100000*exp((F*0.77/R)*(T-298)/(298*T)),0.00000068*exp((F*V2[i]/R)*(T-298)/(298*T))};
-    if(LiOrgButton->Checked)
+    double Km=0.00016*pow(100*Q/(eps*width*t),0.385);
+	double C1=Ci1*SOC;
+	double C2=Ci2*(1-SOC);
+	double CT=j*10/(F*a*Km)+I*t/(n*Q*F);
+	double A = R*T/F;
+	double B[2] = {C1*C2*pow(2*a*F*k1/(j*100*100/1000),2),C1*C2*pow(2*a*F*k2/(j*100*100/1000),2)};
+	double D[2] = {CT*(C1-C2)*pow(2*a*F*k1/(j*100*100/1000),2),CT*(C1-C2)*pow(2*a*F*k2/(j*100*100/1000),2)};
+	double G[2] = {CT*CT*pow(2*a*F*k1/(j*100*100/1000),2),CT*CT*pow(2*a*F*k2/(j*100*100/1000),2)};
+	double H[2] = {0.5*j*100*100/1000/pa,0.5*j*100*100/1000/pc};
+	double tmin[2]={(-D[0]+sqrt(D[0]*D[0]+4*B[0]*G[0]))/(2*B[0]),(-D[1]+sqrt(D[1]*D[1]+4*B[1]*G[1]))/(2*B[1])};
+	if(tmin[0]>t || tmin[1]>t)
 	{
-		k1*=1;
-		k2[system]*=1;
+		return 0;
 	}
-	double etaneg=-R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double beta[2]={sqrt(D[0]*D[0]+4*B[0]*G[0])/B[0],sqrt(D[1]*D[1]+4*B[1]*G[1])/B[1]};
+	//minimization begins
+	double x[2]={pow(2*H[0]*sqrt(B[0]*beta[0])/A,-0.6666666667),pow(2*H[1]*sqrt(B[1]*beta[1])/A,-0.6666666667)};
+	double xi;
+	int k=0;
+	while(k<=7)
+	{
+	xi=x[0];
+	x[0]=pow((2*H[0]*sqrt(B[0])/A)*sqrt((B[0]*xi*(xi+beta[0])+1)/(B[0]*xi))-1/(sqrt(xi)*(xi+beta[0])),-0.6666666667);
+	xi=x[1];
+	x[1]=pow((2*H[1]*sqrt(B[1])/A)*sqrt((B[1]*xi*(xi+beta[1])+1)/(B[1]*xi))-1/(sqrt(xi)*(xi+beta[1])),-0.6666666667);
+	k++;
+	}
+	//minimization ends
+	teff[0]=tmin[0]+x[0];
+	teff[1]=tmin[1]+x[1];
+	double delSOC[2]={I*t/(teff[0]*n*2*Q*Ci1*F),I*t/(teff[1]*n*2*Q*Ci1*F)};
+	double SOCrxn[2]={SOC-delSOC[0],SOC-delSOC[1]};
+	double Conc1neg=Ci1*SOCrxn[0]-j*10/(teff[0]*F*a*Km); // V 2+
+    double Conc1pos=Ci1*(1-SOCrxn[0])+j*10/(teff[0]*F*a*Km); //V 3+
+    double Conc2neg=Ci2*(1-SOCrxn[1])+j*10/(teff[1]*F*a*Km); //V 4+
+    double Conc2pos=Ci2*SOCrxn[1]-j*10/(teff[1]*F*a*Km); // V 5+
+	double etaneg=-R*T/F*asinh(I/(2*teff[0]*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    double etapos=R*T/F*asinh(I/(2*teff[1]*a*F*k2*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double Irea=teff[0]*0.5*j/pa;
+    double Irec=teff[1]*0.5*j/pc;
 	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
 	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 	double iconcH[2]={5300,1000};
-	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn-Inew/(t*F*a*Km)};
-	double concCl[2]={1500,0};
+	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn[1]-I/(t*F*a*Km)};
+	/*double concCl[2]={1500,0};
 	double concH2SO4[2]={3800,5000};
     int ZV2=2;
     int ZV3=3;
@@ -2659,20 +2844,19 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	double DH=(9.31E-09)/reduction[system];
     double DCl=(2.032E-09)/reduction[system];
     double DH2SO4=(1.33E-09)/reduction[system];
-	double condScaleFactor = Convert::ToDouble(CondBox->Text);
+	
 	double pa=(F*F/(T*R))*(ZV2*ZV2*DV2*Conc1neg+ZV3*ZV3*DV3*Conc1pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]);
     double pat=pa*(1+1.711464*(T-273-23)/100)*condScaleFactor;
 	double pc[2]={(F*F/(T*R))*(ZFe2*ZFe2*DFe2*Conc2neg+ZFe3*ZFe3*DFe3*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i]),(F*F/(T*R))*(ZV4*ZV4*DV4*Conc2neg+ZV5*ZV5*DV5*Conc2pos+ZH*ZH*DH*concH[i]+ZH2SO4*ZH2SO4*DH2SO4*concH2SO4[i]+ZCl*ZCl*DCl*concCl[i])};
-    double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;
-    double Irea=t*Inew/pat;
-    double Irec=t*Inew/pct;
+    double pct=pc[i]*(1+1.711464*(T-273-23)/100)*condScaleFactor;*/
+
 	g_etapos=etapos;
 	g_etaneg=etaneg;
 	g_Irea=Irea;
 	g_Irec=Irec;
     if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
     {
-    V = V2[i]-V1[i]+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
+    V = V2-V1+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
     }
     else
     {
@@ -2686,16 +2870,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		double SOCLiA[] = {0.009631481,0.015312908,0.026677674,0.039934338,0.05697862,0.085387667,0.115688613,0.168717178,0.195232417,0.252048601,0.316440021,0.388408589,0.469844291,0.538025241,0.600522852,0.674383318,0.721711346,0.797815335,0.972556012,1};
 		std::vector<double> SOCLi (&SOCLiA[0], &SOCLiA[0]+20);
 		std::vector<vector<double> > LiMatrix= populateSpline2V(SOCLi,VLi);*/
-		double OCVLi = (R*T/(1*F/2.9))*2*log(SOCrxn/(1-SOCrxn))+Convert::ToDouble(LiVoltageBox->Text);//interpolateSplineV(SOC,LiMatrix)-3.8+Convert::ToDouble(LiVoltageBox->Text);
+		double OCVLi = V2+(R*T/(1*F/2.9))*2*log(SOCrxn[0]/(1-SOCrxn[0]));//interpolateSplineV(SOC,LiMatrix)-3.8+Convert::ToDouble(LiVoltageBox->Text);
 		
 		//etaneg = 0;
 		//etapos = 0;
-		pat = A[1]*10*condScaleFactor/(10); //S/m
-		pct = pat; //temp
+ //temp
 		condM[membrane]=0.32;//2.5/(10); //S/m
 		//t=0.5/1000;
-		Irea = t*Inew/pat;
-		Irec = t*Inew/pct;
+		Irea = t*I/pa/2;
+		Irec = t*I/pc/2;
 		mt[membrane]=25e-6;//7*(25e-6); // m
 		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
@@ -2706,6 +2889,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		V=0;
 	}
 	double scaleV=1/*1.138*/;
+	PerformanceTest->Rows->Add(SOC,SOCrxn[1],SOCrxn[0],teff[1],teff[0],V,A,B[0],D[0],G[0],H[0],tmin[0],beta[0]);
     return V*scaleV;
 }
 	public: double CostTab(int column,int row,double units)
@@ -3880,6 +4064,18 @@ private: System::Void optFlowChanBox_CheckedChanged(System::Object^  sender, Sys
 				 FlowChanMinBox->ReadOnly=true;
 			}
 
+		 }
+private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+			 double SOC=0.025;
+			 double V;
+			 while (SOC<=1)
+			 {
+				 V=g_voltage(SOC, .26*.30,1200,160,1,1,1);
+
+				 SOC+=0.025;
+			 }
 		 }
 };
 }
