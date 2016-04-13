@@ -565,6 +565,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column37 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column38 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column39 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column40 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column41 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column42 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column43 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column44 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column45 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column46 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->Int3dVBox = (gcnew System::Windows::Forms::TextBox());
 			this->Int3dFlowBox = (gcnew System::Windows::Forms::TextBox());
@@ -595,13 +602,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->Column40 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column41 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column42 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column43 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column44 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column45 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column46 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -1261,7 +1261,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->currentValueBox->Name = L"currentValueBox";
 			this->currentValueBox->Size = System::Drawing::Size(58, 20);
 			this->currentValueBox->TabIndex = 18;
-			this->currentValueBox->Text = L"100";
+			this->currentValueBox->Text = L"320";
+			this->currentValueBox->TextChanged += gcnew System::EventHandler(this, &Form1::currentValueBox_TextChanged);
 			// 
 			// optCurrentBox
 			// 
@@ -1363,7 +1364,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiConcBox->Name = L"LiConcBox";
 			this->LiConcBox->Size = System::Drawing::Size(65, 20);
 			this->LiConcBox->TabIndex = 52;
-			this->LiConcBox->Text = L"2000";
+			this->LiConcBox->Text = L"1000";
 			// 
 			// label81
 			// 
@@ -1398,7 +1399,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->channelSepBox->Name = L"channelSepBox";
 			this->channelSepBox->Size = System::Drawing::Size(50, 20);
 			this->channelSepBox->TabIndex = 43;
-			this->channelSepBox->Text = L"0.1";
+			this->channelSepBox->Text = L"0.06";
 			// 
 			// FOWBox
 			// 
@@ -1455,7 +1456,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->ThicknessBox->Name = L"ThicknessBox";
 			this->ThicknessBox->Size = System::Drawing::Size(65, 20);
 			this->ThicknessBox->TabIndex = 27;
-			this->ThicknessBox->Text = L"1";
+			this->ThicknessBox->Text = L"0.352631579";
 			// 
 			// CondBox
 			// 
@@ -1490,6 +1491,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// interdigBox
 			// 
 			this->interdigBox->AutoSize = true;
+			this->interdigBox->Checked = true;
+			this->interdigBox->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->interdigBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->interdigBox->Location = System::Drawing::Point(3, 365);
@@ -2062,6 +2065,41 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->Column39->HeaderText = L"V";
 			this->Column39->Name = L"Column39";
 			// 
+			// Column40
+			// 
+			this->Column40->HeaderText = L"A";
+			this->Column40->Name = L"Column40";
+			// 
+			// Column41
+			// 
+			this->Column41->HeaderText = L"B";
+			this->Column41->Name = L"Column41";
+			// 
+			// Column42
+			// 
+			this->Column42->HeaderText = L"D";
+			this->Column42->Name = L"Column42";
+			// 
+			// Column43
+			// 
+			this->Column43->HeaderText = L"G";
+			this->Column43->Name = L"Column43";
+			// 
+			// Column44
+			// 
+			this->Column44->HeaderText = L"H";
+			this->Column44->Name = L"Column44";
+			// 
+			// Column45
+			// 
+			this->Column45->HeaderText = L"tmin";
+			this->Column45->Name = L"Column45";
+			// 
+			// Column46
+			// 
+			this->Column46->HeaderText = L"beta";
+			this->Column46->Name = L"Column46";
+			// 
 			// label38
 			// 
 			this->label38->AutoSize = true;
@@ -2288,46 +2326,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
-			// Column40
-			// 
-			this->Column40->HeaderText = L"A";
-			this->Column40->Name = L"Column40";
-			// 
-			// Column41
-			// 
-			this->Column41->HeaderText = L"B";
-			this->Column41->Name = L"Column41";
-			// 
-			// Column42
-			// 
-			this->Column42->HeaderText = L"D";
-			this->Column42->Name = L"Column42";
-			// 
-			// Column43
-			// 
-			this->Column43->HeaderText = L"G";
-			this->Column43->Name = L"Column43";
-			// 
-			// Column44
-			// 
-			this->Column44->HeaderText = L"H";
-			this->Column44->Name = L"Column44";
-			// 
-			// Column45
-			// 
-			this->Column45->HeaderText = L"tmin";
-			this->Column45->Name = L"Column45";
-			// 
-			// Column46
-			// 
-			this->Column46->HeaderText = L"beta";
-			this->Column46->Name = L"Column46";
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(909, 791);
+			this->ClientSize = System::Drawing::Size(909, 741);
 			this->Controls->Add(this->tabControl1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Form1";
@@ -2368,7 +2371,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 #pragma endregion
 		public: void InitializeCostParameters()//InitializeCostParameters is a function that executes steps below
 				{
-								CostParameters->Rows->Add("Nafion Membrane","500","350","200","$/m^2");//0; CostParameters is a DatagridView
+								CostParameters->Rows->Add("Nafion Membrane","235","165","95","$/m^2");//0; CostParameters is a DatagridView
 								CostParameters->Rows->Add("Daramic Membrane","10","10","10","$/m^2");//1
 								CostParameters->Rows->Add("Carbon Felt","70","45","20","$/m^2");//2
 								CostParameters->Rows->Add("PVC Frame","16.84","10.05","3.26","$/m^2");//3
@@ -2739,12 +2742,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	if(VVGen2->Checked)
 	{
 		V2 = 1.004;
-		V1=-.41;
+		V1=-0.301630478;
 		Ci1=2000;
 		TCent=50;
 		T = TCent+273.15;
-		pa=(26.94+6.63*SOC)*1.05; //S/m
-		pc=(27.96+20.57*SOC)*1.05; //S/m
+		pa=(26.94+6.63*SOC)*1.05*condScaleFactor; //S/m
+		pc=(27.96+20.57*SOC)*1.05*condScaleFactor; //S/m
 		k1=kScaleFactor*3.55666666666667E-06;
 		k2=kScaleFactor*7.06666666666667E-06;
 	}
@@ -2757,6 +2760,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		Ci1= Convert::ToDouble(LiConcBox->Text);
 		pa = 10*condScaleFactor/(10); //S/m
 		pc = pa;
+		k1=kScaleFactor*3.55666666666667E-06;
+		k2=kScaleFactor*7.06666666666667E-06;
 	}
 
 	double Ci2 = Ci1; // initial concentration of chemical 2, mol/m^3
@@ -2789,34 +2794,48 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	double beta[2]={sqrt(D[0]*D[0]+4*B[0]*G[0])/B[0],sqrt(D[1]*D[1]+4*B[1]*G[1])/B[1]};
 	//minimization begins
-	double x[2]={pow(2*H[0]*sqrt(B[0]*beta[0])/A,-0.6666666667),pow(2*H[1]*sqrt(B[1]*beta[1])/A,-0.6666666667)};
+	double alpha[2]={A/sqrt(B[0]),A/sqrt(B[1])};
+	double x[2]={pow(0.5*alpha[0]/H[0]/sqrt(beta[0]),0.6666666667),pow(0.5*alpha[1]/H[1]/sqrt(beta[1]),0.6666666667)};
 	double xi;
+
 	int k=0;
+	/*k=8;
+	teff[0]=t;
+	teff[1]=t;*/
 	while(k<=7)
 	{
 	xi=x[0];
-	x[0]=pow((2*H[0]*sqrt(B[0])/A)*sqrt((B[0]*xi*(xi+beta[0])+1)/(B[0]*xi))-1/(sqrt(xi)*(xi+beta[0])),-0.6666666667);
+	x[0]=pow((2*H[0]/alpha[0])*sqrt((B[0]*x[0]*(beta[0]+x[0])+1)/(B[0]*x[0]))-1/sqrt(x[0]*(x[0]+beta[0])*(x[0]+beta[0])),-0.6666666667);
 	xi=x[1];
 	x[1]=pow((2*H[1]*sqrt(B[1])/A)*sqrt((B[1]*xi*(xi+beta[1])+1)/(B[1]*xi))-1/(sqrt(xi)*(xi+beta[1])),-0.6666666667);
 	k++;
 	}
+	
 	//minimization ends
-	teff[0]=tmin[0]+x[0];
-	teff[1]=tmin[1]+x[1];
-	double delSOC[2]={I*t/(teff[0]*n*2*Q*Ci1*F),I*t/(teff[1]*n*2*Q*Ci1*F)};
+	teff[0]=min(tmin[0]+x[0],t);
+	teff[1]=min(tmin[1]+x[1],t);
+	if(teff[0]!=teff[0])
+	{
+		teff[0]=t;
+	}
+	if(teff[1]!=teff[1])
+	{
+		teff[1]=t;
+	}
+	double delSOC[2]={I*t/(teff[0]*n*Q*Ci1*F),I*t/(teff[1]*n*Q*Ci1*F)};
 	double SOCrxn[2]={SOC-delSOC[0],SOC-delSOC[1]};
 	double Conc1neg=Ci1*SOCrxn[0]-j*10/(teff[0]*F*a*Km); // V 2+
     double Conc1pos=Ci1*(1-SOCrxn[0])+j*10/(teff[0]*F*a*Km); //V 3+
     double Conc2neg=Ci2*(1-SOCrxn[1])+j*10/(teff[1]*F*a*Km); //V 4+
     double Conc2pos=Ci2*SOCrxn[1]-j*10/(teff[1]*F*a*Km); // V 5+
-	double etaneg=-R*T/F*asinh(I/(2*teff[0]*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=R*T/F*asinh(I/(2*teff[1]*a*F*k2*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
-	double Irea=teff[0]*0.5*j/pa;
-    double Irec=teff[1]*0.5*j/pc;
-	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
-	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
+	double etaneg=-R*T/F*asinh(j*10/(2*teff[0]*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
+    double etapos=R*T/F*asinh(j*10/(2*teff[1]*a*F*k2*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
+	double Irea=teff[0]*0.5*j*100*100/1000/pa;
+    double Irec=teff[1]*0.5*j*100*100/1000/pc;
+	double mt[2]={450e-6,2*(25.4e-6)/*175e-6*/}; //membrane thickness m
+	double condM[2]={23.0769,(0.5139*22-.326)*exp(1268*(T-303)/(T*303))};
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
-	double iconcH[2]={5300,1000};
+	double iconcH[2]={5300,6000};
 	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn[1]-I/(t*F*a*Km)};
 	/*double concCl[2]={1500,0};
 	double concH2SO4[2]={3800,5000};
@@ -2856,7 +2875,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	g_Irec=Irec;
     if(Conc1neg*Conc2pos/(Conc1pos*Conc2neg)>0)
     {
-    V = V2-V1+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+log(concH[i]/iconcH[i]))+etaneg-etapos-Irea-Irec-IRM;
+    V = V2-V1+(R*T/F)*(log(Conc1neg*Conc2pos/(Conc1pos*Conc2neg))+2*log(concH[i]/1000))+etaneg-etapos-Irea-Irec-IRM;
     }
     else
     {
@@ -2889,7 +2908,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		V=0;
 	}
 	double scaleV=1/*1.138*/;
-	PerformanceTest->Rows->Add(SOC,SOCrxn[1],SOCrxn[0],teff[1],teff[0],V,A,B[0],D[0],G[0],H[0],tmin[0],beta[0]);
+	//PerformanceTest->Rows->Add(V);
+	//PerformanceTest->Rows->Add(SOC,SOCrxn[1],SOCrxn[0],teff[1],teff[0],V,A,B[0],D[0],G[0],H[0],tmin[0],beta[0]);
+	PerformanceTest->Rows->Add(SOC,V,etaneg,etapos,Irea,Irec,IRM,teff[1],teff[0]);
     return V*scaleV;
 }
 	public: double CostTab(int column,int row,double units)
@@ -3047,7 +3068,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//channels - number of flow channels in cell
 	//cells - cells per stack
 	//return 0;
+
 	double resistivity=0.05;//ohm m (1/Convert::ToDouble(CondBox->Text))
+	if(LiOrgButton->Checked)
+	{
+		resistivity=1/3.2;
+	}
 	double length=sqrt(area/aspectratio);
 	double carea=cdepth*cwidth*channels;
 	double Rs=resistivity*length/carea;
@@ -3076,12 +3102,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double K = 3.982E-10;//1.09438E-10 // m^2
 	double visc = 6.60E-03;
 	double tScaleFactor = Convert::ToDouble(ThicknessBox->Text);
-	double t = 0.004*tScaleFactor;
-	double segments = ceil(width/Convert::ToDouble(channelSepBox->Text));
+	double t = 0.0019*tScaleFactor;
+	double segments = width/Convert::ToDouble(channelSepBox->Text);//ceil(width/Convert::ToDouble(channelSepBox->Text));
 	double Pdrop=0;
 	if(interdigBox->Checked)
 	{
-		Pdrop=(Q/(t*height))*visc*width/K/segments+32*width*Q*visc/(carea*Dh*Dh*channels);
+		Pdrop=(Q/(t*height))*visc*width/K/segments+32*width*Q*visc/(carea*Dh*Dh*segments);
 	}
 	else
 	{
@@ -3417,7 +3443,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 					V=g_voltage(g_SOC,g_area,qhigh*g_area,jLow,g_aspectratio,g_system,g_membrane);
 					a= pLoss(g_area,qhigh*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)/(g_area*g_area);
-					b=-10*jLow*V/sqrt(g_CE);
+					b=-10*jLow*V;
 					c=g_reqpowerpercell+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					if((4*a*c)>(b*b))
 					{
@@ -3457,7 +3483,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					i++;
 
 				}
-				double power = V*10*g_jLow*g_area/sqrt(0.98) - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+				double power = V*10*g_jLow*g_area - a*g_area*g_area -shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 				testPowerNew->Text=power.ToString();
 			
 }
@@ -3565,7 +3591,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			{
 				calculateArea(jLow,qhighpercurrent);
 
-				if(!g_areaReal)
+				if(g_area!=g_area)
 				{
 					return 999999+jLow+qhighpercurrent;
 				}
@@ -3634,15 +3660,21 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				bool optFlow=false;
 				double powerproduced;
 				double powerloss;
-				double flowres=1;
+				double flowres=10;
 				double D_flowVeff;
 				double D_flow2Veff;
-				while((!optFlow))
+				int k =0;
+				while((!optFlow)&&k<5)
 				{
 
 						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
-						while(V==0)
+						while(V==0 || flow!=flow)
 						{
+							if(flow!=flow)
+							{
+								flow=0;
+							}
+							k=0;
 							flow+=10;
 							V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 						}
@@ -3660,13 +3692,32 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 						powerproduced=V*j*g_area*10;
 						powerloss=pLoss(g_area,(flow-flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
 						VEffB = V*(powerproduced-powerloss)/powerproduced;
+						if(VEffB!=VEffB)
+						{
+						while(V==0)
+						{
+							flowres/=2;
+							V=g_voltage(SOC,g_area,(flow-flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+						}
+						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+						VEff = V*(powerproduced-powerloss)/powerproduced;
+						V=g_voltage(SOC,g_area,(flow+flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,(flow+flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+						VEffF = V*(powerproduced-powerloss)/powerproduced;
+						V=g_voltage(SOC,g_area,(flow-flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+						powerproduced=V*j*g_area*10;
+						powerloss=pLoss(g_area,(flow-flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels);
+						VEffB = V*(powerproduced-powerloss)/powerproduced;
+						}
 						D_flowVeff=(VEffF-VEffB)/(2*flowres);
 						D_flow2Veff=(VEffF+VEffB-2*VEff)/(flowres*flowres);
 						if(D_flow2Veff!=0)
 						{
-						flow-=(D_flowVeff/D_flow2Veff);
+						flow-=0.5*(D_flowVeff/D_flow2Veff);
+						k++;
 						}
-						if(abs(D_flowVeff/D_flow2Veff)<=0.01)
+						if(abs(D_flowVeff*D_flowVeff/D_flow2Veff)<=0.0001)
 						{
 							optFlow=true;
 						}
@@ -3679,7 +3730,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			}
 	public: double calculateVeffAvg(double jLow, double qhighpercurrent)
 			{
-				double delSOC = 0.01;
+				double delSOC = g_DOD/100/20;
 				double SOCLow = (100-g_DOD)/200;
 				double SOCHigh = 1.0000001-SOCLow;
 				double flow=qhighpercurrent*jLow;
@@ -3690,17 +3741,28 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				double jres=0.01;
 				double VEffAvg=0;
 				double power;
-				V=g_voltage(SOCLow,g_area,flow*g_area,jLow,g_aspectratio,g_system,g_membrane);
-				VEff =V*(V*j*g_area*10-pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)-shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells))/(V*j*g_area*10);
-				VEffAvg+=VEff;
-				int i = 1;
-
-				g_SOC = SOCLow+delSOC;
 				double powerproduced;
 				double powerloss;
+				/*V=g_voltage(SOCLow,g_area,flow*g_area,jLow,g_aspectratio,g_system,g_membrane);
+				VEff =V*(V*j*g_area*10-pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)-shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells))/(V*j*g_area*10);
+				*/
+				V=g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+				powerproduced=V*j*g_area*10;
+				powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+				power = powerproduced-powerloss;
+				VEff =V*(powerproduced-powerloss)/powerproduced;
+				VEffAvg+=VEff;
+				int i = 1;
+				dataOutput->Rows->Add(g_SOC,powerproduced,pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth,g_cdepth,g_channels),shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells),g_voltage(g_SOC,g_area,flow*g_area,0,g_aspectratio,g_system,g_membrane),g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane),VEff,j,flow,g_etapos,g_etaneg,g_Irea,g_Irec);
+				g_SOC = SOCLow+delSOC;
+				
 				double D_jP;
 				double Pb;
+				double Pf;
+				double D_fP;
+				double D_ffP;
 
+				double flowres=50;
 				while (g_SOC<= SOCHigh)
 				{
 					if(constpower->Checked)
@@ -3711,19 +3773,42 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					{
 
-					flow=optimizeFlow(j,flow,g_SOC);
 					V=g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 					powerproduced=V*j*g_area*10;
 					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					VEff =V*(powerproduced-powerloss)/powerproduced;
 					power = powerproduced-powerloss;
-					flow=optimizeFlow(j-jres,flow,g_SOC);
+
 					V=g_voltage(g_SOC,g_area,flow*g_area,(j-jres),g_aspectratio,g_system,g_membrane);
 					powerproduced=V*(j-jres)*g_area*10;
 					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
 					Pb=powerproduced-powerloss;
+
 					D_jP=((power-Pb)/jres);
 					j-=((power-g_reqpowerpercell)/D_jP);
+
+					
+					V=g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
+					powerproduced=V*j*g_area*10;
+					powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					VEff =V*(powerproduced-powerloss)/powerproduced;
+					power = powerproduced-powerloss;
+
+					V=g_voltage(g_SOC,g_area,(flow-flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+					powerproduced=V*(j)*g_area*10;
+					powerloss=pLoss(g_area,(flow-flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					Pb=powerproduced-powerloss;
+
+					V=g_voltage(g_SOC,g_area,(flow+flowres)*g_area,j,g_aspectratio,g_system,g_membrane);
+					powerproduced=V*(j)*g_area*10;
+					powerloss=pLoss(g_area,(flow+flowres)*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
+					Pf=powerproduced-powerloss;
+
+					D_fP=(Pf-Pb)/flowres;
+					D_ffP=(Pf+Pb-2*power)/(flowres*flowres);
+
+					flow-=0.1*D_fP/D_ffP;
+
 					if(abs((power-g_reqpowerpercell)/D_jP)<=0.001)
 					{
 						powerAttained=true;
@@ -3732,7 +3817,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					}
 					else
 					{
-						flow=optimizeFlow(j,flow,g_SOC);
+						//flow=optimizeFlow(j,flow,g_SOC);
 						V=g_voltage(g_SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 						powerproduced=V*j*g_area*10;
 						powerloss=pLoss(g_area,flow*g_area,g_aspectratio,g_cwidth, g_cdepth,g_channels)+shuntLoss(V,g_area,g_cwidth,g_cdepth,g_aspectratio,g_channels,g_cells)/(g_cells);
@@ -3864,7 +3949,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 double delcost=cost;
 			 double gamma=Convert::ToDouble(gammaBox->Text);
 
-			 while ((abs(delcost)>=0.01) && (i<10))
+			 while ((abs(delcost)>=0.01) && (i<1))
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
@@ -3934,6 +4019,9 @@ public: void Finished()
 			 componentCostGrid->Rows->Add("Pumps",g_pumpsCost.ToString("C"));
 			 componentCostGrid->Rows->Add("PVC Frame",g_frameCost.ToString("C"));
 			 componentCostGrid->Rows->Add("Bipolar Plate",g_bipolarPlateCost.ToString("C"));
+			 currentValueBox->Text=g_jLow.ToString("F2");
+			 flowValueBox->Text=(g_qhighpercurrent*1000/(100*100)).ToString("F2");
+			 DODValueBox->Text=g_DOD.ToString("F2");
 		}
 private: System::Void epBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 //Runs when energy to power ratio box is changed to update energy box
@@ -3975,8 +4063,6 @@ private: System::Void optCurrentBox_CheckedChanged(System::Object^  sender, Syst
 				 currentMinBox->ReadOnly=true;
 			 }
 		 }
-
-
 private: System::Void optDODBox_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			 			 if (optDODBox->Checked)
 			 {
@@ -4070,12 +4156,27 @@ private: System::Void dataGridView1_CellContentClick(System::Object^  sender, Sy
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 			 double SOC=0.025;
 			 double V;
-			 while (SOC<=1)
+			 double VEff;
+			 double flow=0;
+			 //V=g_voltage(0.15, .26*.30,1200,320,1,1,1);
+			 double powerproduced;
+			 double powerloss;
+			 g_cwidth=0.005;
+			g_cdepth=0.002;
+			g_channels=10;
+			g_pDropFactor=1;
+			V=g_voltage(0.1, .26*.30,1200,320,1,1,1);
+			/* while (flow<=12800)
 			 {
-				 V=g_voltage(SOC, .26*.30,1200,160,1,1,1);
-
-				 SOC+=0.025;
-			 }
+				V=g_voltage(0.135,0.12729494167510302,flow*0.12729494167510302,320,1,1,1);
+				powerproduced=V*320*0.12729494167510302*10;
+				powerloss=pLoss(0.12729494167510302,flow*0.12729494167510302,1,g_cwidth, g_cdepth,g_channels);
+				VEff = V*(powerproduced-powerloss)/powerproduced;
+				PerformanceTest->Rows->Add(flow,VEff,V,powerloss);
+				flow +=5;
+			 }*/
+		 }
+private: System::Void currentValueBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
