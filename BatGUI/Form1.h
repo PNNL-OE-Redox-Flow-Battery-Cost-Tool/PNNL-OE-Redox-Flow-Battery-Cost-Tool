@@ -538,8 +538,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-<<<<<<< HEAD
-=======
 			this->tabpage4 = (gcnew System::Windows::Forms::TabPage());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->Int3dVBox = (gcnew System::Windows::Forms::TextBox());
@@ -571,7 +569,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
->>>>>>> refs/remotes/origin/newton
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -925,16 +922,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// label1
 			// 
-<<<<<<< HEAD
-			this->OutputGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->OutputGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->Column27, 
-				this->Column28, this->Column29});
-			this->OutputGrid->Location = System::Drawing::Point(70, 507);
-			this->OutputGrid->Name = L"OutputGrid";
-			this->OutputGrid->Size = System::Drawing::Size(352, 182);
-			this->OutputGrid->TabIndex = 56;
-			this->OutputGrid->Visible = false;
-=======
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(543, 510);
 			this->label1->Name = L"label1";
@@ -969,7 +956,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->componentCostGrid->Name = L"componentCostGrid";
 			this->componentCostGrid->Size = System::Drawing::Size(247, 175);
 			this->componentCostGrid->TabIndex = 60;
->>>>>>> refs/remotes/origin/newton
 			// 
 			// Column27
 			// 
@@ -1370,20 +1356,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->LiVoltageBox->Name = L"LiVoltageBox";
 			this->LiVoltageBox->Size = System::Drawing::Size(50, 20);
 			this->LiVoltageBox->TabIndex = 48;
-<<<<<<< HEAD
-			this->LiVoltageBox->Text = L"3.8";
-			// 
-			// flowCapBox
-			// 
-			this->flowCapBox->Location = System::Drawing::Point(194, 382);
-			this->flowCapBox->Name = L"flowCapBox";
-			this->flowCapBox->Size = System::Drawing::Size(50, 20);
-			this->flowCapBox->TabIndex = 46;
-			this->flowCapBox->Text = L"999999999999";
-			this->flowCapBox->Visible = false;
-=======
 			this->LiVoltageBox->Text = L"1.94";
->>>>>>> refs/remotes/origin/newton
 			// 
 			// channelSepBox
 			// 
@@ -1469,21 +1442,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label51->TabIndex = 49;
 			this->label51->Text = L"Li+ Organic OCV (50% SOC)";
 			// 
-<<<<<<< HEAD
-			// label90
-			// 
-			this->label90->AutoSize = true;
-			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(5, 383);
-			this->label90->Name = L"label90";
-			this->label90->Size = System::Drawing::Size(183, 17);
-			this->label90->TabIndex = 47;
-			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
-			this->label90->Visible = false;
-			// 
-=======
->>>>>>> refs/remotes/origin/newton
 			// label89
 			// 
 			this->label89->AutoSize = true;
@@ -1572,15 +1530,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// panel5
 			// 
-<<<<<<< HEAD
-			this->panel6->Controls->Add(this->label15);
-			this->panel6->Controls->Add(this->flowBox);
-			this->panel6->Controls->Add(this->label9);
-			this->panel6->Location = System::Drawing::Point(213, 236);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(316, 49);
-			this->panel6->TabIndex = 23;
-=======
 			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel5->Controls->Add(this->InterpolationButton3d);
 			this->panel5->Controls->Add(this->button2);
@@ -1592,20 +1541,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(132, 142);
 			this->panel5->TabIndex = 22;
->>>>>>> refs/remotes/origin/newton
 			// 
 			// InterpolationButton3d
 			// 
-<<<<<<< HEAD
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(250, 13);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(61, 17);
-			this->label15->TabIndex = 27;
-			this->label15->Text = L"ml/min/A";
-=======
 			this->InterpolationButton3d->AutoSize = true;
 			this->InterpolationButton3d->Location = System::Drawing::Point(4, 43);
 			this->InterpolationButton3d->Name = L"InterpolationButton3d";
@@ -1614,19 +1552,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->InterpolationButton3d->TabStop = true;
 			this->InterpolationButton3d->Text = L"3d Interpolation";
 			this->InterpolationButton3d->UseVisualStyleBackColor = true;
->>>>>>> refs/remotes/origin/newton
 			// 
 			// button2
 			// 
-<<<<<<< HEAD
-			this->flowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->flowBox->Location = System::Drawing::Point(213, 10);
-			this->flowBox->Name = L"flowBox";
-			this->flowBox->Size = System::Drawing::Size(31, 23);
-			this->flowBox->TabIndex = 26;
-			this->flowBox->Text = L"5";
-=======
 			this->button2->Location = System::Drawing::Point(3, 117);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(95, 20);
@@ -1634,7 +1562,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->button2->Text = L"Load File";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
->>>>>>> refs/remotes/origin/newton
 			// 
 			// label37
 			// 
@@ -2015,8 +1942,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
-<<<<<<< HEAD
-=======
 			// tabpage4
 			// 
 			this->tabpage4->Controls->Add(this->label38);
@@ -2275,7 +2200,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
->>>>>>> refs/remotes/origin/newton
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
