@@ -311,6 +311,25 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->costChart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->dataOutput = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->OutputGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->Column27 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -394,25 +413,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->VVGen1 = (gcnew System::Windows::Forms::RadioButton());
 			this->FeV = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column21 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Digits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -609,6 +609,114 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataOutput->TabIndex = 0;
 			this->dataOutput->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataOutput_CellContentClick);
 			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"j Low";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 50;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Present Total $/kWh";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 50;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Near-Term Total $/kWh";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Optimistic Total $/kWh";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 50;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Average Effective Voltage";
+			this->Column5->Name = L"Column5";
+			this->Column5->Width = 50;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Cell Area (m^2)";
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 50;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Efficiency (1way)";
+			this->Column7->Name = L"Column7";
+			this->Column7->Width = 60;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Present $/kWh";
+			this->Column8->Name = L"Column8";
+			this->Column8->Width = 50;
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"Near-Term $/kWh";
+			this->Column9->Name = L"Column9";
+			this->Column9->Width = 50;
+			// 
+			// Column10
+			// 
+			this->Column10->HeaderText = L"Optimistic $/kWh";
+			this->Column10->Name = L"Column10";
+			this->Column10->Width = 50;
+			// 
+			// Column11
+			// 
+			this->Column11->HeaderText = L"Present $/kW";
+			this->Column11->Name = L"Column11";
+			this->Column11->Width = 50;
+			// 
+			// Column12
+			// 
+			this->Column12->HeaderText = L"Near-Term $/kW";
+			this->Column12->Name = L"Column12";
+			this->Column12->Width = 50;
+			// 
+			// Column13
+			// 
+			this->Column13->HeaderText = L"Optimistic $/kW";
+			this->Column13->Name = L"Column13";
+			this->Column13->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			// 
+			// Column15
+			// 
+			this->Column15->HeaderText = L"Pump Eff";
+			this->Column15->Name = L"Column15";
+			// 
+			// Column16
+			// 
+			this->Column16->HeaderText = L"Shunt Eff";
+			this->Column16->Name = L"Column16";
+			// 
+			// Column14
+			// 
+			this->Column14->HeaderText = L"Area";
+			this->Column14->Name = L"Column14";
+			// 
+			// Column21
+			// 
+			this->Column21->HeaderText = L"Avg Flow";
+			this->Column21->Name = L"Column21";
+			// 
+			// Digits
+			// 
+			this->Digits->HeaderText = L"High Flow";
+			this->Digits->Name = L"Digits";
+			// 
 			// tabPage1
 			// 
 			this->tabPage1->Controls->Add(this->OutputGrid);
@@ -668,6 +776,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->OutputGrid->Name = L"OutputGrid";
 			this->OutputGrid->Size = System::Drawing::Size(352, 182);
 			this->OutputGrid->TabIndex = 56;
+			this->OutputGrid->Visible = false;
 			// 
 			// Column27
 			// 
@@ -752,6 +861,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->flowCapBox->Size = System::Drawing::Size(50, 20);
 			this->flowCapBox->TabIndex = 46;
 			this->flowCapBox->Text = L"999999999999";
+			this->flowCapBox->Visible = false;
 			// 
 			// channelSepBox
 			// 
@@ -854,6 +964,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label90->Size = System::Drawing::Size(183, 17);
 			this->label90->TabIndex = 47;
 			this->label90->Text = L"Flow Rate Cap (ml/min/m^2)";
+			this->label90->Visible = false;
 			// 
 			// label89
 			// 
@@ -959,7 +1070,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel6->Controls->Add(this->label9);
 			this->panel6->Location = System::Drawing::Point(213, 236);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(278, 49);
+			this->panel6->Size = System::Drawing::Size(316, 49);
 			this->panel6->TabIndex = 23;
 			// 
 			// label15
@@ -967,7 +1078,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(192, 10);
+			this->label15->Location = System::Drawing::Point(250, 13);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(61, 17);
 			this->label15->TabIndex = 27;
@@ -977,7 +1088,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			this->flowBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->flowBox->Location = System::Drawing::Point(155, 7);
+			this->flowBox->Location = System::Drawing::Point(213, 10);
 			this->flowBox->Name = L"flowBox";
 			this->flowBox->Size = System::Drawing::Size(31, 23);
 			this->flowBox->TabIndex = 26;
@@ -1490,119 +1601,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Size = System::Drawing::Size(894, 772);
 			this->tabControl1->TabIndex = 18;
 			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"j Low";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 50;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Present Total $/kWh";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 50;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Near-Term Total $/kWh";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 50;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Optimistic Total $/kWh";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 50;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Average Effective Voltage";
-			this->Column5->Name = L"Column5";
-			this->Column5->Width = 50;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Cell Area (m^2)";
-			this->Column6->Name = L"Column6";
-			this->Column6->Width = 50;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Efficiency (1way)";
-			this->Column7->Name = L"Column7";
-			this->Column7->Width = 60;
-			// 
-			// Column8
-			// 
-			this->Column8->HeaderText = L"Present $/kWh";
-			this->Column8->Name = L"Column8";
-			this->Column8->Width = 50;
-			// 
-			// Column9
-			// 
-			this->Column9->HeaderText = L"Near-Term $/kWh";
-			this->Column9->Name = L"Column9";
-			this->Column9->Width = 50;
-			// 
-			// Column10
-			// 
-			this->Column10->HeaderText = L"Optimistic $/kWh";
-			this->Column10->Name = L"Column10";
-			this->Column10->Width = 50;
-			// 
-			// Column11
-			// 
-			this->Column11->HeaderText = L"Present $/kW";
-			this->Column11->Name = L"Column11";
-			this->Column11->Width = 50;
-			// 
-			// Column12
-			// 
-			this->Column12->HeaderText = L"Near-Term $/kW";
-			this->Column12->Name = L"Column12";
-			this->Column12->Width = 50;
-			// 
-			// Column13
-			// 
-			this->Column13->HeaderText = L"Optimistic $/kW";
-			this->Column13->Name = L"Column13";
-			this->Column13->Width = 50;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this->dataGridViewTextBoxColumn1->HeaderText = L"EC eff";
-			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			// 
-			// Column15
-			// 
-			this->Column15->HeaderText = L"Pump Eff";
-			this->Column15->Name = L"Column15";
-			// 
-			// Column16
-			// 
-			this->Column16->HeaderText = L"Shunt Eff";
-			this->Column16->Name = L"Column16";
-			// 
-			// Column14
-			// 
-			this->Column14->HeaderText = L"Area";
-			this->Column14->Name = L"Column14";
-			// 
-			// Column21
-			// 
-			this->Column21->HeaderText = L"Avg Flow";
-			this->Column21->Name = L"Column21";
-			// 
-			// Digits
-			// 
-			this->Digits->HeaderText = L"High Flow";
-			this->Digits->Name = L"Digits";
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(909, 791);
+			this->ClientSize = System::Drawing::Size(909, 753);
 			this->Controls->Add(this->tabControl1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Form1";
