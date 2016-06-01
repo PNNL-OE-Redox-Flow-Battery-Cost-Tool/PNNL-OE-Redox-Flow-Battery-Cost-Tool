@@ -3090,7 +3090,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			{
 				
 				//temp vector initialization
-				g_3dJRange.clear();
+				/*g_3dJRange.clear();
 				g_3dJRange.push_back(0);
 				g_3dJRange.push_back(160);
 				g_3dJRange.push_back(240);
@@ -3113,7 +3113,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 					g_3dSOCRange.push_back(g_3dinterpolation.at(0)[0][k]);
 					k++;
-				}
+				}*/
 				//double a = Interpolation3d(1.8*1000/(3*0.26*0.3),160,0.5);
 
 				//temp
