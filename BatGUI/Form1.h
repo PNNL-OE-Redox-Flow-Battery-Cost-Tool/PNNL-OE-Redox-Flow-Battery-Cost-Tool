@@ -170,10 +170,10 @@ namespace BatGUI {//rest of program included within this bracket
 	private: System::Windows::Forms::RadioButton^  constcurrent;
 	private: System::Windows::Forms::RadioButton^  constpower;
 	private: System::Windows::Forms::DataGridView^  bestTable;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column19;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column17;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column18;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column20;
+
+
+
+
 	private: System::Windows::Forms::Panel^  panel3;
 	private: System::Windows::Forms::Label^  label68;
 	private: System::Windows::Forms::Label^  label67;
@@ -324,7 +324,6 @@ private: System::Windows::Forms::TextBox^  FlowChanMaxBox;
 private: System::Windows::Forms::TextBox^  flowChanValueBox;
 private: System::Windows::Forms::CheckBox^  optFlowChanBox;
 private: System::Windows::Forms::Label^  label2;
-<<<<<<< HEAD
 private: System::Windows::Forms::DataGridView^  PerformanceTest;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column29;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column32;
@@ -343,7 +342,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column46;
 
 
 
-=======
 private: System::Windows::Forms::TabPage^  tabPage3;
 private: System::Windows::Forms::TabPage^  tabpage4;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
@@ -355,7 +353,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column7;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column8;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column9;
->>>>>>> refs/remotes/origin/master
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column19;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column17;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column18;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column20;
 
 
 
@@ -449,6 +450,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->costChart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->dataOutput = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->gammaBox = (gcnew System::Windows::Forms::TextBox());
@@ -525,10 +535,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->constcurrent = (gcnew System::Windows::Forms::RadioButton());
 			this->constpower = (gcnew System::Windows::Forms::RadioButton());
 			this->bestTable = (gcnew System::Windows::Forms::DataGridView());
-			this->Column19 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column20 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label68 = (gcnew System::Windows::Forms::Label());
 			this->label67 = (gcnew System::Windows::Forms::Label());
@@ -597,15 +603,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->testBox = (gcnew System::Windows::Forms::TextBox());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column19 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column20 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataSet2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataTable2))->BeginInit();
@@ -688,7 +689,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage5->Location = System::Drawing::Point(4, 22);
 			this->tabPage5->Name = L"tabPage5";
 			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage5->Size = System::Drawing::Size(886, 746);
+			this->tabPage5->Size = System::Drawing::Size(886, 459);
 			this->tabPage5->TabIndex = 4;
 			this->tabPage5->Text = L"Cost Parameters";
 			this->tabPage5->UseVisualStyleBackColor = true;
@@ -743,7 +744,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage3->Location = System::Drawing::Point(4, 22);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(886, 746);
+			this->tabPage3->Size = System::Drawing::Size(886, 459);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Current vs Cost";
 			this->tabPage3->UseVisualStyleBackColor = true;
@@ -783,7 +784,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(886, 746);
+			this->tabPage2->Size = System::Drawing::Size(886, 459);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Raw Data";
 			this->tabPage2->UseVisualStyleBackColor = true;
@@ -797,6 +798,61 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->dataOutput->Name = L"dataOutput";
 			this->dataOutput->Size = System::Drawing::Size(877, 343);
 			this->dataOutput->TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"SOC";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 50;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Power/cell (W)";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 50;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Pumping loss/cell (W)";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Shunt loss/ cell (W)";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 50;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Average Effective Voltage";
+			this->Column5->Name = L"Column5";
+			this->Column5->ToolTipText = L"OCV (V)";
+			this->Column5->Width = 50;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Voltage (V)";
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 50;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"V Effective (V)";
+			this->Column7->Name = L"Column7";
+			this->Column7->Width = 60;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Current (mA/cm^2)";
+			this->Column8->Name = L"Column8";
+			this->Column8->Width = 50;
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"Flow rate (ml/min/cell)";
+			this->Column9->Name = L"Column9";
+			this->Column9->Width = 50;
 			// 
 			// tabPage1
 			// 
@@ -842,7 +898,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(886, 746);
+			this->tabPage1->Size = System::Drawing::Size(886, 459);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -850,7 +906,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(704, 412);
+			this->label1->Location = System::Drawing::Point(704, 434);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(43, 13);
 			this->label1->TabIndex = 63;
@@ -858,16 +914,16 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// gammaBox
 			// 
-			this->gammaBox->Location = System::Drawing::Point(753, 409);
+			this->gammaBox->Location = System::Drawing::Point(753, 431);
 			this->gammaBox->Name = L"gammaBox";
 			this->gammaBox->Size = System::Drawing::Size(65, 20);
 			this->gammaBox->TabIndex = 62;
-			this->gammaBox->Text = L"0.5";
+			this->gammaBox->Text = L"0.1";
 			// 
 			// stoichFlowBox
 			// 
 			this->stoichFlowBox->AutoSize = true;
-			this->stoichFlowBox->Location = System::Drawing::Point(342, 320);
+			this->stoichFlowBox->Location = System::Drawing::Point(128, 319);
 			this->stoichFlowBox->Name = L"stoichFlowBox";
 			this->stoichFlowBox->Size = System::Drawing::Size(109, 17);
 			this->stoichFlowBox->TabIndex = 61;
@@ -879,11 +935,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->componentCostGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->componentCostGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {this->Column27, 
 				this->Column28});
-			this->componentCostGrid->Location = System::Drawing::Point(334, 344);
+			this->componentCostGrid->Location = System::Drawing::Point(257, 346);
 			this->componentCostGrid->Name = L"componentCostGrid";
 			this->componentCostGrid->Size = System::Drawing::Size(301, 107);
 			this->componentCostGrid->TabIndex = 60;
-			this->componentCostGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::componentCostGrid_CellContentClick);
 			// 
 			// Column27
 			// 
@@ -897,7 +952,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// PSlopeBox
 			// 
-			this->PSlopeBox->Location = System::Drawing::Point(753, 335);
+			this->PSlopeBox->Location = System::Drawing::Point(753, 357);
 			this->PSlopeBox->Name = L"PSlopeBox";
 			this->PSlopeBox->Size = System::Drawing::Size(65, 20);
 			this->PSlopeBox->TabIndex = 59;
@@ -906,7 +961,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label42
 			// 
 			this->label42->AutoSize = true;
-			this->label42->Location = System::Drawing::Point(653, 339);
+			this->label42->Location = System::Drawing::Point(653, 361);
 			this->label42->Name = L"label42";
 			this->label42->Size = System::Drawing::Size(97, 13);
 			this->label42->TabIndex = 58;
@@ -1147,7 +1202,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->currentMaxBox->Name = L"currentMaxBox";
 			this->currentMaxBox->Size = System::Drawing::Size(58, 20);
 			this->currentMaxBox->TabIndex = 19;
-			this->currentMaxBox->Text = L"275";
+			this->currentMaxBox->Text = L"400";
 			// 
 			// currentValueBox
 			// 
@@ -1218,7 +1273,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(753, 202);
+			this->button1->Location = System::Drawing::Point(753, 223);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(125, 30);
 			this->button1->TabIndex = 0;
@@ -1229,7 +1284,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(647, 390);
+			this->label23->Location = System::Drawing::Point(647, 412);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(100, 13);
 			this->label23->TabIndex = 55;
@@ -1237,7 +1292,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// spaBox
 			// 
-			this->spaBox->Location = System::Drawing::Point(753, 387);
+			this->spaBox->Location = System::Drawing::Point(753, 409);
 			this->spaBox->Name = L"spaBox";
 			this->spaBox->Size = System::Drawing::Size(65, 20);
 			this->spaBox->TabIndex = 54;
@@ -1246,15 +1301,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label22
 			// 
 			this->label22->AutoSize = true;
-			this->label22->Location = System::Drawing::Point(704, 364);
+			this->label22->Location = System::Drawing::Point(651, 386);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(43, 13);
+			this->label22->Size = System::Drawing::Size(96, 13);
 			this->label22->TabIndex = 53;
-			this->label22->Text = L"Li Conc";
+			this->label22->Text = L"Nonaqueous Conc";
 			// 
 			// LiConcBox
 			// 
-			this->LiConcBox->Location = System::Drawing::Point(753, 361);
+			this->LiConcBox->Location = System::Drawing::Point(753, 383);
 			this->LiConcBox->Name = L"LiConcBox";
 			this->LiConcBox->Size = System::Drawing::Size(65, 20);
 			this->LiConcBox->TabIndex = 52;
@@ -1273,7 +1328,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// electronBox
 			// 
-			this->electronBox->Location = System::Drawing::Point(201, 390);
+			this->electronBox->Location = System::Drawing::Point(198, 389);
 			this->electronBox->Name = L"electronBox";
 			this->electronBox->Size = System::Drawing::Size(50, 20);
 			this->electronBox->TabIndex = 50;
@@ -1321,7 +1376,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// ThRedBox
 			// 
-			this->ThRedBox->Location = System::Drawing::Point(824, 263);
+			this->ThRedBox->Location = System::Drawing::Point(824, 285);
 			this->ThRedBox->Name = L"ThRedBox";
 			this->ThRedBox->Size = System::Drawing::Size(31, 20);
 			this->ThRedBox->TabIndex = 33;
@@ -1330,7 +1385,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// PBox
 			// 
-			this->PBox->Location = System::Drawing::Point(753, 314);
+			this->PBox->Location = System::Drawing::Point(753, 336);
 			this->PBox->Name = L"PBox";
 			this->PBox->Size = System::Drawing::Size(65, 20);
 			this->PBox->TabIndex = 31;
@@ -1339,7 +1394,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// KBox
 			// 
-			this->KBox->Location = System::Drawing::Point(753, 289);
+			this->KBox->Location = System::Drawing::Point(753, 311);
 			this->KBox->Name = L"KBox";
 			this->KBox->Size = System::Drawing::Size(65, 20);
 			this->KBox->TabIndex = 29;
@@ -1347,15 +1402,15 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// 
 			// ThicknessBox
 			// 
-			this->ThicknessBox->Location = System::Drawing::Point(753, 263);
+			this->ThicknessBox->Location = System::Drawing::Point(753, 285);
 			this->ThicknessBox->Name = L"ThicknessBox";
 			this->ThicknessBox->Size = System::Drawing::Size(65, 20);
 			this->ThicknessBox->TabIndex = 27;
-			this->ThicknessBox->Text = L"0.352631579";
+			this->ThicknessBox->Text = L"0.35";
 			// 
 			// CondBox
 			// 
-			this->CondBox->Location = System::Drawing::Point(753, 237);
+			this->CondBox->Location = System::Drawing::Point(753, 259);
 			this->CondBox->Name = L"CondBox";
 			this->CondBox->Size = System::Drawing::Size(65, 20);
 			this->CondBox->TabIndex = 25;
@@ -1368,9 +1423,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				static_cast<System::Byte>(0)));
 			this->label51->Location = System::Drawing::Point(6, 364);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(189, 17);
+			this->label51->Size = System::Drawing::Size(197, 17);
 			this->label51->TabIndex = 49;
-			this->label51->Text = L"Li+ Organic OCV (50% SOC)";
+			this->label51->Text = L"Nonaqueous OCV (50% SOC)";
 			// 
 			// label89
 			// 
@@ -1427,7 +1482,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(673, 318);
+			this->label18->Location = System::Drawing::Point(673, 340);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(67, 13);
 			this->label18->TabIndex = 32;
@@ -1436,7 +1491,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(673, 292);
+			this->label17->Location = System::Drawing::Point(673, 314);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(74, 13);
 			this->label17->TabIndex = 30;
@@ -1445,7 +1500,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(661, 266);
+			this->label16->Location = System::Drawing::Point(661, 288);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(86, 13);
 			this->label16->TabIndex = 28;
@@ -1454,7 +1509,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			// textasf
 			// 
 			this->textasf->AutoSize = true;
-			this->textasf->Location = System::Drawing::Point(675, 240);
+			this->textasf->Location = System::Drawing::Point(675, 262);
 			this->textasf->Name = L"textasf";
 			this->textasf->Size = System::Drawing::Size(72, 13);
 			this->textasf->TabIndex = 26;
@@ -1546,7 +1601,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel4->Controls->Add(this->constcurrent);
 			this->panel4->Controls->Add(this->constpower);
-			this->panel4->Location = System::Drawing::Point(466, 205);
+			this->panel4->Location = System::Drawing::Point(470, 217);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(139, 50);
 			this->panel4->TabIndex = 21;
@@ -1586,31 +1641,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->bestTable->Name = L"bestTable";
 			this->bestTable->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bestTable->Size = System::Drawing::Size(414, 193);
+			this->bestTable->Size = System::Drawing::Size(414, 209);
 			this->bestTable->TabIndex = 20;
-			// 
-			// Column19
-			// 
-			this->Column19->HeaderText = L"Quantity";
-			this->Column19->Name = L"Column19";
-			// 
-			// Column17
-			// 
-			this->Column17->HeaderText = L"Present";
-			this->Column17->Name = L"Column17";
-			this->Column17->Width = 60;
-			// 
-			// Column18
-			// 
-			this->Column18->HeaderText = L"Near Term";
-			this->Column18->Name = L"Column18";
-			this->Column18->Width = 60;
-			// 
-			// Column20
-			// 
-			this->Column20->HeaderText = L"Optimistic";
-			this->Column20->Name = L"Column20";
-			this->Column20->Width = 60;
+			this->bestTable->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::bestTable_CellContentClick);
 			// 
 			// panel3
 			// 
@@ -1807,9 +1840,9 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				static_cast<System::Byte>(0)));
 			this->LiOrgButton->Location = System::Drawing::Point(3, 82);
 			this->LiOrgButton->Name = L"LiOrgButton";
-			this->LiOrgButton->Size = System::Drawing::Size(99, 21);
+			this->LiOrgButton->Size = System::Drawing::Size(107, 21);
 			this->LiOrgButton->TabIndex = 12;
-			this->LiOrgButton->Text = L"Li+ Organic";
+			this->LiOrgButton->Text = L"Nonaqueous";
 			this->LiOrgButton->UseVisualStyleBackColor = true;
 			// 
 			// label4
@@ -1872,7 +1905,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->RightToLeftLayout = true;
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(894, 772);
+			this->tabControl1->Size = System::Drawing::Size(894, 485);
 			this->tabControl1->TabIndex = 18;
 			// 
 			// tabpage4
@@ -1904,7 +1937,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->tabpage4->Location = System::Drawing::Point(4, 22);
 			this->tabpage4->Name = L"tabpage4";
 			this->tabpage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabpage4->Size = System::Drawing::Size(886, 746);
+			this->tabpage4->Size = System::Drawing::Size(886, 459);
 			this->tabpage4->TabIndex = 5;
 			this->tabpage4->Text = L"Test tab";
 			this->tabpage4->UseVisualStyleBackColor = true;
@@ -2222,70 +2255,35 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			this->testBox->Size = System::Drawing::Size(90, 20);
 			this->testBox->TabIndex = 1;
 			// 
-			// Column1
+			// Column19
 			// 
-			this->Column1->HeaderText = L"SOC";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 50;
+			this->Column19->HeaderText = L"Quantity";
+			this->Column19->Name = L"Column19";
+			this->Column19->Width = 120;
 			// 
-			// Column2
+			// Column17
 			// 
-			this->Column2->HeaderText = L"Power/cell (W)";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 50;
+			this->Column17->HeaderText = L"Present";
+			this->Column17->Name = L"Column17";
+			this->Column17->Width = 80;
 			// 
-			// Column3
+			// Column18
 			// 
-			this->Column3->HeaderText = L"Pumping loss/cell (W)";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 50;
+			this->Column18->HeaderText = L"Near Term";
+			this->Column18->Name = L"Column18";
+			this->Column18->Width = 80;
 			// 
-			// Column4
+			// Column20
 			// 
-			this->Column4->HeaderText = L"Shunt loss/ cell (W)";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 50;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Average Effective Voltage";
-			this->Column5->Name = L"Column5";
-			this->Column5->ToolTipText = L"OCV (V)";
-			this->Column5->Width = 50;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Voltage (V)";
-			this->Column6->Name = L"Column6";
-			this->Column6->Width = 50;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"V Effective (V)";
-			this->Column7->Name = L"Column7";
-			this->Column7->Width = 60;
-			// 
-			// Column8
-			// 
-			this->Column8->HeaderText = L"Current (mA/cm^2)";
-			this->Column8->Name = L"Column8";
-			this->Column8->Width = 50;
-			// 
-			// Column9
-			// 
-			this->Column9->HeaderText = L"Flow rate (ml/min/cell)";
-			this->Column9->Name = L"Column9";
-			this->Column9->Width = 50;
+			this->Column20->HeaderText = L"Optimistic";
+			this->Column20->Name = L"Column20";
+			this->Column20->Width = 80;
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-<<<<<<< HEAD
-			this->ClientSize = System::Drawing::Size(909, 741);
-=======
-			this->ClientSize = System::Drawing::Size(909, 486);
->>>>>>> refs/remotes/origin/master
+			this->ClientSize = System::Drawing::Size(909, 504);
 			this->Controls->Add(this->tabControl1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Form1";
@@ -2709,14 +2707,10 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	}
 	if(LiOrgButton->Checked)
 	{
-<<<<<<< HEAD
 		V2=Convert::ToDouble(LiVoltageBox->Text);
 		V1=0;
 		TCent=60;
 		T = TCent+273.15;
-=======
-		T=273.15+60;
->>>>>>> refs/remotes/origin/master
 		Ci1= Convert::ToDouble(LiConcBox->Text);
 		pa = 10*condScaleFactor/(10); //S/m
 		pc = pa;
@@ -2752,7 +2746,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	{
 		return 0;
 	}
-<<<<<<< HEAD
 	double beta[2]={sqrt(D[0]*D[0]+4*B[0]*G[0])/B[0],sqrt(D[1]*D[1]+4*B[1]*G[1])/B[1]};
 	//minimization begins
 	double alpha[2]={A/sqrt(B[0]),A/sqrt(B[1])};
@@ -2795,12 +2788,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
     double Irec=teff[1]*0.5*j*100*100/1000/pc;
 	double mt[2]={450e-6,2*(25.4e-6)/*175e-6*/}; //membrane thickness m
 	double condM[2]={23.0769,(0.5139*22-.326)*exp(1268*(T-303)/(T*303))};
-=======
-	double etaneg=-R*T/F*asinh(Inew/(2*t*a*F*k1*kScaleFactor*sqrt(Conc1neg*Conc1pos)));
-    double etapos=R*T/F*asinh(Inew/(2*t*a*F*k2[i]*kScaleFactor*sqrt(Conc2neg*Conc2pos)));
-	double mt[2]={450e-6,5*(25.4e-6)/*175e-6*/}; //membrane thickness m
-	double condM[2]={23.0769,(0.5139*9-.326)*exp(1268*(T-303)/(T*303))};
->>>>>>> refs/remotes/origin/master
     double IRM = (j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 	double iconcH[2]={5300,6000};
 	double concH[2]={iconcH[0],iconcH[1]+Ci1*SOCrxn[1]-I/(t*F*a*Km)};
@@ -2860,20 +2847,11 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		
 		//etaneg = 0;
 		//etapos = 0;
-<<<<<<< HEAD
  //temp
 		condM[membrane]=0.32;//2.5/(10); //S/m
 		//t=0.5/1000;
 		Irea = t*I/pa/2;
 		Irec = t*I/pc/2;
-=======
-		pat = A[1]*10*condScaleFactor/(10); //S/m
-		pct = pat; //temp
-		condM[membrane]=0.32;//0.088;//2.5/(10); //S/m
-		//t=0.5/1000;
-		Irea = t*Inew/pat;
-		Irec = t*Inew/pct;
->>>>>>> refs/remotes/origin/master
 		mt[membrane]=25e-6;//7*(25e-6); // m
 		IRM = 0.1*(j*100*100/1000)*(mt[membrane])/(condM[membrane]);
 		V = OCVLi + etaneg-etapos-Irea-Irec-IRM;
@@ -2884,16 +2862,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 		V=0;
 	}
 	double scaleV=1/*1.138*/;
-<<<<<<< HEAD
 	//PerformanceTest->Rows->Add(V);
 	//PerformanceTest->Rows->Add(SOC,SOCrxn[1],SOCrxn[0],teff[1],teff[0],V,A,B[0],D[0],G[0],H[0],tmin[0],beta[0]);
 	PerformanceTest->Rows->Add(SOC,V,etaneg,etapos,Irea,Irec,IRM,teff[1],teff[0]);
-=======
 	if (V<=0)
 	{
 		return 0;
 	}
->>>>>>> refs/remotes/origin/master
     return V*scaleV;
 }
 	public: double CostTab(int column,int row,double units)
@@ -3050,12 +3025,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	//aspect ratio - height/width of cell
 	//channels - number of flow channels in cell
 	//cells - cells per stack
-<<<<<<< HEAD
 	//return 0;
-
-=======
 	cwidth=g_cwidth;
->>>>>>> refs/remotes/origin/master
 	double resistivity=0.05;//ohm m (1/Convert::ToDouble(CondBox->Text))
 	if(LiOrgButton->Checked)
 	{
@@ -3653,20 +3624,13 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				{
 
 						V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
-<<<<<<< HEAD
 						while(V==0 || flow!=flow)
-=======
-						while(V<=0)
->>>>>>> refs/remotes/origin/master
 						{
 							if(flow!=flow)
 							{
 								flow=0;
 							}
-<<<<<<< HEAD
 							k=0;
-=======
->>>>>>> refs/remotes/origin/master
 							flow+=10;
 							V=g_voltage(SOC,g_area,flow*g_area,j,g_aspectratio,g_system,g_membrane);
 						}
@@ -3722,11 +3686,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			}
 	public: double calculateVeffAvg(double jLow, double qhighpercurrent)
 			{
-<<<<<<< HEAD
 				double delSOC = g_DOD/100/20;
-=======
-				double delSOC = 0.01;//*g_DOD/50;
->>>>>>> refs/remotes/origin/master
 				double SOCLow = (100-g_DOD)/200;
 				double SOCHigh = 1.0000001-SOCLow;
 				double flow=qhighpercurrent*jLow;
@@ -3754,15 +3714,12 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				
 				double D_jP;
 				double Pb;
-<<<<<<< HEAD
 				double Pf;
 				double D_fP;
 				double D_ffP;
 
 				double flowres=50;
-=======
 				double del;
->>>>>>> refs/remotes/origin/master
 				while (g_SOC<= SOCHigh)
 				{
 					if(constpower->Checked)
@@ -3785,7 +3742,6 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					Pb=powerproduced-powerloss;
 
 					D_jP=((power-Pb)/jres);
-<<<<<<< HEAD
 					j-=((power-g_reqpowerpercell)/D_jP);
 
 					
@@ -3810,7 +3766,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 
 					flow-=0.1*D_fP/D_ffP;
 
-=======
+/*=======
 					del=0.1*((power-g_reqpowerpercell)/D_jP);
 					if(del>=0)
 					{
@@ -3820,7 +3776,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 					{
 						j=j;
 					}
->>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master*/
 					if(abs((power-g_reqpowerpercell)/D_jP)<=0.001)
 					{
 						powerAttained=true;
@@ -3961,13 +3917,7 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 			 double delcost=cost;
 			 double gamma=Convert::ToDouble(gammaBox->Text);
 
-<<<<<<< HEAD
 			 while ((abs(delcost)>=0.01) && (i<1))
-=======
-			 double del;
-
-			 while ((abs(delcost)>=0.01) && (i<10))
->>>>>>> refs/remotes/origin/master
 			 {
 
 				 //MessageBox::Show("Cost: " + cost);
@@ -3979,9 +3929,8 @@ private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 				 }
 				 if(jLowOpt)
 				 {
-				 del=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
 				 //MessageBox::Show(del.ToString("F3"));
-				 g_jLow-=del;
+				 g_jLow-=gamma*D_xcostoverD_xxcost((g_jLow),g_jLow,g_qhighpercurrent);
 				 if(g_jLow>jLowMax){g_jLow=jLowMax;}
 				 if(g_jLow<jLowMin){g_jLow=jLowMin;}
 				 }
@@ -4169,7 +4118,6 @@ private: System::Void optFlowChanBox_CheckedChanged(System::Object^  sender, Sys
 			}
 
 		 }
-<<<<<<< HEAD
 private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -4196,9 +4144,8 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 			 }*/
 		 }
 private: System::Void currentValueBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-=======
-private: System::Void componentCostGrid_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
->>>>>>> refs/remotes/origin/master
+		 }
+private: System::Void bestTable_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		 }
 };
 }
