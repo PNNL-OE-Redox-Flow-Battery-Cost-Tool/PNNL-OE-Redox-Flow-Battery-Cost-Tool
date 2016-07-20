@@ -374,6 +374,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column20;
 	public:
 		Form1(void)
 		{
+			setlocale(LC_ALL, "en-US");
 			InitializeComponent();//user defined function takes all the pieces of GUI that have been defined and assigns location and/or text values
 			InitializeCostParameters();
 	
